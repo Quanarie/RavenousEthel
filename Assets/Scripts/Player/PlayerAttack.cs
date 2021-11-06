@@ -4,30 +4,36 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] private float damageAmount;
-    [SerializeField] private float rechargeTimeSlime;
-    [SerializeField] private GameObject projectilePrefab;
+    [Header("Regular State")]
+    [SerializeField] private float rechargeTimeRegular;
+    [SerializeField] private GameObject regularProjectilePrefab;
     [SerializeField] private GameObject deadSlimePrefab;
+    private float previousRegularStateAttackTime;
 
-    private float previousSlimeAttackTime;
+    [Header("Mutated State")]
+    [SerializeField] private GameObject mutantProjectilePrefab;
+    [SerializeField] private float rechargeTimeMutated;
+    private float previousMutatedStateAttackTime;
 
     public void Attack()
     {
         if (GameManager.Instance.state == GameManager.State.regular)
         {
-            if (Time.time - previousSlimeAttackTime < rechargeTimeSlime)
+            if (Time.time - previousRegularStateAttackTime < rechargeTimeRegular)
                 return;
 
-            Animator animator = GameManager.Instance.playerAnimator;
+            Instantiate(regularProjectilePrefab, transform.position, Quaternion.identity);
 
-            animator.SetTrigger("attack");
-            Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-
-            previousSlimeAttackTime = Time.time;
+            previousRegularStateAttackTime = Time.time;
         }
-        else if (GameManager.Instance.state == GameManager.State.mutated)
+        else
         {
+            if (Time.time - previousMutatedStateAttackTime < rechargeTimeMutated)
+                return;
 
+            Instantiate(mutantProjectilePrefab, transform.position, Quaternion.identity);
+
+            previousMutatedStateAttackTime = Time.time;
         }
     }
 

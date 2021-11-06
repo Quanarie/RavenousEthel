@@ -26,14 +26,35 @@ public class GameManager : MonoBehaviour
 
         playerAnimator = Player.GetComponent<Animator>();
         playerAttack = Player.GetComponent<PlayerAttack>();
-
-        state = State.regular;
     }
 
     public enum State
     {
         regular,
         mutated,
+    }
+
+    public Transform FindClosestEnemyInRange(float range)
+    {
+        if (EnemiesParent.childCount == 0)
+            return null;
+
+        Transform closestEnemy = EnemiesParent.GetChild(0);
+        Vector3 playerPos = Player.position;
+
+        foreach (Transform enemy in EnemiesParent)
+        {
+            if (Vector3.Distance(enemy.position, playerPos) < Vector3.Distance(closestEnemy.position, playerPos))
+            {
+                closestEnemy = enemy;
+            }
+        }
+
+        if (Vector3.Distance(closestEnemy.position, playerPos) <= range)
+        {
+            return closestEnemy;
+        }
+        return null;
     }
 
 }
