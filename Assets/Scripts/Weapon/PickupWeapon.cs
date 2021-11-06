@@ -13,6 +13,9 @@ public class PickupWeapon : MonoBehaviour
         int weaponQuantity = 0;
         foreach (Collider2D item in items)
         {
+            if (item.transform.parent == GameManager.Instance.WeaponParent)
+                continue;
+
             if (item.TryGetComponent(out Weapon _))
                 weaponQuantity++;
         }
@@ -21,6 +24,9 @@ public class PickupWeapon : MonoBehaviour
         int weaponCounter = 0;
         for (int i = 0; i < items.Length; i++)
         {
+            if (items[i].transform.parent == GameManager.Instance.WeaponParent)
+                continue;
+
             if (items[i].TryGetComponent(out Weapon _))
             {
                 weapons[weaponCounter] = items[i];

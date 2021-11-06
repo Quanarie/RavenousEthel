@@ -18,6 +18,8 @@ public class Projectile : MonoBehaviour
     protected virtual void Update()
     {
         transform.Translate(direction.normalized * speed * Time.deltaTime);
+
+        Destroy(gameObject, lifetime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

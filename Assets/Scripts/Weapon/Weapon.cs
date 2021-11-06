@@ -29,6 +29,7 @@ public class Weapon : MonoBehaviour
             {
                 spawnedProjectile.direction = weaponDirectionLast;
             }
+
             lastShootTime = Time.time;
         }
     }
