@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
+public class PlayerSlimeAttack : MonoBehaviour
 {
     [SerializeField] private float damageAmount;
     [SerializeField] private float rechargeTime;
+    [SerializeField] private GameObject projectilePrefab;
 
     private float previousAttackTime;
 
@@ -17,7 +18,7 @@ public class PlayerAttack : MonoBehaviour
         Animator animator = GameManager.Instance.playerAnimator;
 
         animator.SetTrigger("attack");
-        animator.SetTrigger("death");
+        Instantiate(projectilePrefab, transform.position, Quaternion.identity);
 
         previousAttackTime = Time.time;
     }

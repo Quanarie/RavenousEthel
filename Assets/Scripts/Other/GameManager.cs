@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public Joystick Joystick;
     public Button AttackButton;
 
+    public Transform EnemiesParent;
+
     private void Awake()
     {
         if (Instance == null)
