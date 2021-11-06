@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public Transform Player;
 
+    public Transform WeaponParent;
+
     [HideInInspector] public Animator playerAnimator;
     [HideInInspector] public PlayerAttack playerAttack;
     [HideInInspector] public PlayerHealth playerHealth;

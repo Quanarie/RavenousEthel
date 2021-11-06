@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public GameObject Gun;
+    public Weapon weapon;
 
     [Header("Regular State")]
     [SerializeField] private float rechargeTimeRegular;
@@ -16,6 +16,11 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private GameObject mutantProjectilePrefab;
     [SerializeField] private float rechargeTimeMutated;
     private float previousMutatedStateAttackTime;
+
+    private void Start()
+    {
+        weapon = GameManager.Instance.WeaponParent.GetChild(0).GetComponent<Weapon>();
+    }
 
     public void SwallowUp()
     {
@@ -32,19 +37,7 @@ public class PlayerAttack : MonoBehaviour
         if (GameManager.Instance.state == GameManager.State.regular)
             return;
 
-        if (Gun == null)
-        {
-            if (Time.time - previousMutatedStateAttackTime < rechargeTimeMutated)
-                return;
-
-            Instantiate(mutantProjectilePrefab, transform.position, Quaternion.identity);
-
-            previousMutatedStateAttackTime = Time.time;
-        }
-        else
-        {
-
-        }
+        weapon.Shoot();
     }
 
     public void Mutate(GameObject enemy)
