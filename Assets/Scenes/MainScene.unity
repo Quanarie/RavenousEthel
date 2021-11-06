@@ -505,8 +505,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1546314183
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 6379731779790086710, guid: d3421d8703e4f1b46be40c85605e2f95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -551,8 +551,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  rechargeTime: 0.5
+  rechargeTime: 1
   projectilePrefab: {fileID: 7350114879659511275, guid: 83fa1a85ba73c3a468f85bb04ce7b2b0, type: 3}
+  deadSlimePrefab: {fileID: 2016878233217422246, guid: 46b5e5f8499f1034e95d8815b11717c5, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,9 +908,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 584051764}
   playerAnimator: {fileID: 584051767}
+  playerAttack: {fileID: 0}
   Joystick: {fileID: 2073315662389357428}
   AttackButton: {fileID: 858678335}
   EnemiesParent: {fileID: 353194540}
+  state: 0
 --- !u!4 &1094687393
 Transform:
   m_ObjectHideFlags: 0

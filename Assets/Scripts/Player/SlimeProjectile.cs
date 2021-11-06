@@ -6,26 +6,33 @@ public class SlimeProjectile : MonoBehaviour
 {
     [SerializeField] private float speedOfLerping;
     [SerializeField] private float distanceToMutate;
+    [SerializeField] private float range;
 
     private Transform enemyToAttack;
 
     private void Start()
     {
-        enemyToAttack = FindClosestEnemy();
+        enemyToAttack = FindClosestEnemyInRange();
     }
 
     private void Update()
     {
+        if (enemyToAttack == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         transform.position = Vector3.Lerp(transform.position, enemyToAttack.position, speedOfLerping);
 
         if (Vector3.Distance(transform.position, enemyToAttack.position) < distanceToMutate)
         {
-            //GameManager.Instance.Player.Mutate(enemyToAttack.gameObject);
+            GameManager.Instance.playerAttack.Mutate(enemyToAttack.gameObject);
             Destroy(gameObject);
         }
     }
 
-    private Transform FindClosestEnemy()
+    private Transform FindClosestEnemyInRange()
     {
         Transform closestEnemy = GameManager.Instance.EnemiesParent.GetChild(0);
         Vector3 playerPos = GameManager.Instance.Player.position;
@@ -38,6 +45,10 @@ public class SlimeProjectile : MonoBehaviour
             }
         }
 
-        return closestEnemy;
+        if (Vector3.Distance(closestEnemy.position, playerPos) <= range)
+        {
+            return closestEnemy;
+        }
+        return null;
     }
 }
