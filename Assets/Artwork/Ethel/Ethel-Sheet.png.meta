@@ -1,0 +1,948 @@
+fileFormatVersion: 2
+guid: d3421d8703e4f1b46be40c85605e2f95
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6379731779790086710
+    second: Ethel-Sheet_0
+  - first:
+      213: 6712898681843624229
+    second: Ethel-Sheet_1
+  - first:
+      213: -694726019294321022
+    second: Ethel-Sheet_2
+  - first:
+      213: 7226881230009006976
+    second: Ethel-Sheet_3
+  - first:
+      213: -3031611272150479643
+    second: Ethel-Sheet_4
+  - first:
+      213: -10507060296704754
+    second: Ethel-Sheet_5
+  - first:
+      213: -2129237931157173985
+    second: Ethel-Sheet_6
+  - first:
+      213: 2993089256993452213
+    second: Ethel-Sheet_7
+  - first:
+      213: -5382202630210455907
+    second: Ethel-Sheet_8
+  - first:
+      213: 5012281298608111272
+    second: Ethel-Sheet_9
+  - first:
+      213: -7521652509490683356
+    second: Ethel-Sheet_10
+  - first:
+      213: -435271965753501280
+    second: Ethel-Sheet_11
+  - first:
+      213: 3993676785521107083
+    second: Ethel-Sheet_12
+  - first:
+      213: 1202041661804709641
+    second: Ethel-Sheet_13
+  - first:
+      213: -8348387336263529948
+    second: Ethel-Sheet_14
+  - first:
+      213: 4834681141455620771
+    second: Ethel-Sheet_15
+  - first:
+      213: -3356621851866180264
+    second: Ethel-Sheet_16
+  - first:
+      213: -7582785620443054508
+    second: Ethel-Sheet_17
+  - first:
+      213: 6991942759169147054
+    second: Ethel-Sheet_18
+  - first:
+      213: -2640352099848137065
+    second: Ethel-Sheet_19
+  - first:
+      213: 3068399864506824950
+    second: Ethel-Sheet_20
+  - first:
+      213: 7677324286775753884
+    second: Ethel-Sheet_21
+  - first:
+      213: -7130038191602187108
+    second: Ethel-Sheet_22
+  - first:
+      213: -6991138515316443813
+    second: Ethel-Sheet_23
+  - first:
+      213: 5530130251644751693
+    second: Ethel-Sheet_24
+  - first:
+      213: -1094611210505490338
+    second: Ethel-Sheet_27
+  - first:
+      213: -1215193296172006981
+    second: Ethel-Sheet_28
+  - first:
+      213: 3707420657487049858
+    second: Ethel-Sheet_29
+  - first:
+      213: 7644438923871967442
+    second: Ethel-Sheet_30
+  - first:
+      213: 8854825490448410567
+    second: Ethel-Sheet_31
+  - first:
+      213: -2190888509242987114
+    second: Ethel-Sheet_32
+  - first:
+      213: -5161091441871004504
+    second: Ethel-Sheet_33
+  - first:
+      213: -4592950135611153690
+    second: Ethel-Sheet_34
+  - first:
+      213: 9072028870097217361
+    second: Ethel-Sheet_35
+  - first:
+      213: 8320106237374392534
+    second: Ethel-Sheet_25
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ethel-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 159
+        width: 16
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 632a8a0a04c598850800000000000000
+      internalID: 6379731779790086710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 159
+        width: 18
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5292a70e8c1092d50800000000000000
+      internalID: 6712898681843624229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 159
+        width: 12
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 286adb3cd56db56f0800000000000000
+      internalID: -694726019294321022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 162
+        width: 9
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08bff94603a0b4460800000000000000
+      internalID: 7226881230009006976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 135
+        width: 16
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ec86623c9d8de5d0800000000000000
+      internalID: -3031611272150479643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 135
+        width: 15
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0d916362ebaadff0800000000000000
+      internalID: -10507060296704754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 135
+        width: 17
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f19c61ff16d6372e0800000000000000
+      internalID: -2129237931157173985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 135
+        width: 15
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b0f12832d6998920800000000000000
+      internalID: 2993089256993452213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 17
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d96f12559339e45b0800000000000000
+      internalID: -5382202630210455907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 112
+        width: 14
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aebedde8433f8540800000000000000
+      internalID: 5012281298608111272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 112
+        width: 13
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 422e1efd4e8bd9790800000000000000
+      internalID: -7521652509490683356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 112
+        width: 18
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a9939c047a95f9f0800000000000000
+      internalID: -435271965753501280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 112
+        width: 13
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42a84a603f1942c80800000000000000
+      internalID: -8348387336263529948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 112
+        width: 11
+        height: 6
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aa0eb602ec381340800000000000000
+      internalID: 4834681141455620771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 87
+        width: 11
+        height: 4
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 855d33ab532ea61d0800000000000000
+      internalID: -3356621851866180264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 87
+        width: 13
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45e3d8d47a884c690800000000000000
+      internalID: -7582785620443054508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 87
+        width: 12
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea0442205ee580160800000000000000
+      internalID: 6991942759169147054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 87
+        width: 17
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 796589e11c59b5bd0800000000000000
+      internalID: -2640352099848137065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 48
+        width: 15
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f839c07b65259a20800000000000000
+      internalID: 3068399864506824950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 48
+        width: 17
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9c7fba33c55b8a60800000000000000
+      internalID: 7677324286775753884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 48
+        width: 15
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9445929a040d0d90800000000000000
+      internalID: -7130038191602187108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 48
+        width: 16
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b55f20b9f8c7afe90800000000000000
+      internalID: -6991138515316443813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 25
+        width: 18
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4f4deaf928febc40800000000000000
+      internalID: 5530130251644751693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 25
+        width: 13
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e50f8ae47e82fc0f0800000000000000
+      internalID: -1094611210505490338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 25
+        width: 14
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb14b30b224c22fe0800000000000000
+      internalID: -1215193296172006981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 25
+        width: 17
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 284f57af177637330800000000000000
+      internalID: 3707420657487049858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 25
+        width: 11
+        height: 6
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d8de8403b0861a60800000000000000
+      internalID: 7644438923871967442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 25
+        width: 13
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c760426ed8a2ea70800000000000000
+      internalID: 8854825490448410567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 0
+        width: 17
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69d261832866891e0800000000000000
+      internalID: -2190888509242987114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 0
+        width: 12
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ac58f1adae1068b0800000000000000
+      internalID: -5161091441871004504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 0
+        width: 13
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e2a0d7af209240c0800000000000000
+      internalID: -4592950135611153690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 0
+        width: 11
+        height: 4
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 157ab32113256ed70800000000000000
+      internalID: 9072028870097217361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 67
+        width: 16
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b80a5b480e36c6730800000000000000
+      internalID: 3993676785521107083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 67
+        width: 18
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9070711d5828ea010800000000000000
+      internalID: 1202041661804709641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 67
+        width: 12
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d866348a84f67370800000000000000
+      internalID: 8320106237374392534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: a84ca8abb2c183e458e6946f49c0bd0f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
