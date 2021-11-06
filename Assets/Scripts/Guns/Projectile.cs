@@ -2,20 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MutantProjectile : MonoBehaviour
+public class Projectile : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    [SerializeField] private float range;
-    [SerializeField] private float damageAmount;
-    [SerializeField] private float lifetime;
+    [SerializeField] protected float damageAmount;
+    [SerializeField] protected float rechargeTime;
+    [SerializeField] protected float pushForce;
+    [SerializeField] protected float stunTime;
+    [SerializeField] protected float speed;
+    [SerializeField] protected float range;
+    [SerializeField] protected float lifetime;
 
-    private Vector3 direction;
+    protected Vector3 direction;
+    protected EnemyHealth enemyToAttack;
 
-    private EnemyHealth enemyToAttack;
-
-    private void Start()
+    protected virtual void Start()
     {
         Transform enemyToAttack = GameManager.Instance.FindClosestEnemyInRange(range);
+
         if (enemyToAttack == null)
         {
             Destroy(gameObject);
@@ -23,17 +26,15 @@ public class MutantProjectile : MonoBehaviour
         }
         else
         {
-            GameManager.Instance.playerAnimator.SetTrigger("attack");
-            GameManager.Instance.playerAnimator.SetFloat("enemyPosX", (enemyToAttack.position.x - GameManager.Instance.Player.position.x) / Mathf.Abs(enemyToAttack.position.x - GameManager.Instance.Player.position.x));
             Destroy(gameObject, lifetime);
         }
 
-
         Vector3 playerPos = GameManager.Instance.Player.position;
+
         direction = new Vector3(enemyToAttack.position.x - playerPos.x, enemyToAttack.position.y - playerPos.y, 0);
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         transform.Translate(direction.normalized * speed * Time.deltaTime);
     }
@@ -45,7 +46,10 @@ public class MutantProjectile : MonoBehaviour
 
         if (collision.TryGetComponent(out enemyToAttack))
         {
-            enemyToAttack.ReceiveDamage(damageAmount);
+            Vector3 enemyPos = enemyToAttack.transform.position;
+            Vector3 playerPos = GameManager.Instance.Player.position;
+
+            enemyToAttack.ReceiveDamage(damageAmount, new Vector3(enemyPos.x - playerPos.x, enemyPos.y - playerPos.y, 0).normalized * pushForce, stunTime);
         }
 
         Destroy(gameObject);

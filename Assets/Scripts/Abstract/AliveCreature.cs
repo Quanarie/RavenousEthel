@@ -9,12 +9,14 @@ public class AliveCreature : MonoBehaviour
     protected float currentHp;
 
     private Color startColor;
+    private Movement movementScript;
 
     private void Start()
     {
         currentHp = maxHp;
 
         startColor = GetComponent<SpriteRenderer>().color;
+        movementScript = GetComponent<Movement>();
     }
 
     public virtual void ReceiveDamage(float damageAmount)
@@ -30,6 +32,15 @@ public class AliveCreature : MonoBehaviour
 
         GetComponent<SpriteRenderer>().color = Color.red;
         StartCoroutine(ChangeColorBack());
+    }
+
+    public virtual void ReceiveDamage(float damageAmount, Vector3 pushDirection, float stunTime)
+    {
+        ReceiveDamage(damageAmount);
+
+        movementScript.pushDirection = pushDirection;
+
+        //stun
     }
 
     private IEnumerator ChangeColorBack()

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlimeProjectile : MonoBehaviour
+public class RegularProjectile : MonoBehaviour
 {
     [SerializeField] private float speedOfLerping;
     [SerializeField] private float distanceToMutate;

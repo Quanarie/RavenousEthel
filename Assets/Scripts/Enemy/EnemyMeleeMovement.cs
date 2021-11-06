@@ -11,13 +11,20 @@ public class EnemyMeleeMovement : Movement
     private void Update()
     {
         if (isAttacking)
+        {
+            UpdateMotor(Vector3.zero);
             return;
+        }
 
         Vector3 playerPos = GameManager.Instance.Player.position;
 
         if (Vector3.Distance(transform.position, playerPos) <= chasingDistance)
         {
             UpdateMotor(new Vector3(playerPos.x - transform.position.x, playerPos.y - transform.position.y, 0).normalized);
+        }
+        else
+        {
+            UpdateMotor(Vector3.zero);
         }
     }
 
