@@ -171,6 +171,7 @@ GameObject:
   - component: {fileID: 413913708}
   - component: {fileID: 413913709}
   - component: {fileID: 413913710}
+  - component: {fileID: 413913713}
   m_Layer: 0
   m_Name: Isometric Diamond
   m_TagString: Untagged
@@ -333,6 +334,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.8
+--- !u!114 &413913713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413913705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d165ef582f9e114ea4120b1a6bc5e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ySpeed: 0.35
+  xSpeed: 0.5
+  chasingDistance: 5
 --- !u!1 &466368719
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,6 +464,7 @@ GameObject:
   - component: {fileID: 572815277}
   - component: {fileID: 572815278}
   - component: {fileID: 572815279}
+  - component: {fileID: 572815282}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -610,6 +627,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.8
+--- !u!114 &572815282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572815274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d165ef582f9e114ea4120b1a6bc5e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ySpeed: 0.35
+  xSpeed: 0.5
+  chasingDistance: 5
 --- !u!1 &584051763
 GameObject:
   m_ObjectHideFlags: 0
@@ -1269,6 +1301,7 @@ GameObject:
   - component: {fileID: 2039084048}
   - component: {fileID: 2039084049}
   - component: {fileID: 2039084050}
+  - component: {fileID: 2039084053}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -1431,6 +1464,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.8
+--- !u!114 &2039084053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039084045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d165ef582f9e114ea4120b1a6bc5e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ySpeed: 0.35
+  xSpeed: 0.5
+  chasingDistance: 5
 --- !u!1 &2059625813
 GameObject:
   m_ObjectHideFlags: 0
