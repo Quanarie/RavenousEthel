@@ -14,7 +14,10 @@ public class PlayerAttack : MonoBehaviour
         if (Time.time - previousAttackTime < rechargeTime)
             return;
 
-        GameManager.Instance.playerAnimator.SetTrigger("attack");
+        Animator animator = GameManager.Instance.playerAnimator;
+
+        animator.SetTrigger("attack");
+        animator.SetTrigger("death");
 
         previousAttackTime = Time.time;
     }
