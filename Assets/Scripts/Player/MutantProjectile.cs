@@ -24,6 +24,7 @@ public class MutantProjectile : MonoBehaviour
         else
         {
             GameManager.Instance.playerAnimator.SetTrigger("attack");
+            GameManager.Instance.playerAnimator.SetFloat("enemyPosX", (enemyToAttack.position.x - GameManager.Instance.Player.position.x) / Mathf.Abs(enemyToAttack.position.x - GameManager.Instance.Player.position.x));
             Destroy(gameObject, lifetime);
         }
 
@@ -34,18 +35,19 @@ public class MutantProjectile : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(direction * speed * Time.deltaTime);
+        transform.Translate(direction.normalized * speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.TryGetComponent(out PlayerHealth _))
+            return;
+
         if (collision.TryGetComponent(out enemyToAttack))
         {
             enemyToAttack.ReceiveDamage(damageAmount);
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+
+        Destroy(gameObject);
     }
 }

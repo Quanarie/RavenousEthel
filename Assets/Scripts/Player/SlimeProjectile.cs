@@ -21,6 +21,7 @@ public class SlimeProjectile : MonoBehaviour
         }
 
         GameManager.Instance.playerAnimator.SetTrigger("attack");
+        GameManager.Instance.playerAnimator.SetFloat("enemyPosX", (enemyToAttack.position.x - GameManager.Instance.Player.position.x) / Mathf.Abs(enemyToAttack.position.x - GameManager.Instance.Player.position.x));
     }
 
     private void Update()

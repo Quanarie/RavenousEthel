@@ -12,6 +12,8 @@ public class AliveCreature : MonoBehaviour
 
     private void Start()
     {
+        currentHp = maxHp;
+
         startColor = GetComponent<SpriteRenderer>().color;
     }
 
@@ -27,6 +29,7 @@ public class AliveCreature : MonoBehaviour
         }
 
         GetComponent<SpriteRenderer>().color = Color.red;
+        StartCoroutine(ChangeColorBack());
     }
 
     private IEnumerator ChangeColorBack()

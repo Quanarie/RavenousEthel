@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector] public Animator playerAnimator;
     [HideInInspector] public PlayerAttack playerAttack;
+    [HideInInspector] public PlayerHealth playerHealth;
+
+    [HideInInspector] public CircleCollider2D playerHitBox;
 
     public Joystick Joystick;
     public Button AttackButton;
@@ -26,6 +29,8 @@ public class GameManager : MonoBehaviour
 
         playerAnimator = Player.GetComponent<Animator>();
         playerAttack = Player.GetComponent<PlayerAttack>();
+        playerHealth = Player.GetComponent<PlayerHealth>();
+        playerHitBox = Player.GetComponent<CircleCollider2D>();
     }
 
     public enum State
