@@ -147,7 +147,7 @@ MonoBehaviour:
   damageAmount: 2
   rechargeTime: 1
   pushForce: 10
-  stunTime: 1
+  stunTime: 3
   speed: 1.75
   range: 1
   lifetime: 1

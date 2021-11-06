@@ -40,7 +40,7 @@ public class AliveCreature : MonoBehaviour
 
         movementScript.pushDirection = pushDirection;
 
-        //stun
+        movementScript.Stun(stunTime);
     }
 
     private IEnumerator ChangeColorBack()
