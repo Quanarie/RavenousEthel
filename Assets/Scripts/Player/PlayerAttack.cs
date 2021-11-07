@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
@@ -13,6 +14,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float rechargeTimeRegular;
     [SerializeField] private GameObject regularProjectilePrefab;
     [SerializeField] private GameObject deadSlimePrefab;
+    [SerializeField] private Image rechargeRegularImage;
     private float previousRegularStateAttackTime;
 
     [Header("Mutated State")]
@@ -25,6 +27,11 @@ public class PlayerAttack : MonoBehaviour
     {
         weapon = GameManager.Instance.WeaponParent.GetChild(0).GetComponent<Weapon>();
         GameManager.Instance.playerAnimator.runtimeAnimatorController = regularController;
+    }
+
+    private void Update()
+    {
+        rechargeRegularImage.fillAmount = Mathf.Min((Time.time - previousRegularStateAttackTime) / rechargeTimeRegular, 1);
     }
 
     public void SwallowUp()

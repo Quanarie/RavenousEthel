@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -7,6 +8,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private GameObject projectile;
     [SerializeField] private float rechargeTime;
     [SerializeField] protected float range;
+    [HideInInspector] public Image rechargeImage;
 
     private float lastShootTime;
     private Vector3 weaponDirectionLast;
@@ -37,6 +39,8 @@ public class Weapon : MonoBehaviour
     {
         if (transform.parent != GameManager.Instance.WeaponParent)
             return;
+
+        rechargeImage.fillAmount = Mathf.Min((Time.time - lastShootTime) / rechargeTime, 1);
 
         Transform enemyToAttack = GameManager.Instance.FindClosestEnemyInRange(range);
 

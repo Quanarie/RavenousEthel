@@ -1,10 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PickupWeapon : MonoBehaviour
 {
     [SerializeField] private float radius;
+    [SerializeField] protected Image rechargeImage;
+
+    private void Start()
+    {
+        GameManager.Instance.WeaponParent.GetChild(0).GetComponent<Weapon>().rechargeImage = rechargeImage;
+    }
 
     public void Pickup()
     {
@@ -59,5 +66,7 @@ public class PickupWeapon : MonoBehaviour
         weapons[closestWeapon].transform.SetParent(weaponParent);
         weapons[closestWeapon].transform.position = weaponParent.position;
         GameManager.Instance.playerAttack.weapon = weapons[closestWeapon].GetComponent<Weapon>();
+
+        weapons[closestWeapon].GetComponent<Weapon>().rechargeImage = rechargeImage;
     }
 }

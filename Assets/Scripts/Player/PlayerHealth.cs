@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PlayerHealth : AliveCreature
@@ -11,7 +12,33 @@ public class PlayerHealth : AliveCreature
     [SerializeField] private float getSmallerValue;
     [SerializeField] private float timeToGetSmaller;
 
+    [SerializeField] private Slider healhtSlider;
+
     private float prevTimeGotSmaller;
+
+    protected override void Start()
+    {
+        base.Start();
+
+        healhtSlider.maxValue = maxHp;
+        healhtSlider.value = maxHp;
+    }
+
+    public override void ReceiveDamage(float damageAmount)
+    {
+        base.ReceiveDamage(damageAmount);
+
+        healhtSlider.value = currentHp;
+    }
+
+    private void Update()
+    {
+        if (Time.time - prevTimeGotSmaller > timeToGetSmaller)
+        {
+            GetSmaller();
+            prevTimeGotSmaller = Time.time;
+        }
+    }
 
     public void Heal(float toHeal)
     {
@@ -24,15 +51,8 @@ public class PlayerHealth : AliveCreature
         {
             currentHp = maxHp;
         }
-    }
 
-    private void Update()
-    {
-        if (Time.time - prevTimeGotSmaller > timeToGetSmaller)
-        {
-            GetSmaller();
-            prevTimeGotSmaller = Time.time;
-        }
+        healhtSlider.value = currentHp;
     }
 
     public void GetBigger()

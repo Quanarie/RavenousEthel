@@ -12,7 +12,7 @@ public class AliveCreature : MonoBehaviour
     private Movement movementScript;
     private Animator animator;
 
-    private void Start()
+    protected virtual void Start()
     {
         currentHp = maxHp;
 
