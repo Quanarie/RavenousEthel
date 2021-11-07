@@ -16,12 +16,19 @@ public class PlayerHealth : AliveCreature
 
     private float prevTimeGotSmaller;
 
+    [Header("Camera Shake")]
+    private CameraShake cameraShakeComponent;
+    [SerializeField] private float duration;
+    [SerializeField] private float magnitude;
+
     protected override void Start()
     {
         base.Start();
 
         healhtSlider.maxValue = maxHp;
         healhtSlider.value = maxHp;
+
+        cameraShakeComponent = Camera.main.GetComponent<CameraShake>();
     }
 
     public override void ReceiveDamage(float damageAmount)
@@ -29,6 +36,8 @@ public class PlayerHealth : AliveCreature
         base.ReceiveDamage(damageAmount);
 
         healhtSlider.value = currentHp;
+
+        StartCoroutine(cameraShakeComponent.Shake(duration, magnitude));
     }
 
     private void Update()

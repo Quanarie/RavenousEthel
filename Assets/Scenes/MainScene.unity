@@ -1396,13 +1396,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab8b077a6d4d644898aae2fbcd4ab16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 10
+  maxHp: 100
   maxScale: 1.3
   minScale: 0.9
   getBiggerValue: 0.1
   getSmallerValue: 0.01
   timeToGetSmaller: 1
   healhtSlider: {fileID: 409059910}
+  duration: 0.07
+  magnitude: 0.05
 --- !u!58 &584051770
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1976,6 +1978,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2060,7 +2063,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 211939bf3e3d99f4396ef21c433da967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraLerpSpeed: 0.1
+  cameraLerpSpeed: 0.13
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 833f5ab755007874d9541715516529e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &993911198
 GameObject:
   m_ObjectHideFlags: 0
