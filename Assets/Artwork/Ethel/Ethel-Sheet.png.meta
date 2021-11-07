@@ -125,6 +125,12 @@ TextureImporter:
   - first:
       213: -4894348147996723713
     second: Ethel-Sheet_40
+  - first:
+      213: -5483535851229555457
+    second: Ethel-Sheet_41
+  - first:
+      213: 6311900115694220049
+    second: Ethel-Sheet_42
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1070,6 +1076,27 @@ TextureImporter:
       bones: []
       spriteID: ff5709f6a48c31cb0800000000000000
       internalID: -4894348147996723713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ethel-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 129
+        width: 19
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff4d752423196e3b0800000000000000
+      internalID: -5483535851229555457
       vertices: []
       indices: 
       edges: []

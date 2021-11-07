@@ -10,6 +10,7 @@ public class AliveCreature : MonoBehaviour
 
     private Color startColor;
     private Movement movementScript;
+    private Animator animator;
 
     private void Start()
     {
@@ -17,6 +18,7 @@ public class AliveCreature : MonoBehaviour
 
         startColor = GetComponent<SpriteRenderer>().color;
         movementScript = GetComponent<Movement>();
+        animator = GetComponent<Animator>();
     }
 
     public virtual void ReceiveDamage(float damageAmount)
@@ -32,6 +34,9 @@ public class AliveCreature : MonoBehaviour
 
         GetComponent<SpriteRenderer>().color = Color.red;
         StartCoroutine(ChangeColorBack());
+
+        if (animator != null)
+            animator.SetTrigger("damage");
     }
 
     public virtual void ReceiveDamage(float damageAmount, Vector3 pushDirection, float stunTime)
