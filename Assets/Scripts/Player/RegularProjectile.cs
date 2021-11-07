@@ -20,7 +20,10 @@ public class RegularProjectile : MonoBehaviour
             return;
         }
 
-        GameManager.Instance.playerAnimator.SetTrigger("attack");
+        if (GameManager.Instance.state == GameManager.State.regular)
+            GameManager.Instance.playerAnimator.SetTrigger("attack");
+        else GameManager.Instance.playerAnimator.SetTrigger("transform");
+
         GameManager.Instance.playerAnimator.SetFloat("enemyPosX", (enemyToAttack.position.x - GameManager.Instance.Player.position.x) / Mathf.Abs(enemyToAttack.position.x - GameManager.Instance.Player.position.x));
     }
 

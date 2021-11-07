@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8204583630162276063}
   - component: {fileID: -4570964632110325337}
   - component: {fileID: -3441071063786797458}
-  - component: {fileID: -3301566163468459821}
+  - component: {fileID: -6809332185500936925}
   m_Layer: 0
   m_Name: MutantProjectile
   m_TagString: Untagged
@@ -132,7 +132,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.06, y: 0.05}
   m_EdgeRadius: 0
---- !u!114 &-3301566163468459821
+--- !u!114 &-6809332185500936925
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,13 +141,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 945572282811277856}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da8eeccfbb50b5745bce85b669fc0685, type: 3}
+  m_Script: {fileID: 11500000, guid: b73e69205873cec4cb3e1ab26f0bfd56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 2
   rechargeTime: 1
-  pushForce: 10
-  stunTime: 3
-  speed: 1.75
-  range: 1
-  lifetime: 1
+  pushForce: 5
+  stunTime: 2
+  speed: 2.5
+  lifetime: 1.5
+  direction: {x: 0, y: 0, z: 0}

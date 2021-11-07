@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public Weapon weapon;
+    [SerializeField] private RuntimeAnimatorController regularController;
+    [SerializeField] private RuntimeAnimatorController mutatedController;
+
+    [HideInInspector] public Weapon weapon;
 
     [Header("Regular State")]
     [SerializeField] private float rechargeTimeRegular;
@@ -20,6 +23,7 @@ public class PlayerAttack : MonoBehaviour
     private void Start()
     {
         weapon = GameManager.Instance.WeaponParent.GetChild(0).GetComponent<Weapon>();
+        GameManager.Instance.playerAnimator.runtimeAnimatorController = regularController;
     }
 
     public void SwallowUp()
@@ -46,6 +50,8 @@ public class PlayerAttack : MonoBehaviour
 
         Instantiate(deadSlimePrefab, transform.position, Quaternion.identity);
 
+        GameManager.Instance.playerAnimator.runtimeAnimatorController = mutatedController;
+
         transform.position = enemy.transform.position;
 
         Destroy(enemy);
@@ -54,5 +60,7 @@ public class PlayerAttack : MonoBehaviour
     public void DeMutate()
     {
         GameManager.Instance.state = GameManager.State.regular;
+
+        GameManager.Instance.playerAnimator.runtimeAnimatorController = regularController;
     }
 }

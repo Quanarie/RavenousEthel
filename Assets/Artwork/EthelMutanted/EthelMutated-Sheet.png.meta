@@ -1,0 +1,1671 @@
+fileFormatVersion: 2
+guid: d56170cd3bf711e488392d421cb67d6a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8246589775845759168
+    second: EthelMutated-Sheet_0
+  - first:
+      213: -5009831142654835167
+    second: EthelMutated-Sheet_1
+  - first:
+      213: 303321415278117846
+    second: EthelMutated-Sheet_2
+  - first:
+      213: 7218249692026897124
+    second: EthelMutated-Sheet_3
+  - first:
+      213: -2569145222472318252
+    second: EthelMutated-Sheet_4
+  - first:
+      213: 1372416331251820507
+    second: EthelMutated-Sheet_5
+  - first:
+      213: 9043700856224716605
+    second: EthelMutated-Sheet_6
+  - first:
+      213: 2159902658426548887
+    second: EthelMutated-Sheet_7
+  - first:
+      213: -7117120820337178147
+    second: EthelMutated-Sheet_8
+  - first:
+      213: 4198348384359362055
+    second: EthelMutated-Sheet_9
+  - first:
+      213: 8962918931357832332
+    second: EthelMutated-Sheet_10
+  - first:
+      213: 1935193284993816562
+    second: EthelMutated-Sheet_11
+  - first:
+      213: -1106389893461580797
+    second: EthelMutated-Sheet_12
+  - first:
+      213: 7156076591363961447
+    second: EthelMutated-Sheet_13
+  - first:
+      213: -1149525874435633388
+    second: EthelMutated-Sheet_14
+  - first:
+      213: -1321689559408073842
+    second: EthelMutated-Sheet_15
+  - first:
+      213: 5777588681885211572
+    second: EthelMutated-Sheet_16
+  - first:
+      213: -6973010449803496910
+    second: EthelMutated-Sheet_17
+  - first:
+      213: -7099286639211156034
+    second: EthelMutated-Sheet_18
+  - first:
+      213: 666513695215878763
+    second: EthelMutated-Sheet_19
+  - first:
+      213: -5889738336580748931
+    second: EthelMutated-Sheet_20
+  - first:
+      213: 8073954512198690737
+    second: EthelMutated-Sheet_21
+  - first:
+      213: 314378102027796456
+    second: EthelMutated-Sheet_22
+  - first:
+      213: -296999717537819900
+    second: EthelMutated-Sheet_23
+  - first:
+      213: -2864074561341239258
+    second: EthelMutated-Sheet_24
+  - first:
+      213: 4962974324055937699
+    second: EthelMutated-Sheet_25
+  - first:
+      213: 4109950808345972431
+    second: EthelMutated-Sheet_26
+  - first:
+      213: 2510537404133076309
+    second: EthelMutated-Sheet_27
+  - first:
+      213: 8316808290866252168
+    second: EthelMutated-Sheet_28
+  - first:
+      213: -3176718458958588296
+    second: EthelMutated-Sheet_29
+  - first:
+      213: 56261630567559339
+    second: EthelMutated-Sheet_30
+  - first:
+      213: -4558542748150280674
+    second: EthelMutated-Sheet_33
+  - first:
+      213: -5844252551250321458
+    second: EthelMutated-Sheet_35
+  - first:
+      213: -7237460189514338269
+    second: EthelMutated-Sheet_37
+  - first:
+      213: -627871133232645694
+    second: EthelMutated-Sheet_38
+  - first:
+      213: 1503982104753975522
+    second: EthelMutated-Sheet_39
+  - first:
+      213: 8076613642617926231
+    second: EthelMutated-Sheet_40
+  - first:
+      213: 7610093015915741997
+    second: EthelMutated-Sheet_41
+  - first:
+      213: 6392971889063715117
+    second: EthelMutated-Sheet_42
+  - first:
+      213: -2232725377261145767
+    second: EthelMutated-Sheet_43
+  - first:
+      213: -3075593908354495094
+    second: EthelMutated-Sheet_44
+  - first:
+      213: 3314345176172454441
+    second: EthelMutated-Sheet_45
+  - first:
+      213: 6995152843797522616
+    second: EthelMutated-Sheet_46
+  - first:
+      213: 5381137821107319144
+    second: EthelMutated-Sheet_47
+  - first:
+      213: -7255403639904612776
+    second: EthelMutated-Sheet_48
+  - first:
+      213: 9073536511967004345
+    second: EthelMutated-Sheet_49
+  - first:
+      213: 5648395339031322236
+    second: EthelMutated-Sheet_50
+  - first:
+      213: 6562863014210032406
+    second: EthelMutated-Sheet_51
+  - first:
+      213: 6513202152520524213
+    second: EthelMutated-Sheet_52
+  - first:
+      213: 2283379005649954266
+    second: EthelMutated-Sheet_53
+  - first:
+      213: 2401924185358889828
+    second: EthelMutated-Sheet_54
+  - first:
+      213: -2762719413736108578
+    second: EthelMutated-Sheet_55
+  - first:
+      213: -3747214605656642969
+    second: EthelMutated-Sheet_56
+  - first:
+      213: 422678980222480115
+    second: EthelMutated-Sheet_57
+  - first:
+      213: -537944471963449937
+    second: EthelMutated-Sheet_58
+  - first:
+      213: 8357980795499766860
+    second: EthelMutated-Sheet_59
+  - first:
+      213: -5612942741563002328
+    second: EthelMutated-Sheet_60
+  - first:
+      213: 7285622329197505058
+    second: EthelMutated-Sheet_61
+  - first:
+      213: -3095920864775043322
+    second: EthelMutated-Sheet_62
+  - first:
+      213: -1638301722600618
+    second: EthelMutated-Sheet_63
+  - first:
+      213: 8468298623072233024
+    second: EthelMutated-Sheet_66
+  - first:
+      213: 7082640474500699456
+    second: EthelMutated-Sheet_67
+  - first:
+      213: -2139113616910482965
+    second: EthelMutated-Sheet_68
+  - first:
+      213: -8595125210099994427
+    second: EthelMutated-Sheet_70
+  - first:
+      213: -3215751481014470235
+    second: EthelMutated-Sheet_72
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 689
+        width: 6
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 047685a8a4a3e8d80800000000000000
+      internalID: -8246589775845759168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 686
+        width: 13
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1268e557e11897ab0800000000000000
+      internalID: -5009831142654835167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 684
+        width: 18
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d3cb6a583d953400800000000000000
+      internalID: 303321415278117846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 680
+        width: 18
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e20659d9df5c2460800000000000000
+      internalID: 7218249692026897124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 681
+        width: 22
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d245263800985cd0800000000000000
+      internalID: -2569145222472318252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 678
+        width: 23
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd7a534c16dcb0310800000000000000
+      internalID: 1372416331251820507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 675
+        width: 31
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d379b2e530ea18d70800000000000000
+      internalID: 9043700856224716605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 675
+        width: 30
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 792bfe0360489fd10800000000000000
+      internalID: 2159902658426548887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 623
+        width: 30
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd904407258ea3d90800000000000000
+      internalID: -7117120820337178147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 623
+        width: 31
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70e231d9c97834a30800000000000000
+      internalID: 4198348384359362055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 623
+        width: 31
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c84153ec74fa26c70800000000000000
+      internalID: 8962918931357832332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 623
+        width: 31
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f717c32a003bda10800000000000000
+      internalID: 1935193284993816562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 564
+        width: 27
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 304e329f04055a0f0800000000000000
+      internalID: -1106389893461580797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 564
+        width: 30
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 762bcbdcebd7f4360800000000000000
+      internalID: 7156076591363961447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 564
+        width: 19
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41fc422ce401c00f0800000000000000
+      internalID: -1149525874435633388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 564
+        width: 26
+        height: 51
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e83a32c295a68ade0800000000000000
+      internalID: -1321689559408073842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 564
+        width: 30
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bbd5129b4e1e2050800000000000000
+      internalID: 5777588681885211572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 564
+        width: 29
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2323064c0f3ea3f90800000000000000
+      internalID: -6973010449803496910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 565
+        width: 20
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebd642f4a644a7d90800000000000000
+      internalID: -7099286639211156034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 565
+        width: 25
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b628649acaeef3900800000000000000
+      internalID: 666513695215878763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 502
+        width: 31
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d79ba142032734ea0800000000000000
+      internalID: -5889738336580748931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 502
+        width: 46
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b7e348e9d27c0070800000000000000
+      internalID: 8073954512198690737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 502
+        width: 64
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ef3788d735ec5400800000000000000
+      internalID: 314378102027796456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 502
+        width: 41
+        height: 51
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40354c99458d0ebf0800000000000000
+      internalID: -296999717537819900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 502
+        width: 38
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 620d5096c53c048d0800000000000000
+      internalID: -2864074561341239258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 502
+        width: 31
+        height: 51
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a21dbe4ad600e440800000000000000
+      internalID: 4962974324055937699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 462
+        width: 30
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fce8ac71c7a790930800000000000000
+      internalID: 4109950808345972431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 443
+        width: 30
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55deea8b77837d220800000000000000
+      internalID: 2510537404133076309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 443
+        width: 37
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8894b12831d3b6370800000000000000
+      internalID: 8316808290866252168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 444
+        width: 47
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 876d85e74670ae3d0800000000000000
+      internalID: -3176718458958588296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 448
+        width: 48
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1ec113d58dccb0c0800000000000000
+      internalID: -4558542748150280674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 448
+        width: 47
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecfdd01d44b05eea0800000000000000
+      internalID: -5844252551250321458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 319
+        width: 30
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32077f7ad406f8b90800000000000000
+      internalID: -7237460189514338269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 319
+        width: 31
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c932fae78a5947f0800000000000000
+      internalID: -627871133232645694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 322
+        width: 23
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e0b76e71c73fd410800000000000000
+      internalID: 1503982104753975522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 325
+        width: 22
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 752b054f055e51070800000000000000
+      internalID: 8076613642617926231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 324
+        width: 18
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d23c659274b7c9960800000000000000
+      internalID: 7610093015915741997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 328
+        width: 18
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2163bacf0668b850800000000000000
+      internalID: 6392971889063715117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 330
+        width: 13
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 951795f4914c301e0800000000000000
+      internalID: -2232725377261145767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 333
+        width: 6
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8dcc23b2ab4155d0800000000000000
+      internalID: -3075593908354495094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 267
+        width: 31
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 922e9c8a06beefd20800000000000000
+      internalID: 3314345176172454441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 267
+        width: 31
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b86d141376c31160800000000000000
+      internalID: 6995152843797522616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 267
+        width: 31
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 861758a7654adaa40800000000000000
+      internalID: 5381137821107319144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 267
+        width: 30
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85ec86d84d0af4b90800000000000000
+      internalID: -7255403639904612776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 209
+        width: 25
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b6845c426dabed70800000000000000
+      internalID: 9073536511967004345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 209
+        width: 20
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7e1fe562a1236e40800000000000000
+      internalID: 5648395339031322236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 208
+        width: 29
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 613d98fc329f31b50800000000000000
+      internalID: 6562863014210032406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 208
+        width: 30
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b1ab4b69da836a50800000000000000
+      internalID: 6513202152520524213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 208
+        width: 26
+        height: 51
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad5a9579b1130bf10800000000000000
+      internalID: 2283379005649954266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 208
+        width: 19
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4637cb51259555120800000000000000
+      internalID: 2401924185358889828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 208
+        width: 30
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edd0f2aa459d8a9d0800000000000000
+      internalID: -2762719413736108578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 208
+        width: 27
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76a2ea47b283ffbc0800000000000000
+      internalID: -3747214605656642969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 106
+        width: 30
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fe6f260b48add500800000000000000
+      internalID: 422678980222480115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 146
+        width: 31
+        height: 51
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa5cbb75a56d888f0800000000000000
+      internalID: -537944471963449937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 146
+        width: 38
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c44ec4340438df370800000000000000
+      internalID: 8357980795499766860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 146
+        width: 41
+        height: 51
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 822b780b052da12b0800000000000000
+      internalID: -5612942741563002328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 146
+        width: 64
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22aa87358eabb1560800000000000000
+      internalID: 7285622329197505058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 146
+        width: 46
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6070d5a50641905d0800000000000000
+      internalID: -3095920864775043322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 146
+        width: 31
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65b1ac729fd2afff0800000000000000
+      internalID: -1638301722600618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 87
+        width: 37
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04666201bb0758570800000000000000
+      internalID: 8468298623072233024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_67
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 87
+        width: 30
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0451b627cf79a4260800000000000000
+      internalID: 7082640474500699456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_68
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 92
+        width: 47
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be189d9bf775052e0800000000000000
+      internalID: -2139113616910482965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_72
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 88
+        width: 47
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a93238d01b5f53d0800000000000000
+      internalID: -3215751481014470235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelMutated-Sheet_69
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 92
+        width: 48
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dd60e1b8c5020bd0800000000000000
+      internalID: -2665561669914038830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 0effc58b61a700c49b9bff9fe2090f0a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

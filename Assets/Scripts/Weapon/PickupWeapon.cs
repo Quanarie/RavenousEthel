@@ -8,6 +8,9 @@ public class PickupWeapon : MonoBehaviour
 
     public void Pickup()
     {
+        if (GameManager.Instance.state == GameManager.State.regular)
+            return;
+
         Collider2D[] items = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), radius);
 
         int weaponQuantity = 0;

@@ -15,15 +15,14 @@ public class Weapon : MonoBehaviour
     {
         if (Time.time - lastShootTime >= rechargeTime)
         {
-
             Transform enemyToAttack = GameManager.Instance.FindClosestEnemyInRange(range);
 
             Projectile spawnedProjectile = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
-            Vector3 playerPos = GameManager.Instance.Player.position;
+            Vector3 weaponPos = transform.position;
 
             if (enemyToAttack != null)
             {
-                spawnedProjectile.direction = new Vector3(enemyToAttack.position.x - playerPos.x, enemyToAttack.position.y - playerPos.y, 0);
+                spawnedProjectile.direction = new Vector3(enemyToAttack.position.x - weaponPos.x, enemyToAttack.position.y - weaponPos.y, 0);
             }
             else
             {
@@ -43,11 +42,11 @@ public class Weapon : MonoBehaviour
 
         if (enemyToAttack != null)
         {
-            Vector3 playerPos = GameManager.Instance.Player.position;
-            Vector3 weaponDir = new Vector3(enemyToAttack.position.x - playerPos.x, enemyToAttack.position.y - playerPos.y, 0);
+            Vector3 weaponPos = transform.position;
+            Vector3 weaponDir = new Vector3(enemyToAttack.position.x - weaponPos.x, enemyToAttack.position.y - weaponPos.y, 0);
 
             float angleBetweenEnemyAndWeapon = Mathf.Acos(weaponDir.x / weaponDir.magnitude) * 180 / Mathf.PI;
-            if (enemyToAttack.position.y < GameManager.Instance.Player.position.y) angleBetweenEnemyAndWeapon *= -1;
+            if (enemyToAttack.position.y < transform.position.y) angleBetweenEnemyAndWeapon *= -1;
 
             transform.rotation = Quaternion.Euler(0f, 0f, angleBetweenEnemyAndWeapon);
         }
