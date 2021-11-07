@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
 
     public State state;
 
+    public FloatingTextManager floatingTextManager;
+
     private void Awake()
     {
         if (Instance == null)

@@ -35,6 +35,8 @@ public class AliveCreature : MonoBehaviour
         GetComponent<SpriteRenderer>().color = Color.red;
         StartCoroutine(ChangeColorBack());
 
+        GameManager.Instance.floatingTextManager.Show("-" + damageAmount.ToString(), 15, Color.red, transform.position, new Vector3(70, 80, 0), 0.5f);
+
         if (animator != null)
             animator.SetTrigger("damage");
     }
