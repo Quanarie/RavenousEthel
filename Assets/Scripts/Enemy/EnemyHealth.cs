@@ -6,6 +6,8 @@ public class EnemyHealth : AliveCreature
 {
     protected override void Death()
     {
+        GameManager.Instance.playerHealth.GetBigger();
+
         Destroy(gameObject);
     }
 }
