@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 4068787501046711394}
   - component: {fileID: 4068787501046711421}
   - component: {fileID: 4068787501046711423}
-  - component: {fileID: 4068787501046711420}
+  - component: {fileID: 8056351333884053327}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -183,7 +183,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &4068787501046711420
+--- !u!114 &8056351333884053327
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,9 +192,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4068787501046711395}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4285bd6be22fdf94584ae5de10a0c3a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d52fde7e5541f048af48c47f0532505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 945572282811277856, guid: ab0292704ccfc244d8deb64351437758, type: 3}
+  projectile: {fileID: 945572282811277856, guid: 15f35ec412b848f4ab6b13c480cb91fa, type: 3}
   rechargeTime: 1
   range: 1
+  rechargeImage: {fileID: 0}

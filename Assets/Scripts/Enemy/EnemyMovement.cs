@@ -2,15 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMeleeMovement : Movement
+public class EnemyMovement : Movement
 {
     [SerializeField] private float chasingDistance;
 
-    private bool isAttacking;
+    private EnemyAttack enemyAttack;
+
+    protected override void Start()
+    {
+        base.Start();
+        enemyAttack = GetComponent<EnemyAttack>();
+    }
 
     private void Update()
     {
-        if (isAttacking)
+        if (Vector3.Distance(GameManager.Instance.Player.position, transform.position) <= enemyAttack.attackDistance)
         {
             UpdateMotor(Vector3.zero);
             return;
@@ -30,14 +36,17 @@ public class EnemyMeleeMovement : Movement
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public override void Stun(float stunTime)
     {
-        if (collision.TryGetComponent(out PlayerHealth _))
-            isAttacking = true;
+        base.Stun(stunTime);
+
+        enemyAttack.enabled = false;
     }
-    private void OnTriggerExit2D(Collider2D collision)
+
+    protected override IEnumerator UnStunCreature(float stunTime)
     {
-        if (collision.TryGetComponent(out PlayerHealth _))
-            isAttacking = false;
+        yield return new WaitForSeconds(stunTime);
+        enemyAttack.enabled = true;
+        isStunned = false;
     }
 }

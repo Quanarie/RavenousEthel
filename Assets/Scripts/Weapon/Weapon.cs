@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] private GameObject projectile;
-    [SerializeField] private float rechargeTime;
+    [SerializeField] protected GameObject projectile;
+    [SerializeField] protected float rechargeTime;
     [SerializeField] protected float range;
     [HideInInspector] public Image rechargeImage;
 
-    private float lastShootTime;
-    private Vector3 weaponDirectionLast;
+    protected float lastShootTime;
+    protected Vector3 weaponDirectionLast;
 
-    public void Shoot()
+    public virtual void Shoot()
     {
         if (Time.time - lastShootTime >= rechargeTime)
         {
@@ -29,13 +29,18 @@ public class Weapon : MonoBehaviour
             else
             {
                 spawnedProjectile.direction = weaponDirectionLast;
+
+                if (weaponDirectionLast.magnitude == 0)
+                {
+                    spawnedProjectile.direction = Vector3.right;
+                }
             }
 
             lastShootTime = Time.time;
         }
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (transform.parent != GameManager.Instance.WeaponParent)
             return;

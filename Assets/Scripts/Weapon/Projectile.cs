@@ -5,7 +5,6 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] protected float damageAmount;
-    [SerializeField] protected float rechargeTime;
     [SerializeField] protected float pushForce;
     [SerializeField] protected float stunTime;
     [SerializeField] protected float speed;
@@ -13,7 +12,7 @@ public class Projectile : MonoBehaviour
 
     [HideInInspector] public Vector3 direction;
 
-    protected EnemyHealth enemyToAttack;
+    private EnemyHealth enemyToAttack;
 
     protected virtual void Update()
     {
@@ -22,7 +21,7 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject, lifetime);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out PlayerHealth _) || collision.TryGetComponent(out Weapon _))
             return;
@@ -36,5 +35,10 @@ public class Projectile : MonoBehaviour
         }
 
         Destroy(gameObject);
+    }
+
+    protected  void OnCollisionEnter2D(Collision2D collision)
+    {
+        
     }
 }

@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
         int closestEnemy = 0;
         for (int i = 0; i < enemies.Length; i++)
         {
-            if (Vector3.Distance(transform.position, enemies[i].transform.position) < Vector3.Distance(transform.position, enemies[closestEnemy].transform.position))
+            if (Vector3.Distance(Player.transform.position, enemies[i].transform.position) < Vector3.Distance(Player.transform.position, enemies[closestEnemy].transform.position))
             {
                 closestEnemy = i;
             }
@@ -79,5 +79,4 @@ public class GameManager : MonoBehaviour
 
         return enemies[closestEnemy].transform;
     }
-
 }

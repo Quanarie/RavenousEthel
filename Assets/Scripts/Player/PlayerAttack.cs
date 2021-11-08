@@ -19,7 +19,6 @@ public class PlayerAttack : MonoBehaviour
 
     [Header("Mutated State")]
     [SerializeField] private GameObject mutantProjectilePrefab;
-    [SerializeField] private float rechargeTimeMutated;
     [SerializeField] private GameObject deadMonsterPrefab;
     [SerializeField] private AnimationClip monsterDeath;
 

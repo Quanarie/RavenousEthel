@@ -10,7 +10,7 @@ public abstract class Movement : MonoBehaviour
     [HideInInspector] public float pushRecoverySpeed;
     public Vector3 pushDirection;
 
-    private bool isStunned;
+    protected bool isStunned;
 
     private Vector3 moveDelta;
 
@@ -47,9 +47,10 @@ public abstract class Movement : MonoBehaviour
         }
     }
 
-    public void Stun(float stunTime)
+    public virtual void Stun(float stunTime)
     {
         isStunned = true;
+
         StartCoroutine(UnStunCreature(stunTime));
 
         UpdateAnimator(Vector3.zero);
@@ -59,10 +60,9 @@ public abstract class Movement : MonoBehaviour
         transform.Translate(moveDelta.x * Time.deltaTime, moveDelta.y * Time.deltaTime, 0);
     }
 
-    IEnumerator UnStunCreature(float stunTime)
+    protected virtual IEnumerator UnStunCreature(float stunTime)
     {
         yield return new WaitForSeconds(stunTime);
-
         isStunned = false;
     }
 }
