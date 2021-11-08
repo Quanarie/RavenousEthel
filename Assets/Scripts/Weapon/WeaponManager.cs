@@ -3,14 +3,38 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class PickupWeapon : MonoBehaviour
+public class WeaponManager : MonoBehaviour
 {
     [SerializeField] private float radius;
     [SerializeField] protected Image rechargeImage;
+    [SerializeField] protected Image weaponImage;
+
+    private int currentWeapon = 0;
+    private List<Weapon> weapons = new List<Weapon>();
 
     private void Start()
     {
         GameManager.Instance.WeaponParent.GetChild(0).GetComponent<Weapon>().rechargeImage = rechargeImage;
+        weapons.Add(GameManager.Instance.playerAttack.weapon);
+        weaponImage.sprite = weapons[0].gameObject.GetComponent<SpriteRenderer>().sprite;
+    }
+
+    public void NextWeapon()
+    {
+        weapons[currentWeapon].gameObject.SetActive(false);
+
+        if (currentWeapon + 1 >= weapons.Count)
+        {
+            currentWeapon = 0;
+        }
+        else
+        {
+            currentWeapon++;
+        }
+        weapons[currentWeapon].gameObject.SetActive(true);
+        weaponImage.sprite = weapons[currentWeapon].gameObject.GetComponent<SpriteRenderer>().sprite;
+
+        GameManager.Instance.playerAttack.weapon = weapons[currentWeapon];
     }
 
     public void Pickup()
@@ -57,15 +81,16 @@ public class PickupWeapon : MonoBehaviour
         }
 
         Transform weaponParent = GameManager.Instance.WeaponParent;
-        if (weaponParent.childCount != 0)
-        {
-            Transform currentWeapon = weaponParent.GetChild(0);
-            currentWeapon.SetParent(null);
-            currentWeapon.position = transform.position;
-        }
         weapons[closestWeapon].transform.SetParent(weaponParent);
         weapons[closestWeapon].transform.position = weaponParent.position;
-        GameManager.Instance.playerAttack.weapon = weapons[closestWeapon].GetComponent<Weapon>();
+
+        Weapon newWeapon = weapons[closestWeapon].GetComponent<Weapon>();
+        GameManager.Instance.playerAttack.weapon = newWeapon;
+        this.weapons.Add(newWeapon);
+        this.weapons[currentWeapon].gameObject.SetActive(false);
+        currentWeapon++;
+
+        weaponImage.sprite = newWeapon.gameObject.GetComponent<SpriteRenderer>().sprite;
 
         weapons[closestWeapon].GetComponent<Weapon>().rechargeImage = rechargeImage;
     }

@@ -47,3 +47,4 @@ MonoBehaviour:
   rechargeTime: 0.25
   range: 5
   rechargeImage: {fileID: 0}
+  weaponSprite: {fileID: 0}
