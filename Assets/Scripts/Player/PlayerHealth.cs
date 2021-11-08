@@ -64,6 +64,11 @@ public class PlayerHealth : AliveCreature
         healhtSlider.value = currentHp;
     }
 
+    public void HealMax()
+    {
+        Heal(maxHp);
+    }
+
     public void GetBigger()
     {
         if (transform.localScale.x + getBiggerValue < maxScale)
@@ -82,6 +87,14 @@ public class PlayerHealth : AliveCreature
 
     protected override void Death()
     {
-        SceneManager.LoadScene(0);
+        if (GameManager.Instance.state == GameManager.State.regular)
+        {
+            SceneManager.LoadScene(0);
+        }
+        else
+        {
+            GameManager.Instance.playerAttack.DeMutate();
+            currentHp = maxHp;
+        }
     }
 }

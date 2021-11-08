@@ -60,6 +60,7 @@ public class PlayerAttack : MonoBehaviour
         Instantiate(deadSlimePrefab, transform.position, Quaternion.identity);
 
         GameManager.Instance.playerAnimator.runtimeAnimatorController = mutatedController;
+        GameManager.Instance.playerHealth.HealMax();
 
         transform.position = enemy.transform.position;
         transform.localScale = new Vector3(1, 1, 0);

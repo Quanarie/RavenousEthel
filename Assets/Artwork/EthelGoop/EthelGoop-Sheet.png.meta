@@ -188,6 +188,9 @@ TextureImporter:
   - first:
       213: 7851350558343241724
     second: EthelGoop-Sheet_63
+  - first:
+      213: 2611450053285786310
+    second: EthelGoop-Sheet_22
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1598,6 +1601,27 @@ TextureImporter:
       bones: []
       spriteID: cff1d1d0cb995fc60800000000000000
       internalID: 7851350558343241724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelGoop-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 612
+        width: 47
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c236c6ccfbbd3420800000000000000
+      internalID: 2611450053285786310
       vertices: []
       indices: 
       edges: []
