@@ -45,25 +45,39 @@ public class GameManager : MonoBehaviour
 
     public Transform FindClosestEnemyInRange(float range)
     {
-        if (EnemiesParent.childCount == 0)
-            return null;
+        Collider2D[] items = Physics2D.OverlapCircleAll(new Vector2(Player.transform.position.x, Player.transform.position.y), range);
 
-        Transform closestEnemy = EnemiesParent.GetChild(0);
-        Vector3 playerPos = Player.position;
-
-        foreach (Transform enemy in EnemiesParent)
+        int enemiesQuantity = 0;
+        foreach (Collider2D item in items)
         {
-            if (Vector3.Distance(enemy.position, playerPos) < Vector3.Distance(closestEnemy.position, playerPos))
+            if (item.TryGetComponent(out EnemyHealth _))
+                enemiesQuantity++;
+        }
+
+        Collider2D[] enemies = new Collider2D[enemiesQuantity];
+        int enemyCounter = 0;
+        for (int i = 0; i < items.Length; i++)
+        {
+            if (items[i].TryGetComponent(out EnemyHealth _))
             {
-                closestEnemy = enemy;
+                enemies[enemyCounter] = items[i];
+                enemyCounter++;
             }
         }
 
-        if (Vector3.Distance(closestEnemy.position, playerPos) <= range)
+        if (enemies.Length == 0)
+            return null;
+
+        int closestEnemy = 0;
+        for (int i = 0; i < enemies.Length; i++)
         {
-            return closestEnemy;
+            if (Vector3.Distance(transform.position, enemies[i].transform.position) < Vector3.Distance(transform.position, enemies[closestEnemy].transform.position))
+            {
+                closestEnemy = i;
+            }
         }
-        return null;
+
+        return enemies[closestEnemy].transform;
     }
 
 }

@@ -17,10 +17,12 @@ public class EnemyMeleeMovement : Movement
         }
 
         Vector3 playerPos = GameManager.Instance.Player.position;
+        float inputX = playerPos.x - transform.position.x;
+        float inputY = playerPos.y - transform.position.y;
 
         if (Vector3.Distance(transform.position, playerPos) <= chasingDistance)
         {
-            UpdateMotor(new Vector3(playerPos.x - transform.position.x, playerPos.y - transform.position.y, 0).normalized);
+            UpdateMotor(new Vector3(inputX, inputY, 0).normalized);
         }
         else
         {

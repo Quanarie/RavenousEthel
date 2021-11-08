@@ -8,15 +8,13 @@ public class AliveCreature : MonoBehaviour
 
     protected float currentHp;
 
-    private Color startColor;
     private Movement movementScript;
-    private Animator animator;
+    protected Animator animator;
 
     protected virtual void Start()
     {
         currentHp = maxHp;
 
-        startColor = GetComponent<SpriteRenderer>().color;
         movementScript = GetComponent<Movement>();
         animator = GetComponent<Animator>();
     }
@@ -32,13 +30,9 @@ public class AliveCreature : MonoBehaviour
             Death();
         }
 
-        GetComponent<SpriteRenderer>().color = Color.red;
-        StartCoroutine(ChangeColorBack());
-
         GameManager.Instance.floatingTextManager.Show("-" + damageAmount.ToString(), 15, Color.red, transform.position, new Vector3(70, 80, 0), 0.5f);
 
-        if (animator != null)
-            animator.SetTrigger("damage");
+        animator.SetTrigger("damage");
     }
 
     public virtual void ReceiveDamage(float damageAmount, Vector3 pushDirection, float stunTime)
@@ -48,13 +42,6 @@ public class AliveCreature : MonoBehaviour
         movementScript.pushDirection = pushDirection;
 
         movementScript.Stun(stunTime);
-    }
-
-    private IEnumerator ChangeColorBack()
-    {
-        yield return new WaitForSeconds(0.5f);
-
-        GetComponent<SpriteRenderer>().color = startColor;
     }
 
     protected virtual void Death() { }

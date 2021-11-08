@@ -8,6 +8,7 @@ public class EnemyHealth : AliveCreature
     {
         GameManager.Instance.playerHealth.GetBigger();
 
+        animator.SetTrigger("death");
         Destroy(gameObject);
     }
 }

@@ -10,15 +10,5 @@ public class PlayerMovement : Movement
         float inputY = GameManager.Instance.Joystick.Vertical;
 
         UpdateMotor(new Vector3(inputX, inputY, 0).normalized);
-
-        Animator animator = GameManager.Instance.playerAnimator;
-
-        animator.SetFloat("moveX", inputX);
-        animator.SetFloat("moveY", inputY);
-
-        if (inputX != 0)
-        {
-            animator.SetFloat("prevMoveX", inputX);
-        }
     }
 }
