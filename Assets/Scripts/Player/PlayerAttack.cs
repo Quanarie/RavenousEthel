@@ -27,6 +27,7 @@ public class PlayerAttack : MonoBehaviour
     {
         weapon = GameManager.Instance.WeaponParent.GetChild(0).GetComponent<Weapon>();
         GameManager.Instance.playerAnimator.runtimeAnimatorController = regularController;
+        GameManager.Instance.playerAnimator.SetTrigger("transform");
     }
 
     private void Update()
@@ -60,6 +61,7 @@ public class PlayerAttack : MonoBehaviour
         Instantiate(deadSlimePrefab, transform.position, Quaternion.identity);
 
         GameManager.Instance.playerAnimator.runtimeAnimatorController = mutatedController;
+        GameManager.Instance.playerAnimator.SetTrigger("transform");
         GameManager.Instance.playerHealth.HealMax();
 
         transform.position = enemy.transform.position;
@@ -80,6 +82,7 @@ public class PlayerAttack : MonoBehaviour
 
         GameManager.Instance.state = GameManager.State.regular;
         GameManager.Instance.playerAnimator.runtimeAnimatorController = regularController;
+        GameManager.Instance.playerAnimator.SetTrigger("transform");
         Instantiate(deadMonsterPrefab, transform.position, Quaternion.identity);
     }
 }
