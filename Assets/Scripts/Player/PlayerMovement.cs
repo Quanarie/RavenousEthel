@@ -9,7 +9,7 @@ public class PlayerMovement : Movement
         float inputX = GameManager.Instance.Joystick.Horizontal;
         float inputY = GameManager.Instance.Joystick.Vertical;
 
-        UpdateMotor(new Vector3(inputX, inputY, 0));
+        UpdateMotor(new Vector3(inputX, inputY, 0).normalized);
 
         Animator animator = GameManager.Instance.playerAnimator;
 

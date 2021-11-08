@@ -1374,7 +1374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   regularController: {fileID: 9100000, guid: 8694ad7aadfe81b4e9de2041d30aae39, type: 2}
-  mutatedController: {fileID: 9100000, guid: 925ea680fc7670145b405196b5f880ba, type: 2}
+  mutatedController: {fileID: 9100000, guid: cdc0cb53f6717024c8b61f1677ae07d5, type: 2}
   weapon: {fileID: 0}
   rechargeTimeRegular: 1
   regularProjectilePrefab: {fileID: 7350114879659511275, guid: 83fa1a85ba73c3a468f85bb04ce7b2b0, type: 3}
@@ -3441,7 +3441,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1990477049}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.3, z: 0}
+  m_LocalPosition: {x: 0, y: 0.056, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1280113669}
