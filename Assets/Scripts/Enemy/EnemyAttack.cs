@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     [SerializeField] protected float damageAmount;
-    [SerializeField] protected float rechargeTime;
+    [SerializeField] private float rechargeTime;
 
     public float attackDistance;
 

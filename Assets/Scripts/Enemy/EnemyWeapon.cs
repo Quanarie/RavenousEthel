@@ -2,22 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyWeapon : Weapon
+public class EnemyWeapon : MonoBehaviour
 {
-    public override void Shoot()
+    [SerializeField] protected GameObject projectile;
+
+    public void Shoot()
     {
-        if (Time.time - lastShootTime >= rechargeTime)
-        {
-            Vector3 playerPos = GameManager.Instance.Player.position;
+        Vector3 playerPos = GameManager.Instance.Player.position;
 
-            Projectile spawnedProjectile = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
-            spawnedProjectile.direction = new Vector3(playerPos.x - transform.position.x, playerPos.y - transform.position.y, 0);
-
-            lastShootTime = Time.time;
-        }
+        Projectile spawnedProjectile = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
+        spawnedProjectile.direction = new Vector3(playerPos.x - transform.position.x, playerPos.y - transform.position.y, 0);
     }
 
-    protected override void Update()
+    private void Update()
     {
         Vector3 playerPos = GameManager.Instance.Player.position;
 
