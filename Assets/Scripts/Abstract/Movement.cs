@@ -15,10 +15,12 @@ public abstract class Movement : MonoBehaviour
     private Vector3 moveDelta;
 
     private Animator animator;
+    private new Rigidbody2D rigidbody;
 
     protected virtual void Start()
     {
         animator = GetComponent<Animator>();
+        rigidbody = GetComponent<Rigidbody2D>();
     }
 
     protected virtual void UpdateMotor(Vector3 input)
@@ -31,7 +33,8 @@ public abstract class Movement : MonoBehaviour
         moveDelta += pushDirection;
         pushDirection = Vector3.Lerp(pushDirection, Vector3.zero, pushRecoverySpeed);
 
-        transform.Translate(moveDelta.x * Time.deltaTime, moveDelta.y * Time.deltaTime, 0);
+        //transform.Translate(moveDelta.x * Time.deltaTime, moveDelta.y * Time.deltaTime, 0);
+        rigidbody.MovePosition(transform.position+ moveDelta*Time.deltaTime);
 
         UpdateAnimator(input);
     }

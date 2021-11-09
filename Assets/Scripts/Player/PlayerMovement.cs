@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : Movement
 {
-    private void Update()
+    private void FixedUpdate()
     {
         float inputX = GameManager.Instance.Joystick.Horizontal;
         float inputY = GameManager.Instance.Joystick.Vertical;

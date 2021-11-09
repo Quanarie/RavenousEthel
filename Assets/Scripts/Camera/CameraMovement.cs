@@ -13,7 +13,7 @@ public class CameraMovement : MonoBehaviour
         cameraStartPosition = transform.position;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         Vector3 lerpedPosition = Vector3.Lerp(transform.position, GameManager.Instance.Player.position, cameraLerpSpeed);
 

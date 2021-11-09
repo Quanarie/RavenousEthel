@@ -14,7 +14,7 @@ public class EnemyMovement : Movement
         enemyAttack = GetComponent<EnemyAttack>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (Vector3.Distance(GameManager.Instance.Player.position, transform.position) <= enemyAttack.attackDistance)
         {
