@@ -44,5 +44,5 @@ public class AliveCreature : MonoBehaviour
         movementScript.Stun(stunTime);
     }
 
-    protected virtual void Death() { }
+    public virtual void Death() { }
 }

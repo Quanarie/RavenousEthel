@@ -83,9 +83,14 @@ public class PlayerHealth : AliveCreature
         {
             transform.localScale -= new Vector3(getSmallerValue, getSmallerValue, 0);
         }
+        else if (GameManager.Instance.state == GameManager.State.mutated)
+        {
+            GameManager.Instance.playerAttack.DeMutate();
+            currentHp = maxHp;
+        }
     }
 
-    protected override void Death()
+    public override void Death()
     {
         if (GameManager.Instance.state == GameManager.State.regular)
         {

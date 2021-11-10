@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyHealth : AliveCreature
 {
-    protected override void Death()
+    public override void Death()
     {
         GameManager.Instance.playerHealth.GetBigger();
 
