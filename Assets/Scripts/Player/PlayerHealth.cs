@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class PlayerHealth : AliveCreature
 {
+    [SerializeField] private float maxMonsterHp;
     [SerializeField] private float maxScale;
     [SerializeField] private float minScale;
     [SerializeField] private float getBiggerValue;
@@ -13,8 +14,13 @@ public class PlayerHealth : AliveCreature
     [SerializeField] private float timeToGetSmaller;
 
     [SerializeField] private Slider healhtSlider;
+    [SerializeField] private Text healhtText;
+    [SerializeField] private Slider sizeSlider;
+    [SerializeField] private Text sizeText;
 
     private float prevTimeGotSmaller;
+
+    private float maxRegularHp;
 
     [Header("Camera Shake")]
     private CameraShake cameraShakeComponent;
@@ -25,8 +31,13 @@ public class PlayerHealth : AliveCreature
     {
         base.Start();
 
-        healhtSlider.maxValue = maxHp;
-        healhtSlider.value = maxHp;
+        healhtSlider.minValue = 0;
+        UpdateHealth();
+
+        sizeSlider.minValue = 0;
+        UpdateSize();
+
+        maxRegularHp = maxHp;
 
         cameraShakeComponent = Camera.main.GetComponent<CameraShake>();
     }
@@ -35,7 +46,7 @@ public class PlayerHealth : AliveCreature
     {
         base.ReceiveDamage(damageAmount);
 
-        healhtSlider.value = currentHp;
+        UpdateHealth();
 
         StartCoroutine(cameraShakeComponent.Shake(duration, magnitude));
     }
@@ -61,11 +72,40 @@ public class PlayerHealth : AliveCreature
             currentHp = maxHp;
         }
 
-        healhtSlider.value = currentHp;
+        UpdateHealth();
     }
 
-    public void HealMax()
+    private void UpdateHealth()
     {
+        healhtSlider.maxValue = maxHp;
+        healhtSlider.value = currentHp;
+        healhtText.text = currentHp.ToString();
+    }
+
+    private void UpdateSize()
+    {
+        sizeSlider.maxValue = maxScale - minScale;
+        sizeSlider.value = transform.localScale.x - minScale;
+        sizeText.text = ((int)(sizeSlider.value * 100)).ToString();
+    }
+
+    public void Mutate()
+    {
+        maxHp = maxMonsterHp;
+
+        UpdateHealth();
+        UpdateSize();
+
+        Heal(maxHp);
+    }
+
+    public void DeMutate()
+    {
+        maxHp = maxRegularHp;
+
+        UpdateHealth();
+        UpdateSize();
+
         Heal(maxHp);
     }
 
@@ -75,6 +115,11 @@ public class PlayerHealth : AliveCreature
         {
             transform.localScale += new Vector3(getBiggerValue, getBiggerValue, 0);
         }
+        else
+        {
+            transform.localScale = new Vector3(maxScale, maxScale, 0);
+        }
+        UpdateSize();
     }
 
     public void GetSmaller()
@@ -88,6 +133,7 @@ public class PlayerHealth : AliveCreature
             GameManager.Instance.playerAttack.DeMutate();
             currentHp = maxHp;
         }
+        UpdateSize();
     }
 
     public override void Death()

@@ -60,11 +60,9 @@ public class PlayerAttack : MonoBehaviour
 
         GameManager.Instance.playerAnimator.runtimeAnimatorController = mutatedController;
         GameManager.Instance.playerAnimator.SetTrigger("transform");
-        GameManager.Instance.playerHealth.HealMax();
+        GameManager.Instance.playerHealth.Mutate();
 
         transform.position = enemy.transform.position;
-        if (transform.localScale.x < 1)
-            transform.localScale = new Vector3(1, 1, 0);
 
         enemy.GetComponent<EnemyHealth>().Death();
     }
@@ -82,9 +80,9 @@ public class PlayerAttack : MonoBehaviour
     {
         yield return new WaitForSeconds(monsterDeath.length);
 
-        transform.localScale = new Vector3(1, 1, 0);
         GameManager.Instance.playerAnimator.runtimeAnimatorController = regularController;
         GameManager.Instance.playerAnimator.SetTrigger("transform");
+        GameManager.Instance.playerHealth.DeMutate();
         Instantiate(deadMonsterPrefab, transform.position, Quaternion.identity);
     }
 }
