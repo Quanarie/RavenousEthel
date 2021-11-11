@@ -19,15 +19,27 @@ public class WeaponManager : MonoBehaviour
         weaponImage.sprite = weapons[0].gameObject.GetComponent<SpriteRenderer>().sprite;
     }
 
-    public void ClearList()
+    public void ClearWeapons()
     {
         for (int i = 0; i < weapons.Count; i++)
         {
-            if (weapons[i] == GameManager.Instance.playerAttack.weapon)
+            if (weapons[i] == GameManager.Instance.playerAttack.startWeapon)
                 continue;
 
-            weapons.RemoveAt(i);
+            weapons[i].transform.SetParent(null);
+
+            Vector2 randomOffset = Random.insideUnitCircle / 4;
+            weapons[i].transform.position += new Vector3(randomOffset.x, randomOffset.y, 0);
+
+            weapons[i].gameObject.SetActive(true);
         }
+
+        weapons = new List<Weapon>()
+        {
+            weapons[0]
+        };
+
+        weaponImage.sprite = weapons[0].GetComponent<SpriteRenderer>().sprite;
 
         currentWeapon = 0;
     }

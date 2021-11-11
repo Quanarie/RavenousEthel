@@ -9,6 +9,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private RuntimeAnimatorController mutatedController;
 
     [HideInInspector] public Weapon weapon;
+    [HideInInspector] public Weapon startWeapon;
+    private WeaponManager weaponManager;
 
     [Header("Regular State")]
     [SerializeField] private float rechargeTimeRegular;
@@ -25,8 +27,11 @@ public class PlayerAttack : MonoBehaviour
     private void Start()
     {
         weapon = GameManager.Instance.WeaponParent.GetChild(0).GetComponent<Weapon>();
+        startWeapon = weapon;
         GameManager.Instance.playerAnimator.runtimeAnimatorController = regularController;
         GameManager.Instance.playerAnimator.SetTrigger("transform");
+
+        weaponManager = GetComponent<WeaponManager>();
     }
 
     private void Update()
@@ -75,17 +80,7 @@ public class PlayerAttack : MonoBehaviour
 
         StartCoroutine(ChangeStateToRegular());
 
-        GetComponent<WeaponManager>().ClearList();
-        foreach(Transform weapon in GameManager.Instance.WeaponParent)
-        {
-            if (weapon.gameObject.name == "MutantWeapon")
-                continue;
-
-            weapon.gameObject.SetActive(true);
-            weapon.SetParent(null);
-            Vector2 randomOffset = Random.insideUnitCircle;
-            weapon.position += new Vector3(randomOffset.x, randomOffset.y, 0);
-        }
+        weaponManager.ClearWeapons();
     }
 
     IEnumerator ChangeStateToRegular()
