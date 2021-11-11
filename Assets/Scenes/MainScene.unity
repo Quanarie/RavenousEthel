@@ -3342,6 +3342,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 584051768}
+        m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
+        m_MethodName: DrainAllCorpses
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &361003812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3609,7 +3621,7 @@ Transform:
   m_GameObject: {fileID: 584051763}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.293, y: 0.439, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1990477050}
   m_Father: {fileID: 0}
@@ -3742,7 +3754,7 @@ MonoBehaviour:
   minScale: 0.8
   getBiggerValue: 0.1
   getSmallerValue: 0.01
-  timeToGetSmaller: 1
+  timeToGetSmaller: 2
   healhtSlider: {fileID: 409059910}
   healhtText: {fileID: 1848512904}
   sizeSlider: {fileID: 1282221927}

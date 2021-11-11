@@ -6,10 +6,9 @@ public class EnemyHealth : AliveCreature
 {
     [SerializeField] private AnimationClip deathClip;
     [SerializeField] private GameObject corpse;
+
     public override void Death()
     {
-        GameManager.Instance.playerHealth.GetBigger();
-
         for (int i = 0; i < transform.childCount; i++)
         {
             Destroy(transform.GetChild(i).gameObject);

@@ -12,6 +12,8 @@ public class PlayerAttack : MonoBehaviour
     [HideInInspector] public Weapon startWeapon;
     private WeaponManager weaponManager;
 
+    [SerializeField] private float distanceToDrain = 0.5f;
+
     [Header("Regular State")]
     [SerializeField] private float rechargeTimeRegular;
     [SerializeField] private GameObject regularProjectilePrefab;
@@ -53,8 +55,9 @@ public class PlayerAttack : MonoBehaviour
     {
         if (GameManager.Instance.state == GameManager.State.regular)
             return;
-
+        
         weapon.Shoot();
+        TryDrainCorpses();
     }
 
     public void Mutate(GameObject enemy)
@@ -69,7 +72,8 @@ public class PlayerAttack : MonoBehaviour
 
         transform.position = enemy.transform.position;
 
-        enemy.GetComponent<EnemyHealth>().Death();
+        GameManager.Instance.playerHealth.GetBigger();
+        Destroy(enemy);
     }
 
     public void DeMutate()
@@ -81,6 +85,26 @@ public class PlayerAttack : MonoBehaviour
         StartCoroutine(ChangeStateToRegular());
 
         weaponManager.ClearWeapons();
+    }
+
+    public void TryDrainCorpses()
+    {
+        Collider2D[] items = Physics2D.OverlapCircleAll(transform.position, distanceToDrain);
+
+        int corpsesCount = 0;
+        foreach(Collider2D item in items)
+        {
+            if (item.TryGetComponent(out EnemyCorpse _))
+            {
+                item.GetComponent<EnemyCorpse>().Drain();
+                corpsesCount++;
+            }
+        }
+
+        if (corpsesCount == 0)
+            return;
+
+        GameManager.Instance.playerAnimator.SetTrigger("drain");
     }
 
     IEnumerator ChangeStateToRegular()
