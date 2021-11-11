@@ -15,16 +15,14 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public PlayerAttack playerAttack;
     [HideInInspector] public PlayerHealth playerHealth;
 
-    [HideInInspector] public CircleCollider2D playerHitBox;
-
     public Joystick Joystick;
     public Button AttackButton;
-
-    public Transform EnemiesParent;
 
     public State state;
 
     public FloatingTextManager floatingTextManager;
+
+    [SerializeField] private GameObject DontDestroyOnLoadContainer;
 
     private void Awake()
     {
@@ -32,15 +30,15 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
-        /*else
+        else
         {
-            Destroy(gameObject);
-        }*/
+            Destroy(DontDestroyOnLoadContainer);
+            return;
+        }
 
         playerAnimator = Player.GetComponent<Animator>();
         playerAttack = Player.GetComponent<PlayerAttack>();
         playerHealth = Player.GetComponent<PlayerHealth>();
-        playerHitBox = Player.GetComponent<CircleCollider2D>();
     }
 
     public enum State

@@ -8,7 +8,7 @@ public class EnemyProjectile : Projectile
 
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out EnemyHealth _) || collision.TryGetComponent(out Weapon _))
+        if (collision.TryGetComponent(out EnemyHealth _) || collision.TryGetComponent(out EnemyWeapon _)|| collision.TryGetComponent(out NextLevel _))
             return;
 
         if (collision.TryGetComponent(out playerHealth))
