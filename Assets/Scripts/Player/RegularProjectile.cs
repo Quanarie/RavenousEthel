@@ -29,9 +29,11 @@ public class RegularProjectile : MonoBehaviour
 
     private void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, enemyToAttack.position, speedOfLerping);
+        Vector3 endPos = new Vector3(enemyToAttack.position.x, enemyToAttack.position.y + Projectile.offsetY, 0);
 
-        if (Vector3.Distance(transform.position, enemyToAttack.position) < distanceToMutate)
+        transform.position = Vector3.Lerp(transform.position, endPos, speedOfLerping);
+
+        if (Vector3.Distance(transform.position, endPos) < distanceToMutate)
         {
             GameManager.Instance.playerAttack.Mutate(enemyToAttack.gameObject);
             Destroy(gameObject);

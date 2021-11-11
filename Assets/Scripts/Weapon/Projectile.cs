@@ -11,12 +11,13 @@ public class Projectile : MonoBehaviour
     [SerializeField] protected float lifetime;
 
     [HideInInspector] public Vector3 direction;
+    public static float offsetY = 0.175f;
 
     private EnemyHealth enemyToAttack;
 
     protected virtual void Update()
     {
-        transform.Translate(direction.normalized * speed * Time.deltaTime);
+        transform.Translate(new Vector3(direction.x, direction.y + offsetY, 0).normalized * speed * Time.deltaTime);
 
         Destroy(gameObject, lifetime);
     }
