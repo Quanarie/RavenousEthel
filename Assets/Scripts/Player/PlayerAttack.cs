@@ -69,6 +69,9 @@ public class PlayerAttack : MonoBehaviour
         GameManager.Instance.playerAnimator.runtimeAnimatorController = mutatedController;
         GameManager.Instance.playerAnimator.SetTrigger("transform");
         GameManager.Instance.playerHealth.Mutate();
+        CircleCollider2D hitbox = GameManager.Instance.playerHitBox;
+        hitbox.radius = 0.115f;
+        hitbox.offset = new Vector3(0f, 0.115f, 0f);
 
         transform.position = enemy.transform.position;
 
@@ -81,6 +84,10 @@ public class PlayerAttack : MonoBehaviour
         GameManager.Instance.state = GameManager.State.regular;
 
         GameManager.Instance.playerAnimator.SetTrigger("death");
+
+        CircleCollider2D hitbox = GameManager.Instance.playerHitBox;
+        hitbox.radius = 0.08f;
+        hitbox.offset = new Vector3(0f, 0.08f, 0f);
 
         StartCoroutine(ChangeStateToRegular());
 
