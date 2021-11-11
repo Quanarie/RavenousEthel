@@ -2512,7 +2512,7 @@ MonoBehaviour:
   mutatedController: {fileID: 9100000, guid: cdc0cb53f6717024c8b61f1677ae07d5, type: 2}
   weapon: {fileID: 0}
   startWeapon: {fileID: 0}
-  distanceToDrain: 0.5
+  distanceToDrain: 0.2
   rechargeTimeRegular: 5
   regularProjectilePrefab: {fileID: 7350114879659511275, guid: 83fa1a85ba73c3a468f85bb04ce7b2b0, type: 3}
   deadSlimePrefab: {fileID: 2016878233217422246, guid: 46b5e5f8499f1034e95d8815b11717c5, type: 3}
