@@ -8,6 +8,7 @@ public class EnemyDistanceAttack : EnemyAttack
 
     protected override void Attack()
     {
-        weapon.Shoot();
+        if (weapon != null)
+            weapon.Shoot();
     }
 }

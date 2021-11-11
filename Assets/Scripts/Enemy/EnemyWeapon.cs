@@ -18,6 +18,11 @@ public class EnemyWeapon : MonoBehaviour
     {
         Vector3 playerPos = GameManager.Instance.Player.position;
 
+        if (playerPos.x < transform.position.x)
+            transform.localScale = new Vector3(1, -1, 0);
+        else
+            transform.localScale = new Vector3(1, 1, 0);
+
         Vector3 weaponPos = transform.position;
         Vector3 weaponDir = new Vector3(playerPos.x - weaponPos.x, playerPos.y - weaponPos.y, 0);
 

@@ -4,11 +4,34 @@ using UnityEngine;
 
 public class EnemyHealth : AliveCreature
 {
+    [SerializeField] private AnimationClip deathClip;
+    [SerializeField] private GameObject corpse;
     public override void Death()
     {
         GameManager.Instance.playerHealth.GetBigger();
 
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            Destroy(transform.GetChild(i).gameObject);
+        }
+
         animator.SetTrigger("death");
+        animator.SetBool("isDead", true);
+
+        StartCoroutine(SpawnCorpse());
+    }
+
+    private IEnumerator SpawnCorpse()
+    {
+        yield return new WaitForSeconds(deathClip.length);
+
+        GameObject spawnedCorpse = Instantiate(corpse, transform.position, transform.rotation);
+
+        if (animator.GetFloat("prevMoveX") > 0)
+            spawnedCorpse.transform.localScale = new Vector3(1, 1, 0);
+        else
+            spawnedCorpse.transform.localScale = new Vector3(-1, 1, 0);
+
         Destroy(gameObject);
     }
 }

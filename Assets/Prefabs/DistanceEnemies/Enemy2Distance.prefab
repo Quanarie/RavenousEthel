@@ -168,6 +168,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 5
+  deathClip: {fileID: 7400000, guid: a462dc787462727488fe265c452db537, type: 2}
+  corpse: {fileID: 345898005979158083, guid: 9db7320f966abb2469e284394cb5f96e, type: 3}
 --- !u!114 &4619333159468655594
 MonoBehaviour:
   m_ObjectHideFlags: 0

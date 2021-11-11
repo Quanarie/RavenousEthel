@@ -74,6 +74,18 @@ public class PlayerAttack : MonoBehaviour
         GameManager.Instance.playerAnimator.SetTrigger("death");
 
         StartCoroutine(ChangeStateToRegular());
+
+        GetComponent<WeaponManager>().ClearList();
+        foreach(Transform weapon in GameManager.Instance.WeaponParent)
+        {
+            if (weapon.gameObject.name == "MutantWeapon")
+                continue;
+
+            weapon.gameObject.SetActive(true);
+            weapon.SetParent(null);
+            Vector2 randomOffset = Random.insideUnitCircle;
+            weapon.position += new Vector3(randomOffset.x, randomOffset.y, 0);
+        }
     }
 
     IEnumerator ChangeStateToRegular()

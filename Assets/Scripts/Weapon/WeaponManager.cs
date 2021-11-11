@@ -19,6 +19,19 @@ public class WeaponManager : MonoBehaviour
         weaponImage.sprite = weapons[0].gameObject.GetComponent<SpriteRenderer>().sprite;
     }
 
+    public void ClearList()
+    {
+        for (int i = 0; i < weapons.Count; i++)
+        {
+            if (weapons[i] == GameManager.Instance.playerAttack.weapon)
+                continue;
+
+            weapons.RemoveAt(i);
+        }
+
+        currentWeapon = 0;
+    }
+
     public void NextWeapon()
     {
         weapons[currentWeapon].gameObject.SetActive(false);

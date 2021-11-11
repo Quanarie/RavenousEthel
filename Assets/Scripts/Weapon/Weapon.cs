@@ -58,6 +58,11 @@ public class Weapon : MonoBehaviour
             if (enemyToAttack.position.y < transform.position.y) angleBetweenEnemyAndWeapon *= -1;
 
             transform.rotation = Quaternion.Euler(0f, 0f, angleBetweenEnemyAndWeapon);
+
+            if (enemyToAttack.position.x < transform.position.x)
+                transform.localScale = new Vector3(1, -1, 0);
+            else
+                transform.localScale = new Vector3(1, 1, 0);
         }
         else
         {
@@ -73,6 +78,11 @@ public class Weapon : MonoBehaviour
             if (weaponDir.y < 0) angleBetweenWalkDirectionAndWeapon *= -1;
 
             transform.rotation = Quaternion.Euler(0f, 0f, angleBetweenWalkDirectionAndWeapon);
+
+            if (weaponDir.x < 0)
+                transform.localScale = new Vector3(1, -1, 0);
+            else
+                transform.localScale = new Vector3(1, 1, 0);
         }
     }
 }
