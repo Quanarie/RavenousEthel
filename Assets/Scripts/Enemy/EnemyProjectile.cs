@@ -8,16 +8,18 @@ public class EnemyProjectile : Projectile
 
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out EnemyHealth _) || collision.TryGetComponent(out EnemyWeapon _)|| collision.TryGetComponent(out NextLevel _))
-            return;
-
         if (collision.TryGetComponent(out playerHealth))
         {
             Vector3 playerPos = GameManager.Instance.Player.position;
 
             playerHealth.ReceiveDamage(damageAmount, new Vector3(playerPos.x - transform.position.x, playerPos.y - transform.position.y, 0).normalized * pushForce, stunTime);
+            
+            Destroy(gameObject);
         }
 
-        Destroy(gameObject);
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

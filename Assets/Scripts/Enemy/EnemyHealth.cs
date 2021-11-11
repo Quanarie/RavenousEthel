@@ -17,6 +17,7 @@ public class EnemyHealth : AliveCreature
         animator.SetTrigger("death");
         animator.SetBool("isDead", true);
 
+
         StartCoroutine(SpawnCorpse());
     }
 
@@ -24,13 +25,15 @@ public class EnemyHealth : AliveCreature
     {
         yield return new WaitForSeconds(deathClip.length);
 
-        GameObject spawnedCorpse = Instantiate(corpse, transform.position, transform.rotation);
+        if (corpse != null)
+        {
+            GameObject spawnedCorpse = Instantiate(corpse, transform.position, transform.rotation);
 
-        if (animator.GetFloat("prevMoveX") > 0)
-            spawnedCorpse.transform.localScale = new Vector3(1, 1, 0);
-        else
-            spawnedCorpse.transform.localScale = new Vector3(-1, 1, 0);
-
+            if (animator.GetFloat("prevMoveX") > 0)
+                spawnedCorpse.transform.localScale = new Vector3(1, 1, 0);
+            else
+                spawnedCorpse.transform.localScale = new Vector3(-1, 1, 0);
+        }
         Destroy(gameObject);
     }
 }

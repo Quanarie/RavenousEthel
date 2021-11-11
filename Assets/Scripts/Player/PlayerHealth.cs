@@ -10,7 +10,7 @@ public class PlayerHealth : AliveCreature
     [SerializeField] private float maxScale;
     [SerializeField] private float minScale;
     [SerializeField] private float getBiggerValue;
-    [SerializeField] private float getSmallerValue;
+    public float getSmallerValue;
     [SerializeField] private float timeToGetSmaller;
 
     [SerializeField] private Slider healhtSlider;

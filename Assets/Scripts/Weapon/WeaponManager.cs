@@ -14,9 +14,11 @@ public class WeaponManager : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance.WeaponParent.GetChild(0).GetComponent<Weapon>().rechargeImage = rechargeImage;
-        weapons.Add(GameManager.Instance.playerAttack.weapon);
-        weaponImage.sprite = weapons[0].gameObject.GetComponent<SpriteRenderer>().sprite;
+        Weapon startWeapon = GameManager.Instance.WeaponParent.GetChild(0).GetComponent<Weapon>();
+
+        startWeapon.rechargeImage = rechargeImage;
+        weapons.Add(startWeapon);
+        weaponImage.sprite = startWeapon.GetComponent<SpriteRenderer>().sprite;
     }
 
     public void ClearWeapons()

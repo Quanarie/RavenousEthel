@@ -23,22 +23,19 @@ public class Projectile : MonoBehaviour
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out PlayerHealth _) || collision.TryGetComponent(out Weapon _))
-            return;
-
         if (collision.TryGetComponent(out enemyToAttack))
         {
             Vector3 enemyPos = enemyToAttack.transform.position;
             Vector3 playerPos = GameManager.Instance.Player.position;
 
             enemyToAttack.ReceiveDamage(damageAmount, new Vector3(enemyPos.x - playerPos.x, enemyPos.y - playerPos.y, 0).normalized * pushForce, stunTime);
+
+            Destroy(gameObject);
         }
 
-        Destroy(gameObject);
-    }
-
-    protected  void OnCollisionEnter2D(Collision2D collision)
-    {
-        
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

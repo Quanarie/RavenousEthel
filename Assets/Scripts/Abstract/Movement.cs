@@ -33,8 +33,7 @@ public abstract class Movement : MonoBehaviour
         moveDelta += pushDirection;
         pushDirection = Vector3.Lerp(pushDirection, Vector3.zero, pushRecoverySpeed);
 
-        //transform.Translate(moveDelta.x * Time.deltaTime, moveDelta.y * Time.deltaTime, 0);
-        rigidbody.MovePosition(transform.position+ moveDelta*Time.deltaTime);
+        rigidbody.MovePosition(transform.position + moveDelta * Time.deltaTime);
 
         UpdateAnimator(input);
     }
@@ -58,9 +57,15 @@ public abstract class Movement : MonoBehaviour
 
         UpdateAnimator(Vector3.zero);
 
+        /*if (Physics2D.OverlapCircleAll(transform.position + moveDelta * Time.deltaTime, 0.2f, 1 << LayerMask.NameToLayer("Obstacles")).Length > 0)
+        {
+            pushDirection = Vector3.zero;
+            return;
+        }*/
+
         moveDelta += pushDirection;
         pushDirection = Vector3.zero;
-        transform.Translate(moveDelta.x * Time.deltaTime, moveDelta.y * Time.deltaTime, 0);
+        rigidbody.MovePosition(transform.position + moveDelta * Time.deltaTime);
     }
 
     protected virtual IEnumerator UnStunCreature(float stunTime)

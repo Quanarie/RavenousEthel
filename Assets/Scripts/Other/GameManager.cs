@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public Transform Player;
-
     public Transform WeaponParent;
 
     [HideInInspector] public Animator playerAnimator;
@@ -34,6 +33,9 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            if (DontDestroyOnLoadContainer == null)
+                return;
+
             Destroy(DontDestroyOnLoadContainer);
             return;
         }
