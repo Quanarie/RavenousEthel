@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4619333159468655593}
   - component: {fileID: 4619333159468655598}
   - component: {fileID: 4619333159468655602}
-  - component: {fileID: 4619333159468655599}
   - component: {fileID: 4619333159468655601}
+  - component: {fileID: 5209369346561084717}
   - component: {fileID: 4619333159468655596}
   - component: {fileID: 4619333159468655594}
   - component: {fileID: 4619333159468655595}
@@ -110,32 +110,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &4619333159468655599
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4619333159468655592}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.003012091, y: 0.13569242}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.16, y: 0.36}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.12351006, y: 0.253438}
-  m_EdgeRadius: 0
 --- !u!95 &4619333159468655601
 Animator:
   serializedVersion: 3
@@ -155,6 +129,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &5209369346561084717
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4619333159468655592}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.11092718}
+  serializedVersion: 2
+  m_Radius: 0.1
 --- !u!114 &4619333159468655596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  rechargeTime: 0.25
+  rechargeTime: 2
   attackDistance: 1
   weapon: {fileID: 2067163031374520631}
 --- !u!1001 &1420289412046099153

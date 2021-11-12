@@ -191,4 +191,4 @@ MonoBehaviour:
   xSpeed: 0.5
   pushRecoverySpeed: 0.5
   pushDirection: {x: 0, y: 0, z: 0}
-  chasingDistance: 5
+  chasingDistance: 2
