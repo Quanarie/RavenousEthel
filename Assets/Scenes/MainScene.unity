@@ -3732,6 +3732,10 @@ MonoBehaviour:
   regularProjectilePrefab: {fileID: 7350114879659511275, guid: 83fa1a85ba73c3a468f85bb04ce7b2b0, type: 3}
   deadSlimePrefab: {fileID: 2016878233217422246, guid: 46b5e5f8499f1034e95d8815b11717c5, type: 3}
   rechargeRegularImage: {fileID: 231686804}
+  attackDistanceMutantState: 0.4
+  damageMutantState: 2
+  stunTimeMutantState: 1
+  pushForceMutantState: 5
   mutantProjectilePrefab: {fileID: 945572282811277856, guid: 6ba1d3ae802f6e744b7e7f6c54bdd3d8, type: 3}
   deadMonsterPrefab: {fileID: 7623924429536812040, guid: f9b9505c42d704544972f73463e24c31, type: 3}
   monsterDeath: {fileID: 7400000, guid: d66e0aeb2ea0d9740ad8dbc141d8b557, type: 2}
@@ -6129,11 +6133,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0}
---- !u!4 &1280113669 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4471212686207050010, guid: 8996053e7b9658c43a5b03cee96c4768, type: 3}
-  m_PrefabInstance: {fileID: 4471212687352372511}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1282221925
 GameObject:
   m_ObjectHideFlags: 0
@@ -7165,8 +7164,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.056, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1280113669}
+  m_Children: []
   m_Father: {fileID: 584051764}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7644,60 +7642,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &4471212687352372511
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1990477050}
-    m_Modifications:
-    - target: {fileID: 4471212686207050010, guid: 8996053e7b9658c43a5b03cee96c4768, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4471212686207050010, guid: 8996053e7b9658c43a5b03cee96c4768, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4471212686207050010, guid: 8996053e7b9658c43a5b03cee96c4768, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4471212686207050010, guid: 8996053e7b9658c43a5b03cee96c4768, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4471212686207050010, guid: 8996053e7b9658c43a5b03cee96c4768, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4471212686207050010, guid: 8996053e7b9658c43a5b03cee96c4768, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4471212686207050010, guid: 8996053e7b9658c43a5b03cee96c4768, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4471212686207050010, guid: 8996053e7b9658c43a5b03cee96c4768, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4471212686207050010, guid: 8996053e7b9658c43a5b03cee96c4768, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4471212686207050010, guid: 8996053e7b9658c43a5b03cee96c4768, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4471212686207050010, guid: 8996053e7b9658c43a5b03cee96c4768, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4471212686207050011, guid: 8996053e7b9658c43a5b03cee96c4768, type: 3}
-      propertyPath: m_Name
-      value: MutantWeapon
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8996053e7b9658c43a5b03cee96c4768, type: 3}

@@ -9,25 +9,13 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] protected Image rechargeImage;
     [SerializeField] protected Image weaponImage;
 
-    private int currentWeapon = 0;
+    private int currentWeapon = -1;
     private List<Weapon> weapons = new List<Weapon>();
-
-    private void Start()
-    {
-        Weapon startWeapon = GameManager.Instance.WeaponParent.GetChild(0).GetComponent<Weapon>();
-
-        startWeapon.rechargeImage = rechargeImage;
-        weapons.Add(startWeapon);
-        weaponImage.sprite = startWeapon.GetComponent<SpriteRenderer>().sprite;
-    }
 
     public void ClearWeapons()
     {
         for (int i = 0; i < weapons.Count; i++)
         {
-            if (weapons[i] == GameManager.Instance.playerAttack.startWeapon)
-                continue;
-
             weapons[i].transform.SetParent(null);
 
             Vector2 randomOffset = Random.insideUnitCircle / 4;
@@ -36,18 +24,16 @@ public class WeaponManager : MonoBehaviour
             weapons[i].gameObject.SetActive(true);
         }
 
-        weapons = new List<Weapon>()
-        {
-            weapons[0]
-        };
+        weapons = new List<Weapon>();
 
-        weaponImage.sprite = weapons[0].GetComponent<SpriteRenderer>().sprite;
-
-        currentWeapon = 0;
+        currentWeapon = -1;
     }
 
     public void NextWeapon()
     {
+        if (currentWeapon == -1)
+            return;
+
         weapons[currentWeapon].gameObject.SetActive(false);
 
         if (currentWeapon + 1 >= weapons.Count)
@@ -114,7 +100,8 @@ public class WeaponManager : MonoBehaviour
         Weapon newWeapon = weapons[closestWeapon].GetComponent<Weapon>();
         GameManager.Instance.playerAttack.weapon = newWeapon;
         this.weapons.Add(newWeapon);
-        this.weapons[currentWeapon].gameObject.SetActive(false);
+        if (currentWeapon != -1)
+            this.weapons[currentWeapon].gameObject.SetActive(false);
         currentWeapon++;
 
         weaponImage.sprite = newWeapon.gameObject.GetComponent<SpriteRenderer>().sprite;

@@ -9,7 +9,6 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private RuntimeAnimatorController mutatedController;
 
     [HideInInspector] public Weapon weapon;
-    [HideInInspector] public Weapon startWeapon;
     private WeaponManager weaponManager;
 
     [SerializeField] private float distanceToDrain = 0.5f;
@@ -22,14 +21,16 @@ public class PlayerAttack : MonoBehaviour
     private float previousRegularStateAttackTime;
 
     [Header("Mutated State")]
+    [SerializeField] private float attackDistanceMutantState;
+    [SerializeField] private float damageMutantState;
+    [SerializeField] private float stunTimeMutantState;
+    [SerializeField] private float pushForceMutantState;
     [SerializeField] private GameObject mutantProjectilePrefab;
     [SerializeField] private GameObject deadMonsterPrefab;
     [SerializeField] private AnimationClip monsterDeath;
 
     private void Start()
     {
-        weapon = GameManager.Instance.WeaponParent.GetChild(0).GetComponent<Weapon>();
-        startWeapon = weapon;
         GameManager.Instance.playerAnimator.runtimeAnimatorController = regularController;
         GameManager.Instance.playerAnimator.SetTrigger("transform");
 
@@ -55,9 +56,26 @@ public class PlayerAttack : MonoBehaviour
     {
         if (GameManager.Instance.state == GameManager.State.regular)
             return;
-        
-        weapon.Shoot();
+
         TryDrainCorpses();
+
+        if (weapon == null)
+        {
+            Transform enemy = GameManager.Instance.FindClosestEnemyInRange(attackDistanceMutantState);
+
+            if (enemy != null)
+            {
+                GameManager.Instance.playerAnimator.SetFloat("enemyPosX", (enemy.position.x - transform.position.x) / Mathf.Abs((enemy.position.x - transform.position.x)));
+                GameManager.Instance.playerAnimator.SetTrigger("attack");
+
+                enemy.GetComponent<EnemyHealth>().ReceiveDamage(damageMutantState,
+                    new Vector3(enemy.position.x - transform.position.x, enemy.position.y - transform.position.y, 0).normalized * pushForceMutantState,
+                    stunTimeMutantState);
+            }
+            return;
+        }
+
+        weapon.Shoot();
     }
 
     public void Mutate(GameObject enemy)
