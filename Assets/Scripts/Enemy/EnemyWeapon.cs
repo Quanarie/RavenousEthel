@@ -24,7 +24,7 @@ public class EnemyWeapon : MonoBehaviour
             transform.localScale = new Vector3(1, 1, 0);
 
         Vector3 weaponPos = transform.position;
-        Vector3 weaponDir = new Vector3(playerPos.x - weaponPos.x, playerPos.y - weaponPos.y, 0);
+        Vector3 weaponDir = new Vector3(playerPos.x - weaponPos.x, playerPos.y - weaponPos.y + Projectile.offsetY, 0);
 
         float angleBetweenEnemyAndWeapon = Mathf.Acos(weaponDir.x / weaponDir.magnitude) * 180 / Mathf.PI;
         if (playerPos.y < transform.position.y) angleBetweenEnemyAndWeapon *= -1;

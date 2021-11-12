@@ -28,7 +28,7 @@ public class Weapon : MonoBehaviour
             }
             else
             {
-                spawnedProjectile.direction = weaponDirectionLast;
+                spawnedProjectile.direction = new Vector3(weaponDirectionLast.x, weaponDirectionLast.y - Projectile.offsetY, 0);
 
                 if (weaponDirectionLast.magnitude == 0)
                 {
@@ -52,7 +52,7 @@ public class Weapon : MonoBehaviour
         if (enemyToAttack != null)
         {
             Vector3 weaponPos = transform.position;
-            Vector3 weaponDir = new Vector3(enemyToAttack.position.x - weaponPos.x, enemyToAttack.position.y - weaponPos.y, 0);
+            Vector3 weaponDir = new Vector3(enemyToAttack.position.x - weaponPos.x, enemyToAttack.position.y - weaponPos.y + Projectile.offsetY, 0);
 
             float angleBetweenEnemyAndWeapon = Mathf.Acos(weaponDir.x / weaponDir.magnitude) * 180 / Mathf.PI;
             if (enemyToAttack.position.y < transform.position.y) angleBetweenEnemyAndWeapon *= -1;
