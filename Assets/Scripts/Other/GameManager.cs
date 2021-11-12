@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public WeaponManager weaponManager;
     public Slider weaponStock;
 
+    public GameObject pickupableArrowObject;
+
     [HideInInspector] public Animator playerAnimator;
     [HideInInspector] public PlayerAttack playerAttack;
     [HideInInspector] public PlayerHealth playerHealth;

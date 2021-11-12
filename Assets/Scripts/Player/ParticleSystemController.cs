@@ -20,11 +20,11 @@ public class ParticleSystemController : MonoBehaviour
         var particleEmisson = particleSystem.emission;
         particleEmisson.rateOverDistance = regularRateOverDistance;
 
-        GameManager.Instance.playerAttack.OnMutation += () => { particleShape.radius = mutantRadius;
+        PlayerAttack.OnMutation += () => { particleShape.radius = mutantRadius;
                                                                 particleEmisson.rateOverDistance = mutantRateOverDistance;
         };
 
-        GameManager.Instance.playerAttack.OnDemutation += () => { particleShape.radius = regularRadius;
+        PlayerAttack.OnDemutation += () => { particleShape.radius = regularRadius;
                                                                   particleEmisson.rateOverDistance = regularRateOverDistance;
         };
     }
