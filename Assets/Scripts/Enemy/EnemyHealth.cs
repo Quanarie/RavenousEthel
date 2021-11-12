@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyHealth : AliveCreature
 {
     [SerializeField] private AnimationClip deathClip;
-    [SerializeField] private GameObject corpse;
+    public GameObject corpse;
 
     public override void Death()
     {

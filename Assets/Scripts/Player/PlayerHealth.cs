@@ -91,10 +91,13 @@ public class PlayerHealth : AliveCreature
         sizeText.text = ((int)(sizeSlider.value * 100)).ToString();
     }
 
-    public void Mutate()
+    public void Mutate(float toHeal)
     {
         maxHp = maxMonsterHp;
-        currentHp = (int)((currentHp / maxRegularHp) * maxMonsterHp);
+        if (GameManager.Instance.state == GameManager.State.regular)
+            currentHp = maxMonsterHp - (maxRegularHp - currentHp);
+
+        Heal(toHeal);
 
         UpdateHealth();
         UpdateSize();
@@ -103,7 +106,7 @@ public class PlayerHealth : AliveCreature
     public void DeMutate()
     {
         maxHp = maxRegularHp;
-        currentHp = (int)((currentHp / maxMonsterHp) * maxRegularHp);
+        currentHp = Mathf.Min(currentHp, maxRegularHp);
 
         UpdateHealth();
         UpdateSize();

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyCorpse : MonoBehaviour
 {
-    [SerializeField] private float toHeal;
+    public float toHeal;
 
     public void Drain()
     {

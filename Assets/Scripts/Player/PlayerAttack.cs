@@ -97,7 +97,7 @@ public class PlayerAttack : MonoBehaviour
 
         GameManager.Instance.playerAnimator.runtimeAnimatorController = mutatedController;
         GameManager.Instance.playerAnimator.SetTrigger("transform");
-        GameManager.Instance.playerHealth.Mutate();
+        GameManager.Instance.playerHealth.Mutate(enemy.GetComponent<EnemyHealth>().corpse.GetComponent<EnemyCorpse>().toHeal);
         CircleCollider2D hitbox = GameManager.Instance.playerHitBox;
         hitbox.radius = 0.115f;
         hitbox.offset = new Vector3(0f, 0.115f, 0f);
