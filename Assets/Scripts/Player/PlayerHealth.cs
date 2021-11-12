@@ -62,6 +62,8 @@ public class PlayerHealth : AliveCreature
 
     public void Heal(float toHeal)
     {
+        GameManager.Instance.floatingTextManager.Show("+" + toHeal.ToString(), 20, Color.green, transform.position, new Vector3(50, 60, 0), 1f);
+        
         if (currentHp == maxHp)
             return;
 
@@ -92,21 +94,19 @@ public class PlayerHealth : AliveCreature
     public void Mutate()
     {
         maxHp = maxMonsterHp;
+        currentHp = (int)((currentHp / maxRegularHp) * maxMonsterHp);
 
         UpdateHealth();
         UpdateSize();
-
-        Heal(maxHp);
     }
 
     public void DeMutate()
     {
         maxHp = maxRegularHp;
+        currentHp = (int)((currentHp / maxMonsterHp) * maxRegularHp);
 
         UpdateHealth();
         UpdateSize();
-
-        Heal(maxHp);
     }
 
     public void GetBigger()
@@ -131,7 +131,7 @@ public class PlayerHealth : AliveCreature
         else if (GameManager.Instance.state == GameManager.State.mutated)
         {
             GameManager.Instance.playerAttack.DeMutate();
-            currentHp = maxHp;
+            DeMutate();
         }
         UpdateSize();
     }

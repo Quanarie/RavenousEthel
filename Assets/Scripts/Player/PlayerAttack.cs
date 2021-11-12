@@ -138,7 +138,6 @@ public class PlayerAttack : MonoBehaviour
 
         GameManager.Instance.playerAnimator.runtimeAnimatorController = regularController;
         GameManager.Instance.playerAnimator.SetTrigger("transform");
-        GameManager.Instance.playerHealth.DeMutate();
         Instantiate(deadMonsterPrefab, transform.position, Quaternion.identity);
     }
 }
