@@ -12,6 +12,22 @@ public class WeaponManager : MonoBehaviour
     private int currentWeapon = -1;
     private List<Weapon> weapons = new List<Weapon>();
 
+    public void Break(Weapon weapon)
+    {
+        if (weapons.Count > 1)
+        {
+            NextWeapon();
+        }
+        else
+        {
+            currentWeapon = -1;
+            weaponImage.sprite = null;
+        }
+       
+        weapons.Remove(weapon);
+        Destroy(weapon.gameObject);
+    }
+
     public void ClearWeapons()
     {
         for (int i = 0; i < weapons.Count; i++)
@@ -25,6 +41,7 @@ public class WeaponManager : MonoBehaviour
         }
 
         weapons = new List<Weapon>();
+        weaponImage.sprite = null;
 
         currentWeapon = -1;
     }
@@ -45,6 +62,7 @@ public class WeaponManager : MonoBehaviour
             currentWeapon++;
         }
         weapons[currentWeapon].gameObject.SetActive(true);
+        weapons[currentWeapon].UpdateWeaponStock();
         weaponImage.sprite = weapons[currentWeapon].gameObject.GetComponent<SpriteRenderer>().sprite;
 
         GameManager.Instance.playerAttack.weapon = weapons[currentWeapon];
@@ -103,6 +121,7 @@ public class WeaponManager : MonoBehaviour
         if (currentWeapon != -1)
             this.weapons[currentWeapon].gameObject.SetActive(false);
         currentWeapon++;
+        newWeapon.UpdateWeaponStock();
 
         weaponImage.sprite = newWeapon.gameObject.GetComponent<SpriteRenderer>().sprite;
 

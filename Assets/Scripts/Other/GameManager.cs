@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public Transform Player;
     public Transform WeaponParent;
+    public WeaponManager weaponManager;
+    public Slider weaponStock;
 
     [HideInInspector] public Animator playerAnimator;
     [HideInInspector] public PlayerAttack playerAttack;
@@ -44,6 +46,7 @@ public class GameManager : MonoBehaviour
         playerAttack = Player.GetComponent<PlayerAttack>();
         playerHealth = Player.GetComponent<PlayerHealth>();
         playerHitBox = Player.GetComponent<CircleCollider2D>();
+        weaponManager = Player.GetComponent<WeaponManager>();
     }
 
     public enum State

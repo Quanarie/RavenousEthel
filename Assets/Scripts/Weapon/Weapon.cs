@@ -8,15 +8,33 @@ public class Weapon : MonoBehaviour
     [SerializeField] protected GameObject projectile;
     [SerializeField] protected float rechargeTime;
     [SerializeField] protected float range;
+    [SerializeField] protected int maxShootQuantity;
     [HideInInspector] public Image rechargeImage;
 
     protected float lastShootTime;
     protected Vector3 weaponDirectionLast;
+    private int currentShotQuantity;
+
+    public void UpdateWeaponStock()
+    {
+        GameManager.Instance.weaponStock.minValue = 0f;
+        GameManager.Instance.weaponStock.maxValue = maxShootQuantity;
+        GameManager.Instance.weaponStock.value = maxShootQuantity - currentShotQuantity;
+    }
 
     public virtual void Shoot()
     {
         if (Time.time - lastShootTime >= rechargeTime)
         {
+            if (currentShotQuantity >= maxShootQuantity)
+            {
+                GameManager.Instance.weaponManager.Break(this);
+                rechargeImage.fillAmount = 0f;
+                return;
+            }
+            currentShotQuantity++;
+            GameManager.Instance.weaponStock.value = maxShootQuantity - currentShotQuantity;
+
             Transform enemyToAttack = GameManager.Instance.FindClosestEnemyInRange(range);
 
             Projectile spawnedProjectile = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
