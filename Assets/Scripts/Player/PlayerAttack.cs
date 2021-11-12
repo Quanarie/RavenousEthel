@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public delegate void Transformation();
+    public event Transformation OnMutation;
+    public event Transformation OnDemutation;
+
     [SerializeField] private RuntimeAnimatorController regularController;
     [SerializeField] private RuntimeAnimatorController mutatedController;
 
@@ -80,6 +84,8 @@ public class PlayerAttack : MonoBehaviour
 
     public void Mutate(GameObject enemy)
     {
+        OnMutation?.Invoke();
+
         GameManager.Instance.state = GameManager.State.mutated;
 
         Instantiate(deadSlimePrefab, transform.position, Quaternion.identity);
@@ -99,6 +105,8 @@ public class PlayerAttack : MonoBehaviour
 
     public void DeMutate()
     {
+        OnDemutation?.Invoke();
+
         GameManager.Instance.state = GameManager.State.regular;
 
         GameManager.Instance.playerAnimator.SetTrigger("death");
