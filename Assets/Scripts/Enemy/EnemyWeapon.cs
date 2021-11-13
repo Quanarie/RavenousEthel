@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyWeapon : MonoBehaviour
 {
     [SerializeField] protected GameObject projectile;
+    public float chanceOfDropping;
 
     public void Shoot()
     {

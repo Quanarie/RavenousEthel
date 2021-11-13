@@ -8,7 +8,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] protected GameObject projectile;
     [SerializeField] protected float rechargeTime;
     [SerializeField] protected float range;
-    [SerializeField] protected int maxShootQuantity;
+    public int maxShootQuantity;
     [HideInInspector] public Image rechargeImage;
 
     protected float lastShootTime;

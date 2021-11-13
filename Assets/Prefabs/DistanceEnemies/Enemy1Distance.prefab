@@ -159,6 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 5
   deathClip: {fileID: 7400000, guid: dc34714afc92b4b4db29f552ada7c6c2, type: 2}
+  dropWeapon: {fileID: 3220945507767099503, guid: 557ffacbf35f80a4cb6e675edb748c49, type: 3}
   corpse: {fileID: 4370713503632993849, guid: 5c55d40d707a3e44fb70af67607ed2c7, type: 3}
 --- !u!114 &5354261157024498527
 MonoBehaviour:

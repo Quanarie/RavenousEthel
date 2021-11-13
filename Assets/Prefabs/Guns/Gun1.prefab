@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -192968159
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -4906864666938018422, guid: 603977e0c11e36d4298de3b7eafb8cd2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -97,18 +97,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.02731365, y: 0.007563807}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.3, y: 0.15}
+    pivot: {x: 0.38673294, y: 0.42212886}
+    oldSize: {x: 0.27272728, y: 0.13636364}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.15}
+  m_Size: {x: 0.26554263, y: 0.13487239}
   m_EdgeRadius: 0
 --- !u!114 &3220945507767099503
 MonoBehaviour:
@@ -125,4 +125,5 @@ MonoBehaviour:
   projectile: {fileID: 945572282811277856, guid: 556ce6c9827ed524689d698e09f331d1, type: 3}
   rechargeTime: 0.25
   range: 2
+  maxShootQuantity: 3
   rechargeImage: {fileID: 0}

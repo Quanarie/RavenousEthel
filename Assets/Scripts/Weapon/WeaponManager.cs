@@ -37,7 +37,7 @@ public class WeaponManager : MonoBehaviour
         {
             weapons[i].transform.SetParent(null);
 
-            Vector2 randomOffset = Random.insideUnitCircle / 4;
+            Vector2 randomOffset = Random.insideUnitCircle / 3;
             weapons[i].transform.position += new Vector3(randomOffset.x, randomOffset.y, 0);
 
             weapons[i].gameObject.SetActive(true);

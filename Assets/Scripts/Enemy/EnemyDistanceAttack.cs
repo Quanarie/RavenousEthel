@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyDistanceAttack : EnemyAttack
 {
-    [SerializeField] private EnemyWeapon weapon;
+    public EnemyWeapon weapon;
 
     protected override void Attack()
     {

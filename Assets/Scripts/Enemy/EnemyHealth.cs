@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyHealth : AliveCreature
 {
     [SerializeField] private AnimationClip deathClip;
+    [SerializeField] private Weapon dropWeapon;
     public GameObject corpse;
 
     public override void Death()
@@ -17,6 +18,16 @@ public class EnemyHealth : AliveCreature
         animator.SetTrigger("death");
         animator.SetBool("isDead", true);
 
+        if (!TryGetComponent(out EnemyDistanceAttack _))
+            return;
+
+        if (Random.value <= GetComponent<EnemyDistanceAttack>().weapon.chanceOfDropping)
+        {
+            Weapon weapon = Instantiate(dropWeapon, transform.position, transform.rotation);
+
+            Vector2 randomOffset = Random.insideUnitCircle / 3;
+            weapon.transform.position += new Vector3(randomOffset.x, randomOffset.y, 0);
+        }
 
         StartCoroutine(SpawnCorpse());
     }

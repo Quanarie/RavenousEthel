@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -192968159
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 6314785377950087458, guid: 59245fe722667784f91d52571e6a1788, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -99,6 +99,7 @@ MonoBehaviour:
   projectile: {fileID: 945572282811277856, guid: ab0292704ccfc244d8deb64351437758, type: 3}
   rechargeTime: 1
   range: 1
+  maxShootQuantity: 10
   rechargeImage: {fileID: 0}
 --- !u!61 &5904744142282705242
 BoxCollider2D:
