@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
+    public delegate void PickupClick();
+    public static event PickupClick OnPickupClicked;
+
     [SerializeField] private float radius;
     [SerializeField] protected Image rechargeImage;
     [SerializeField] protected Image weaponImage;
@@ -70,6 +73,8 @@ public class WeaponManager : MonoBehaviour
 
     public void Pickup()
     {
+        OnPickupClicked?.Invoke();
+
         if (GameManager.Instance.state == GameManager.State.regular)
             return;
 

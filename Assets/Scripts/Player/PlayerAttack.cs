@@ -9,9 +9,6 @@ public class PlayerAttack : MonoBehaviour
     public static event Transformation OnMutation;
     public static event Transformation OnDemutation;
 
-    public delegate void AttackClick();
-    public static event AttackClick OnAttackClicked;
-
     [SerializeField] private RuntimeAnimatorController regularController;
     [SerializeField] private RuntimeAnimatorController mutatedController;
 
@@ -61,8 +58,6 @@ public class PlayerAttack : MonoBehaviour
 
     public void Attack()
     {
-        OnAttackClicked?.Invoke();
-
         if (GameManager.Instance.state == GameManager.State.regular)
             return;
 

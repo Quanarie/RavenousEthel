@@ -12,7 +12,7 @@ public abstract class PickupableObject : MonoBehaviour
 
     private void Start()
     {
-        PlayerAttack.OnAttackClicked += TryPickup;
+        WeaponManager.OnPickupClicked += TryPickup;
 
         arrow = Instantiate(GameManager.Instance.pickupableArrowObject, transform.position, transform.rotation, transform);
         arrow.SetActive(false);

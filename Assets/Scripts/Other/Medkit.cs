@@ -9,7 +9,7 @@ public class Medkit : PickupableObject
     protected override void PerformAction()
     {
         GameManager.Instance.playerHealth.Heal(toHeal);
-        PlayerAttack.OnAttackClicked -= TryPickup;
+        WeaponManager.OnPickupClicked -= TryPickup;
         Destroy(gameObject);
     }
 }
