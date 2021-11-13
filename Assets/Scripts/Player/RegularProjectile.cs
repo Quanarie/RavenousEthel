@@ -6,15 +6,14 @@ public class RegularProjectile : MonoBehaviour
 {
     [SerializeField] private float speedOfLerping;
     [SerializeField] private float distanceToMutate;
-    [SerializeField] private float range;
 
     private Transform enemyToAttack;
 
     private void Start()
     {
-        enemyToAttack = GameManager.Instance.FindClosestEnemyInRange(range);
+        enemyToAttack = GameManager.Instance.FindClosestEnemyInRange(Camera.main.orthographicSize * Screen.width / Screen.height);
 
-        if (enemyToAttack == null)
+        if (enemyToAttack == null || !enemyToAttack.GetComponent<Renderer>().isVisible)
         {
             Destroy(gameObject);
             return;
