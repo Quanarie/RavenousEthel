@@ -18,6 +18,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float distanceToDrain = 0.5f;
 
     [Header("Regular State")]
+    [SerializeField] private float regularAttackDistanceX;
+    [SerializeField] private float regularAttackDistanceY;
     [SerializeField] private float rechargeTimeRegular;
     [SerializeField] private GameObject regularProjectilePrefab;
     [SerializeField] private GameObject deadSlimePrefab;
@@ -48,6 +50,16 @@ public class PlayerAttack : MonoBehaviour
 
     public void SwallowUp()
     {
+        Transform closestEnemy = GameManager.Instance.FindClosestEnemyInRange(Camera.main.orthographicSize * Screen.width / Screen.height);
+        if (closestEnemy == null)
+            return;
+
+        if (Mathf.Abs(closestEnemy.position.y - transform.position.y) > regularAttackDistanceY ||
+            Mathf.Abs(closestEnemy.position.x - transform.position.x) > regularAttackDistanceX)
+            return;
+
+
+
         if (Time.time - previousRegularStateAttackTime < rechargeTimeRegular)
             return;
 
