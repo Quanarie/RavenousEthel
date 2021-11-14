@@ -22,7 +22,6 @@ public abstract class PickupableObject : MonoBehaviour
     {
         if (Vector3.Distance(GameManager.Instance.Player.position, transform.position) <= pickupDistance)
         {
-            print("F");
             if (!arrow.activeSelf)
                 arrow.SetActive(true);
 
