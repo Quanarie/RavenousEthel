@@ -8,7 +8,7 @@ public abstract class Movement : MonoBehaviour
     public float xSpeed = 1f;
 
     [HideInInspector] public float pushRecoverySpeed;
-    public Vector3 pushDirection;
+    [HideInInspector] public Vector3 pushDirection;
 
     protected bool isStunned;
 

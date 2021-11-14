@@ -50,6 +50,9 @@ TagManager:
   - name: Enemies
     uniqueID: 753048633
     locked: 0
+  - name: Items
+    uniqueID: 3525356111
+    locked: 0
   - name: Guns
     uniqueID: 4101999137
     locked: 0

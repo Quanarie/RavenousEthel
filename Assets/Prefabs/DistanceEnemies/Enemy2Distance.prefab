@@ -159,6 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 5
   deathClip: {fileID: 7400000, guid: a462dc787462727488fe265c452db537, type: 2}
+  dropWeapon: {fileID: 3220945507767099503, guid: 7dacdbdfdac1c3a4b811f5a7d9a07f72, type: 3}
   corpse: {fileID: 345898005979158083, guid: 9db7320f966abb2469e284394cb5f96e, type: 3}
 --- !u!114 &4619333159468655594
 MonoBehaviour:
@@ -189,7 +190,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d76150e74d82844494cd6f64a5f475a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 1
   rechargeTime: 2
   attackDistance: 1
   weapon: {fileID: 2067163031374520631}

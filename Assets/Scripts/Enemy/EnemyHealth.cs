@@ -18,6 +18,10 @@ public class EnemyHealth : AliveCreature
         animator.SetTrigger("death");
         animator.SetBool("isDead", true);
 
+        GetComponent<EnemyMovement>().enabled = false;
+
+        StartCoroutine(SpawnCorpse());
+
         if (!TryGetComponent(out EnemyDistanceAttack _))
             return;
 
@@ -28,8 +32,6 @@ public class EnemyHealth : AliveCreature
             Vector2 randomOffset = Random.insideUnitCircle / 3;
             weapon.transform.position += new Vector3(randomOffset.x, randomOffset.y, 0);
         }
-
-        StartCoroutine(SpawnCorpse());
     }
 
     private IEnumerator SpawnCorpse()

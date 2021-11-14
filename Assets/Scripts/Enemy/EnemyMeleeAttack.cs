@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyMeleeAttack : EnemyAttack
 {
+    [SerializeField] private float damageAmount;
     [SerializeField] private AnimationClip attackClip;
 
     private Animator animator;

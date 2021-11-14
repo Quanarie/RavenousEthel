@@ -26,15 +26,6 @@ public class Weapon : MonoBehaviour
     {
         if (Time.time - lastShootTime >= rechargeTime)
         {
-            if (currentShotQuantity >= maxShootQuantity)
-            {
-                GameManager.Instance.weaponManager.Break(this);
-                rechargeImage.fillAmount = 0f;
-                return;
-            }
-            currentShotQuantity++;
-            GameManager.Instance.weaponStock.value = maxShootQuantity - currentShotQuantity;
-
             Transform enemyToAttack = GameManager.Instance.FindClosestEnemyInRange(range);
 
             Projectile spawnedProjectile = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
@@ -55,6 +46,15 @@ public class Weapon : MonoBehaviour
             }
 
             lastShootTime = Time.time;
+
+            currentShotQuantity++;
+            if (currentShotQuantity >= maxShootQuantity)
+            {
+                GameManager.Instance.weaponManager.Break(this);
+                rechargeImage.fillAmount = 0f;
+                return;
+            }
+            UpdateWeaponStock();
         }
     }
 

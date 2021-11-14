@@ -15,7 +15,7 @@ public class PlayerAttack : MonoBehaviour
     [HideInInspector] public Weapon weapon;
     private WeaponManager weaponManager;
 
-    [SerializeField] private float distanceToDrain = 0.5f;
+    [SerializeField] private float distanceToDrain;
 
     [Header("Regular State")]
     [SerializeField] private float rechargeTimeRegular;

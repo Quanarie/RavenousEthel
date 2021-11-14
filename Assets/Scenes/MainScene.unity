@@ -3829,7 +3829,7 @@ MonoBehaviour:
   regularController: {fileID: 9100000, guid: 8694ad7aadfe81b4e9de2041d30aae39, type: 2}
   mutatedController: {fileID: 9100000, guid: cdc0cb53f6717024c8b61f1677ae07d5, type: 2}
   weapon: {fileID: 0}
-  distanceToDrain: 0.5
+  distanceToDrain: 0.2
   rechargeTimeRegular: 1
   regularProjectilePrefab: {fileID: 7350114879659511275, guid: 83fa1a85ba73c3a468f85bb04ce7b2b0, type: 3}
   deadSlimePrefab: {fileID: 2016878233217422246, guid: 46b5e5f8499f1034e95d8815b11717c5, type: 3}
@@ -10879,6 +10879,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy1Distance
       objectReference: {fileID: 0}
+    - target: {fileID: 5354261157024498526, guid: 6a74b060415c61b4097133be03200419, type: 3}
+      propertyPath: damageAmount
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a74b060415c61b4097133be03200419, type: 3}
 --- !u!1 &1178660691
@@ -12224,7 +12228,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2034978534
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public abstract class PickupableObject : MonoBehaviour
 {
-    public static float pickupDistance = 0.2f;
-    public static float offsetY = 0.4f;
+    public static float pickupDistance = 0.3f;
+    public static float offsetY = 0.2f;
     private static float arrowSpeed = 2f;
     private float argumentForSin;
     private GameObject arrow;

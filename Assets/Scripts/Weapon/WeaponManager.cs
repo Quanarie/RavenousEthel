@@ -23,6 +23,7 @@ public class WeaponManager : MonoBehaviour
         }
         else
         {
+            GameManager.Instance.weaponStock.value = 0;
             currentWeapon = -1;
             weaponImage.sprite = null;
         }
