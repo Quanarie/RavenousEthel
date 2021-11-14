@@ -52,6 +52,10 @@ public class PlayerAttack : MonoBehaviour
 
     public void SwallowUp()
     {
+        Transform enemy = GameManager.Instance.FindClosestEnemyInRange(Camera.main.orthographicSize * Screen.width / Screen.height);
+        if (enemy == null || !enemy.GetComponent<Renderer>().isVisible)
+            return;
+
         if (Time.time - previousRegularStateAttackTime < rechargeTimeRegular)
             return;
 
@@ -68,7 +72,10 @@ public class PlayerAttack : MonoBehaviour
         if (Time.time - previousMutatedStateAttackTime < rechargeTimeMutated)
             return;
 
-        TryDrainCorpses();
+        bool isDraining = TryDrainCorpses();
+
+        if (isDraining)
+            return;
 
         if (weapon == null)
         {
@@ -133,7 +140,7 @@ public class PlayerAttack : MonoBehaviour
         weaponManager.ClearWeapons();
     }
 
-    public void TryDrainCorpses()
+    public bool TryDrainCorpses()
     {
         Collider2D[] items = Physics2D.OverlapCircleAll(transform.position, distanceToDrain);
 
@@ -148,9 +155,10 @@ public class PlayerAttack : MonoBehaviour
         }
 
         if (corpsesCount == 0)
-            return;
+            return false;
 
         GameManager.Instance.playerAnimator.SetTrigger("drain");
+        return true;
     }
 
     IEnumerator ChangeStateToRegular()

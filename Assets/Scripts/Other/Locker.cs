@@ -22,12 +22,12 @@ public class Locker : PickupableObject
 
     protected override void PerformAction()
     {
-        spriteRenderer.sprite = opened;
-        Instantiate(insideObject, spawnPoint.position, transform.rotation, transform);
+        base.PerformAction();
 
-        WeaponManager.OnPickupClicked -= TryPickup;
+        spriteRenderer.sprite = opened;
+        Instantiate(insideObject, spawnPoint.position, transform.rotation);
 
         Destroy(arrow);
-        Destroy(this);
+        enabled = false;
     }
 }

@@ -13,7 +13,7 @@ public class RegularProjectile : MonoBehaviour
     {
         enemyToAttack = GameManager.Instance.FindClosestEnemyInRange(Camera.main.orthographicSize * Screen.width / Screen.height);
 
-        if (enemyToAttack == null || !enemyToAttack.GetComponent<Renderer>().isVisible)
+        if (enemyToAttack == null)
         {
             Destroy(gameObject);
             return;

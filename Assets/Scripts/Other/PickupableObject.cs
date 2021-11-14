@@ -44,5 +44,13 @@ public abstract class PickupableObject : MonoBehaviour
         }
     }
 
-    protected virtual void PerformAction() { }
+    protected virtual void PerformAction() 
+    {
+        WeaponManager.OnPickupClicked -= TryPickup;
+    }
+
+    private void OnDestroy()
+    {
+        WeaponManager.OnPickupClicked -= TryPickup;
+    }
 }
