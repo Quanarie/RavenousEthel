@@ -1,0 +1,372 @@
+fileFormatVersion: 2
+guid: 289e6d7499a58ec4788119f46cb2de7f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5986427999308361284
+    second: EthelGoop-Attack_0
+  - first:
+      213: 4662801946423603334
+    second: EthelGoop-Attack_1
+  - first:
+      213: -3008649956420957137
+    second: EthelGoop-Attack_2
+  - first:
+      213: -4898842154820928562
+    second: EthelGoop-Attack_3
+  - first:
+      213: 1540326955728320174
+    second: EthelGoop-Attack_4
+  - first:
+      213: -563785092496570700
+    second: EthelGoop-Attack_5
+  - first:
+      213: 1482464946364123354
+    second: EthelGoop-Attack_6
+  - first:
+      213: 3954629411751841720
+    second: EthelGoop-Attack_7
+  - first:
+      213: 7964195912115430490
+    second: EthelGoop-Attack_8
+  - first:
+      213: -1792060220075577637
+    second: EthelGoop-Attack_9
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: EthelGoop-Attack_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 265
+        width: 31
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb1d5cbb37febeca0800000000000000
+      internalID: -5986427999308361284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelGoop-Attack_1
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 265
+        width: 31
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 680349a6aa995b040800000000000000
+      internalID: 4662801946423603334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelGoop-Attack_2
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 265
+        width: 48
+        height: 21
+      alignment: 9
+      pivot: {x: 0.28241953, y: 0.0048987977}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2cc80e1ec02f36d0800000000000000
+      internalID: -3008649956420957137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelGoop-Attack_3
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 192
+        width: 34
+        height: 23
+      alignment: 9
+      pivot: {x: 0.45330632, y: 0.1005594}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecb703fe301d30cb0800000000000000
+      internalID: -4898842154820928562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelGoop-Attack_4
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 194
+        width: 34
+        height: 21
+      alignment: 9
+      pivot: {x: 0.46087334, y: -0.000000726609}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea6352a8437506510800000000000000
+      internalID: 1540326955728320174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelGoop-Attack_5
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 103
+        width: 48
+        height: 21
+      alignment: 9
+      pivot: {x: 0.71835583, y: 0.009909131}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b6c41802780d28f0800000000000000
+      internalID: -563785092496570700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelGoop-Attack_6
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 103
+        width: 31
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad88008a306c29410800000000000000
+      internalID: 1482464946364123354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelGoop-Attack_7
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 103
+        width: 31
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bfc7c95f7aa1e630800000000000000
+      internalID: 3954629411751841720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelGoop-Attack_8
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 32
+        width: 34
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5311562, y: 0.007205963}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5422476cf1868e60800000000000000
+      internalID: 7964195912115430490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EthelGoop-Attack_9
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 30
+        width: 34
+        height: 23
+      alignment: 9
+      pivot: {x: 0.56263554, y: 0.09649642}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bde694e79b25127e0800000000000000
+      internalID: -1792060220075577637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

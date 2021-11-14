@@ -3089,11 +3089,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5927496543980980441, guid: 9ff47c6b8bfb6a640a90a62779704563, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.184
+      value: 1.401
       objectReference: {fileID: 0}
     - target: {fileID: 5927496543980980441, guid: 9ff47c6b8bfb6a640a90a62779704563, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.605
+      value: -0.46599996
       objectReference: {fileID: 0}
     - target: {fileID: 5927496543980980441, guid: 9ff47c6b8bfb6a640a90a62779704563, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3805,7 +3805,7 @@ Animator:
   m_GameObject: {fileID: 584051763}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8694ad7aadfe81b4e9de2041d30aae39, type: 2}
+  m_Controller: {fileID: 9100000, guid: cdc0cb53f6717024c8b61f1677ae07d5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3835,9 +3835,11 @@ MonoBehaviour:
   deadSlimePrefab: {fileID: 2016878233217422246, guid: 46b5e5f8499f1034e95d8815b11717c5, type: 3}
   rechargeRegularImage: {fileID: 231686804}
   attackDistanceMutantState: 0.4
+  rechargeTimeMutated: 1
   damageMutantState: 2
   stunTimeMutantState: 1
   pushForceMutantState: 5
+  rechargeMutatedImage: {fileID: 993911200}
   mutantProjectilePrefab: {fileID: 945572282811277856, guid: 6ba1d3ae802f6e744b7e7f6c54bdd3d8, type: 3}
   deadMonsterPrefab: {fileID: 7623924429536812040, guid: f9b9505c42d704544972f73463e24c31, type: 3}
   monsterDeath: {fileID: 7400000, guid: d66e0aeb2ea0d9740ad8dbc141d8b557, type: 2}
@@ -10837,11 +10839,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5354261157024498524, guid: 6a74b060415c61b4097133be03200419, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.073
+      value: 0.37
       objectReference: {fileID: 0}
     - target: {fileID: 5354261157024498524, guid: 6a74b060415c61b4097133be03200419, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.081
+      value: -0.47
       objectReference: {fileID: 0}
     - target: {fileID: 5354261157024498524, guid: 6a74b060415c61b4097133be03200419, type: 3}
       propertyPath: m_LocalPosition.z

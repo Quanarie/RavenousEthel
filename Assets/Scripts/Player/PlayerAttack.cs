@@ -26,12 +26,15 @@ public class PlayerAttack : MonoBehaviour
 
     [Header("Mutated State")]
     [SerializeField] private float attackDistanceMutantState;
+    [SerializeField] private float rechargeTimeMutated;
     [SerializeField] private float damageMutantState;
     [SerializeField] private float stunTimeMutantState;
     [SerializeField] private float pushForceMutantState;
+    [SerializeField] private Image rechargeMutatedImage;
     [SerializeField] private GameObject mutantProjectilePrefab;
     [SerializeField] private GameObject deadMonsterPrefab;
     [SerializeField] private AnimationClip monsterDeath;
+    private float previousMutatedStateAttackTime;
 
     private void Start()
     {
@@ -44,6 +47,7 @@ public class PlayerAttack : MonoBehaviour
     private void Update()
     {
         rechargeRegularImage.fillAmount = Mathf.Min((Time.time - previousRegularStateAttackTime) / rechargeTimeRegular, 1);
+        rechargeMutatedImage.fillAmount = Mathf.Min((Time.time - previousMutatedStateAttackTime) / rechargeTimeMutated, 1);
     }
 
     public void SwallowUp()
@@ -61,6 +65,9 @@ public class PlayerAttack : MonoBehaviour
         if (GameManager.Instance.state == GameManager.State.regular)
             return;
 
+        if (Time.time - previousMutatedStateAttackTime < rechargeTimeMutated)
+            return;
+
         TryDrainCorpses();
 
         if (weapon == null)
@@ -76,6 +83,12 @@ public class PlayerAttack : MonoBehaviour
                     new Vector3(enemy.position.x - transform.position.x, enemy.position.y - transform.position.y, 0).normalized * pushForceMutantState,
                     stunTimeMutantState);
             }
+            else
+            {
+                GameManager.Instance.playerAnimator.SetFloat("enemyPosX", 0);
+                GameManager.Instance.playerAnimator.SetTrigger("attack");
+            }
+            previousMutatedStateAttackTime = Time.time;
             return;
         }
 
