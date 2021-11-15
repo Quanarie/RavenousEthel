@@ -15,9 +15,17 @@ public class Projectile : MonoBehaviour
 
     private EnemyHealth enemyToAttack;
 
+    protected virtual void Start()
+    {
+        float angleBetweenEnemyAndWeapon = Mathf.Acos(direction.x / direction.magnitude) * 180 / Mathf.PI;
+        if (direction.y < transform.position.y) angleBetweenEnemyAndWeapon *= -1;
+
+        transform.localRotation = Quaternion.Euler(0f, 0f, angleBetweenEnemyAndWeapon);
+    }
+
     protected virtual void Update()
     {
-        transform.Translate(new Vector3(direction.x, direction.y + offsetY, 0).normalized * speed * Time.deltaTime);
+        transform.Translate(new Vector3(direction.x, direction.y + offsetY, 0).normalized * speed * Time.deltaTime, Space.World);
 
         Destroy(gameObject, lifetime);
     }
