@@ -34,7 +34,6 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
         }
 
-        print(collision.gameObject.layer);
         if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
         {
             Destroy(gameObject);
