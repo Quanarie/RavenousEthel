@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4866205998428079137}
   - component: {fileID: 4866205998428079140}
   - component: {fileID: 4866205998428079167}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DoorSideControlled
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1546314183
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 506869622187742408, guid: 494fdcc19690d5b44ae92873e7175e96, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -154,7 +154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4866205999000777338}
   - component: {fileID: 4866205999000777339}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4866205999070770737}
   - component: {fileID: 4866205999070770738}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}

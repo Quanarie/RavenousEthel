@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class DoorController : PickupableObject
 {
-    [SerializeField] private ControlledDoor door;
+    [SerializeField] private ControlledDoor[] doors;
 
     protected override void PerformAction()
     {
-        door.Open();
+        foreach (ControlledDoor door in doors)
+        {
+            door.Open();
+        }
+
         Destroy(arrow);
         Destroy(this);
     }

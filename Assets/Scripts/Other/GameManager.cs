@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -44,11 +45,23 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
         playerAnimator = Player.GetComponent<Animator>();
         playerAttack = Player.GetComponent<PlayerAttack>();
         playerHealth = Player.GetComponent<PlayerHealth>();
         playerHitBox = Player.GetComponent<CircleCollider2D>();
         weaponManager = Player.GetComponent<WeaponManager>();
+    }
+
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        GameObject spawnPoint = GameObject.Find("Respawn");
+
+        if (spawnPoint != null)
+        {
+            Player.transform.position = spawnPoint.transform.position;
+        }
     }
 
     public enum State

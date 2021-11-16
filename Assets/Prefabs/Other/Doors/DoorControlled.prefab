@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 527563619479948569}
   - component: {fileID: 527563619479948570}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.1264866, y: -0.05347711}
+  m_Offset: {x: -0.12600747, y: 0.025}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -55,7 +55,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2245701, y: 0.25}
+  m_Size: {x: 0.2255283, y: 0.125}
   m_EdgeRadius: 0
 --- !u!1 &527563620445210445
 GameObject:
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 527563620445210446}
   - component: {fileID: 527563620445209777}
   - component: {fileID: 527563620445210442}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DoorControlled
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,8 +130,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -769611185
-  m_SortingLayer: 3
+  m_SortingLayerID: 1546314183
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 2774111426448763615, guid: 826e1d1995428104d8444a6cde40afec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -211,7 +211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 527563620607844319}
   - component: {fileID: 527563620607844288}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.12648657, y: -0.048811227}
+  m_Offset: {x: -0.12600747, y: 0.025}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -256,5 +256,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2245701, y: 0.25}
+  m_Size: {x: 0.2255283, y: 0.125}
   m_EdgeRadius: 0

@@ -144,7 +144,6 @@ public class PlayerHealth : AliveCreature
         if (GameManager.Instance.state == GameManager.State.regular)
         {
             currentHp = maxHp;
-            transform.position = Vector3.zero;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         else

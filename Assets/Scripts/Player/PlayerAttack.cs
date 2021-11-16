@@ -132,8 +132,8 @@ public class PlayerAttack : MonoBehaviour
         GameManager.Instance.playerAnimator.SetTrigger("death");
 
         CircleCollider2D hitbox = GameManager.Instance.playerHitBox;
-        hitbox.radius = 0.08f;
-        hitbox.offset = new Vector3(0f, 0.08f, 0f);
+        hitbox.radius = 0.09f;
+        hitbox.offset = new Vector3(0f, 0.09f, 0f);
 
         StartCoroutine(ChangeStateToRegular());
 
