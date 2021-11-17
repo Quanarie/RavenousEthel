@@ -28,22 +28,17 @@ public class GameManager : MonoBehaviour
 
     public FloatingTextManager floatingTextManager;
 
-    [SerializeField] private GameObject DontDestroyOnLoadContainer;
+    public GameObject DontDestroyOnLoadContainer;
 
     private void Awake()
     {
-        if (Instance == null)
+        if (Instance != null)
         {
-            Instance = this;
-        }
-        else
-        {
-            if (DontDestroyOnLoadContainer == null)
-                return;
-
             Destroy(DontDestroyOnLoadContainer);
             return;
         }
+
+        Instance = this;
 
         SceneManager.sceneLoaded += OnSceneLoaded;
 
@@ -56,6 +51,11 @@ public class GameManager : MonoBehaviour
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        if (SceneManager.GetActiveScene().name != "MainMenu")
+        {
+            DontDestroyOnLoadContainer.SetActive(true);
+        }
+
         GameObject spawnPoint = GameObject.Find("Respawn");
 
         if (spawnPoint != null)
