@@ -7712,6 +7712,7 @@ MonoBehaviour:
   radius: 0.3
   rechargeImage: {fileID: 1683637827}
   weaponImage: {fileID: 1503849214}
+  currentWeapon: 0
 --- !u!114 &972839410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129905,7 +129906,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1734860588
 BoxCollider2D:
   m_ObjectHideFlags: 0

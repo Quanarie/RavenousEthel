@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4866205998428079137}
   - component: {fileID: 4866205998428079140}
   - component: {fileID: 4866205998428079167}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: DoorSideControlled
   m_TagString: Untagged
   m_Icon: {fileID: 0}

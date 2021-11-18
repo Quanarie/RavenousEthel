@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 527563620445210446}
   - component: {fileID: 527563620445209777}
   - component: {fileID: 527563620445210442}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: DoorControlled
   m_TagString: Untagged
   m_Icon: {fileID: 0}

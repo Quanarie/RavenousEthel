@@ -74,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 753048633
-  m_SortingLayer: 2
+  m_SortingLayerID: 1546314183
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -2933203432097905320, guid: 59b955a6179d2164d9a4b78ca0deaee1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -157,7 +157,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 10
+  currentHp: 0
   deathClip: {fileID: 7400000, guid: dc34714afc92b4b4db29f552ada7c6c2, type: 2}
+  dropWeapon: {fileID: 0}
   corpse: {fileID: 4370713503632993849, guid: 5c55d40d707a3e44fb70af67607ed2c7, type: 3}
 --- !u!114 &5927496543980980445
 MonoBehaviour:
@@ -171,9 +173,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd80dd21ec8e2964b88be5d0e4cf26f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 1
   rechargeTime: 2
   attackDistance: 0.3
+  damageAmount: 1
   attackClip: {fileID: 7400000, guid: 5fbb078dcc95d934e9166ef21da58602, type: 2}
 --- !u!114 &5927496543980980416
 MonoBehaviour:

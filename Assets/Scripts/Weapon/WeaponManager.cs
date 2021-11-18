@@ -59,7 +59,8 @@ public class WeaponManager : MonoBehaviour
     {
         for (int i = 0; i < weapons.Count; i++)
         {
-            Destroy(weapons[i].gameObject);
+            if (weapons[i] != null)
+                Destroy(weapons[i].gameObject);
         }
 
         weapons = new List<Weapon>();

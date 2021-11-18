@@ -6,6 +6,7 @@ using UnityEngine;
 public class NextLevel : MonoBehaviour
 {
     [SerializeField] private string sceneName;
+    [SerializeField] private bool shouldSave;
     private int doneLevelIndex;
 
     private void Start()
@@ -20,6 +21,9 @@ public class NextLevel : MonoBehaviour
             SceneManager.LoadScene(sceneName);
             if (doneLevelIndex >= 0)
                 GameManager.Instance.levels[doneLevelIndex] = true;
+
+            if (SceneManager.GetActiveScene().name == "Tutorial")
+                return;
 
             GameManager.Instance.SaveState();
         }

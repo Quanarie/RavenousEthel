@@ -124,4 +124,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupDistance: 0.5
   offsetY: 0.5
-  doors: []
+  doors:
+  - {fileID: 0}
