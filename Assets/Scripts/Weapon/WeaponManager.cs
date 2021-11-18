@@ -12,8 +12,13 @@ public class WeaponManager : MonoBehaviour
     public Image rechargeImage;
     [SerializeField] protected Image weaponImage;
 
-    public int currentWeapon = -1;
+    public int currentWeapon = 0;
     private List<Weapon> weapons = new List<Weapon>();
+
+    private void Start()
+    {
+        weapons.Add(null);
+    }
 
     public void AddWeapon(Weapon weapon)
     {
@@ -23,17 +28,10 @@ public class WeaponManager : MonoBehaviour
 
     public void Break(Weapon weapon)
     {
-        if (weapons.Count > 1)
-        {
-            NextWeapon();
-        }
-        else
-        {
-            GameManager.Instance.weaponStock.value = 0;
-            currentWeapon = -1;
-            weaponImage.sprite = null;
-        }
-       
+        GameManager.Instance.weaponStock.value = 0;
+        currentWeapon = 0;
+        weaponImage.sprite = null;
+
         weapons.Remove(weapon);
         Destroy(weapon.gameObject);
     }
@@ -51,9 +49,10 @@ public class WeaponManager : MonoBehaviour
         }
 
         weapons = new List<Weapon>();
+        weapons.Add(null);
         weaponImage.sprite = null;
 
-        currentWeapon = -1;
+        currentWeapon = 0;
     }
 
     public void DeleteWeapons()
@@ -64,29 +63,30 @@ public class WeaponManager : MonoBehaviour
         }
 
         weapons = new List<Weapon>();
+        weapons.Add(null);
         weaponImage.sprite = null;
 
-        currentWeapon = -1;
+        currentWeapon = 0;
     }
 
     public void NextWeapon()
     {
-        if (currentWeapon == -1)
-            return;
+        if (weapons[currentWeapon] != null)
+            weapons[currentWeapon].gameObject.SetActive(false);
 
-        weapons[currentWeapon].gameObject.SetActive(false);
-
-        if (currentWeapon + 1 >= weapons.Count)
+        currentWeapon++;
+        if (currentWeapon >= weapons.Count)
         {
             currentWeapon = 0;
+            weaponImage.sprite = null;
         }
-        else
+
+        if (weapons[currentWeapon] != null)
         {
-            currentWeapon++;
+            weapons[currentWeapon].gameObject.SetActive(true);
+            weapons[currentWeapon].UpdateWeaponStock();
+            weaponImage.sprite = weapons[currentWeapon].gameObject.GetComponent<SpriteRenderer>().sprite;
         }
-        weapons[currentWeapon].gameObject.SetActive(true);
-        weapons[currentWeapon].UpdateWeaponStock();
-        weaponImage.sprite = weapons[currentWeapon].gameObject.GetComponent<SpriteRenderer>().sprite;
 
         GameManager.Instance.playerAttack.weapon = weapons[currentWeapon];
     }
@@ -143,7 +143,7 @@ public class WeaponManager : MonoBehaviour
         Weapon newWeapon = weapons[closestWeapon].GetComponent<Weapon>();
         GameManager.Instance.playerAttack.weapon = newWeapon;
         this.weapons.Add(newWeapon);
-        if (currentWeapon != -1)
+        if (this.weapons[currentWeapon] != null)
             this.weapons[currentWeapon].gameObject.SetActive(false);
         currentWeapon++;
         newWeapon.UpdateWeaponStock();

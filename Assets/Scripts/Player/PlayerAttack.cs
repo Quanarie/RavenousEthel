@@ -71,9 +71,7 @@ public class PlayerAttack : MonoBehaviour
         if (Time.time - previousMutatedStateAttackTime < rechargeTimeMutated)
             return;
 
-        bool isDraining = TryDrainCorpses();
-
-        if (isDraining)
+        if (TryDrainCorpses())
             return;
 
         if (weapon == null)
@@ -95,10 +93,11 @@ public class PlayerAttack : MonoBehaviour
                 GameManager.Instance.playerAnimator.SetTrigger("attack");
             }
             previousMutatedStateAttackTime = Time.time;
-            return;
         }
-
-        weapon.Shoot();
+        else
+        {
+            weapon.Shoot();
+        }
     }
 
     public void Mutate(GameObject enemy)

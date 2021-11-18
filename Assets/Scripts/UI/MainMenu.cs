@@ -18,13 +18,13 @@ public class MainMenu : MonoBehaviour
 
     public void StartNewGame()
     {
+        PlayerPrefs.DeleteAll();
         if (PlayerPrefs.GetInt("TutorialStart", 0) == 0)
         {
             StartTutorial();
         }
         else
         {
-            PlayerPrefs.DeleteAll();
             PlayerPrefs.SetInt("TutorialStart", 1);
             SceneManager.LoadScene("Level1");
         }
