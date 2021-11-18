@@ -38,7 +38,6 @@ public class PlayerAttack : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance.playerAnimator.runtimeAnimatorController = regularController;
         GameManager.Instance.playerAnimator.SetTrigger("transform");
 
         weaponManager = GetComponent<WeaponManager>();
@@ -104,6 +103,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void Mutate(GameObject enemy)
     {
+
         OnMutation?.Invoke();
 
         GameManager.Instance.state = GameManager.State.mutated;
@@ -112,15 +112,21 @@ public class PlayerAttack : MonoBehaviour
 
         GameManager.Instance.playerAnimator.runtimeAnimatorController = mutatedController;
         GameManager.Instance.playerAnimator.SetTrigger("transform");
-        GameManager.Instance.playerHealth.Mutate(enemy.GetComponent<EnemyHealth>().corpse.GetComponent<EnemyCorpse>().toHeal);
+
+        if (enemy != null)
+        {
+            GameManager.Instance.playerHealth.Mutate(enemy.GetComponent<EnemyHealth>().corpse.GetComponent<EnemyCorpse>().toHeal);
+            transform.position = enemy.transform.position;
+            Destroy(enemy);
+        }
+        else
+            GameManager.Instance.playerHealth.Mutate(0f);
+
         CircleCollider2D hitbox = GameManager.Instance.playerHitBox;
         hitbox.radius = 0.115f;
         hitbox.offset = new Vector3(0f, 0.115f, 0f);
 
-        transform.position = enemy.transform.position;
-
         GameManager.Instance.playerHealth.GetBigger();
-        Destroy(enemy);
     }
 
     public void DeMutate()

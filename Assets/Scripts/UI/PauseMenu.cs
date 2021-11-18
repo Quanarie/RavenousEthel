@@ -30,6 +30,6 @@ public class PauseMenu : MonoBehaviour
 
     public void SaveGame()
     {
-        print("save");
+        GameManager.Instance.SaveState(new Scene(), new LoadSceneMode());
     }
 }

@@ -9,7 +9,7 @@ public class WeaponManager : MonoBehaviour
     public static event PickupClick OnPickupClicked;
 
     [SerializeField] private float radius;
-    [SerializeField] protected Image rechargeImage;
+    public Image rechargeImage;
     [SerializeField] protected Image weaponImage;
 
     private int currentWeapon = -1;
@@ -131,6 +131,6 @@ public class WeaponManager : MonoBehaviour
 
         weaponImage.sprite = newWeapon.gameObject.GetComponent<SpriteRenderer>().sprite;
 
-        weapons[closestWeapon].GetComponent<Weapon>().rechargeImage = rechargeImage;
+        newWeapon.rechargeImage = rechargeImage;
     }
 }

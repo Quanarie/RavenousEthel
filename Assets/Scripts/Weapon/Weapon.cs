@@ -21,8 +21,6 @@ public class Weapon : MonoBehaviour
         GameManager.Instance.weaponStock.minValue = 0f;
         GameManager.Instance.weaponStock.maxValue = maxShootQuantity;
         GameManager.Instance.weaponStock.value = maxShootQuantity - currentShotQuantity;
-
-        print("updatestock" + currentShotQuantity);
     }
 
     public virtual void Shoot()

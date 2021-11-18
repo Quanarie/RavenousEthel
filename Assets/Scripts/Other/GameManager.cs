@@ -42,7 +42,6 @@ public class GameManager : MonoBehaviour
         }
 
         Instance = this;
-        LoadState();
 
         SceneManager.sceneLoaded += OnSceneLoaded;
         SceneManager.sceneLoaded += SaveState;
@@ -52,6 +51,8 @@ public class GameManager : MonoBehaviour
         playerHealth = Player.GetComponent<PlayerHealth>();
         playerHitBox = Player.GetComponent<CircleCollider2D>();
         weaponManager = Player.GetComponent<WeaponManager>();
+
+        LoadState();
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -95,24 +96,31 @@ public class GameManager : MonoBehaviour
         SetCurrentLevel(PlayerPrefs.GetInt("Level"));
 
         if (PlayerPrefs.GetInt("State") == 0)
+        {
             state = State.regular;
+        }
         else
-            state = State.mutated;
+        {
+            playerAttack.Mutate(null);
+            for (int i = 0; i < WeaponParent.childCount; i++)
+            {
+                Destroy(WeaponParent.GetChild(i));
+            }
+
+            for (int i = 0; i < PlayerPrefs.GetInt("WeaponCount"); i++)
+            {
+                Weapon weapon = Instantiate(weapons[PlayerPrefs.GetInt("Weapon" + i.ToString())], transform.position, transform.rotation, WeaponParent);
+                weapon.currentShotQuantity = PlayerPrefs.GetInt("WeaponShoots" + i.ToString());
+                weapon.transform.localPosition = Vector3.zero;
+                weapon.rechargeImage = weaponManager.rechargeImage;
+                weapon.UpdateWeaponStock();
+                playerAttack.weapon = weapon;
+            }
+        }
 
         playerHealth.currentHp = PlayerPrefs.GetFloat("Health");
 
         Player.transform.localScale = new Vector3(PlayerPrefs.GetFloat("Size"), PlayerPrefs.GetFloat("Size"), 0);
-
-        for (int i = 0; i < WeaponParent.childCount; i++)
-        {
-            Destroy(WeaponParent.GetChild(i));
-        }
-        
-        for (int i = 0; i < PlayerPrefs.GetInt("WeaponCount"); i++)
-        {
-            Weapon weapon = Instantiate(weapons[PlayerPrefs.GetInt("Weapon" + i.ToString())], transform.position, transform.rotation, WeaponParent);
-            weapon.currentShotQuantity = PlayerPrefs.GetInt("WeaponShoots" + i.ToString());
-        }
     }
 
     private int GetCurrentLevel()
