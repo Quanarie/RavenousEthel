@@ -105,8 +105,6 @@ public class PlayerAttack : MonoBehaviour
 
         OnMutation?.Invoke();
 
-        GameManager.Instance.state = GameManager.State.mutated;
-
         Instantiate(deadSlimePrefab, transform.position, Quaternion.identity);
 
         GameManager.Instance.playerAnimator.runtimeAnimatorController = mutatedController;

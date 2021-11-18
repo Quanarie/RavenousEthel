@@ -97,6 +97,8 @@ public class PlayerHealth : AliveCreature
         if (GameManager.Instance.state == GameManager.State.regular)
             currentHp = maxMonsterHp - (maxRegularHp - currentHp);
 
+        GameManager.Instance.state = GameManager.State.mutated;
+
         Heal(toHeal);
 
         UpdateHealth();
@@ -106,7 +108,7 @@ public class PlayerHealth : AliveCreature
     public void DeMutate()
     {
         maxHp = maxRegularHp;
-        currentHp = Mathf.Min(currentHp, maxRegularHp);
+        currentHp = maxHp = maxRegularHp;
 
         UpdateHealth();
         UpdateSize();
@@ -150,7 +152,6 @@ public class PlayerHealth : AliveCreature
         {
             GameManager.Instance.playerAttack.DeMutate();
             DeMutate();
-            currentHp = maxHp;
         }
     }
 }

@@ -143066,6 +143066,7 @@ MonoBehaviour:
   radius: 0.3
   rechargeImage: {fileID: 520924872}
   weaponImage: {fileID: 1633088735}
+  currentWeapon: 0
 --- !u!114 &1712012599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143330,7 +143331,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1734860587}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.62, y: -1.07, z: 0}
+  m_LocalPosition: {x: 11.41, y: -0.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -143349,6 +143350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Level2
+  shouldSave: 0
 --- !u!1 &1749885551
 GameObject:
   m_ObjectHideFlags: 0

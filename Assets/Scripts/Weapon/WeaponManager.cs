@@ -40,6 +40,9 @@ public class WeaponManager : MonoBehaviour
     {
         for (int i = 0; i < weapons.Count; i++)
         {
+            if (weapons[i] == null)
+                continue;
+
             weapons[i].transform.SetParent(null);
 
             Vector2 randomOffset = Random.insideUnitCircle / 3;
