@@ -12,7 +12,7 @@ public class WeaponManager : MonoBehaviour
     public Image rechargeImage;
     [SerializeField] protected Image weaponImage;
 
-    private int currentWeapon = -1;
+    public int currentWeapon = -1;
     private List<Weapon> weapons = new List<Weapon>();
 
     public void AddWeapon(Weapon weapon)
@@ -48,6 +48,19 @@ public class WeaponManager : MonoBehaviour
             weapons[i].transform.position += new Vector3(randomOffset.x, randomOffset.y, 0);
 
             weapons[i].gameObject.SetActive(true);
+        }
+
+        weapons = new List<Weapon>();
+        weaponImage.sprite = null;
+
+        currentWeapon = -1;
+    }
+
+    public void DeleteWeapons()
+    {
+        for (int i = 0; i < weapons.Count; i++)
+        {
+            Destroy(weapons[i].gameObject);
         }
 
         weapons = new List<Weapon>();

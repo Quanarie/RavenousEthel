@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject DontDestroyOnLoadContainer;
 
-    [HideInInspector] public bool[] levels = new bool[14];
+    public bool[] levels = new bool[14];
     public Weapon[] weapons = new Weapon[9];
 
     private void Awake()
@@ -44,23 +44,21 @@ public class GameManager : MonoBehaviour
         Instance = this;
 
         SceneManager.sceneLoaded += OnSceneLoaded;
-        SceneManager.sceneLoaded += SaveState;
 
         playerAnimator = Player.GetComponent<Animator>();
         playerAttack = Player.GetComponent<PlayerAttack>();
         playerHealth = Player.GetComponent<PlayerHealth>();
         playerHitBox = Player.GetComponent<CircleCollider2D>();
         weaponManager = Player.GetComponent<WeaponManager>();
-
-        LoadState();
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (SceneManager.GetActiveScene().name != "MainMenu")
-        {
-            DontDestroyOnLoadContainer.SetActive(true);
-        }
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+            return;
+
+        DontDestroyOnLoadContainer.SetActive(true);
+        LoadState();
 
         GameObject spawnPoint = GameObject.Find("Respawn");
 
@@ -70,7 +68,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SaveState(Scene scene, LoadSceneMode mode)
+    public void SaveState()
     {
         PlayerPrefs.SetInt("Level", GetCurrentLevel());
 
@@ -84,6 +82,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetFloat("Size", Player.transform.localScale.x);
 
         PlayerPrefs.SetInt("WeaponCount", WeaponParent.childCount);
+        PlayerPrefs.SetInt("CurrentWeapon", weaponManager.currentWeapon);
         for (int i = 0; i < WeaponParent.childCount; i++)
         {
             PlayerPrefs.SetInt("Weapon" + i.ToString(), WeaponParent.GetChild(i).GetComponent<Weapon>().index);
@@ -93,37 +92,52 @@ public class GameManager : MonoBehaviour
 
     public void LoadState()
     {
-        SetCurrentLevel(PlayerPrefs.GetInt("Level"));
+        SetCurrentLevel(PlayerPrefs.GetInt("Level", 0));
 
-        if (PlayerPrefs.GetInt("State") == 0)
+        if (PlayerPrefs.GetInt("State", 0) == 0)
         {
             state = State.regular;
+            playerAnimator.runtimeAnimatorController = playerAttack.regularController;
         }
         else
         {
-            playerAttack.Mutate(null);
+            state = State.mutated;
+            playerAnimator.runtimeAnimatorController = playerAttack.mutatedController;
             for (int i = 0; i < WeaponParent.childCount; i++)
             {
-                Destroy(WeaponParent.GetChild(i));
+                Destroy(WeaponParent.GetChild(i).gameObject);
             }
 
-            weaponManager.ClearWeapons();
+            weaponManager.DeleteWeapons();
 
-            for (int i = 0; i < PlayerPrefs.GetInt("WeaponCount"); i++)
+        
+            int currentWeapon = PlayerPrefs.GetInt("CurrentWeaponCount");
+            for (int i = 0; i < PlayerPrefs.GetInt("WeaponCount", 0); i++)
             {
                 Weapon weapon = Instantiate(weapons[PlayerPrefs.GetInt("Weapon" + i.ToString())], transform.position, transform.rotation, WeaponParent);
+
                 weapon.currentShotQuantity = PlayerPrefs.GetInt("WeaponShoots" + i.ToString());
                 weapon.transform.localPosition = Vector3.zero;
                 weapon.rechargeImage = weaponManager.rechargeImage;
+
                 weapon.UpdateWeaponStock();
                 weaponManager.AddWeapon(weapon);
-                playerAttack.weapon = weapon;
+
+                if (i == currentWeapon)
+                {
+                    playerAttack.weapon = weapon;
+                }
+                else
+                {
+                    weapon.gameObject.SetActive(false);
+                }
             }
         }
 
-        playerHealth.currentHp = PlayerPrefs.GetFloat("Health");
+        playerHealth.currentHp = PlayerPrefs.GetFloat("Health", playerHealth.maxRegularHp);
 
-        Player.transform.localScale = new Vector3(PlayerPrefs.GetFloat("Size"), PlayerPrefs.GetFloat("Size"), 0);
+        float size = PlayerPrefs.GetFloat("Size", 1f);
+        Player.transform.localScale = new Vector3(size, size, 0);
     }
 
     private int GetCurrentLevel()
@@ -135,7 +149,7 @@ public class GameManager : MonoBehaviour
                 levelsDone++;
         }
 
-        return levelsDone + 1;
+        return levelsDone;
     }
 
     private void SetCurrentLevel(int level)

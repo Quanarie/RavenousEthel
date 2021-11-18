@@ -20,7 +20,7 @@ public class PlayerHealth : AliveCreature
 
     private float prevTimeGotSmaller;
 
-    private float maxRegularHp;
+    public float maxRegularHp;
 
     [Header("Camera Shake")]
     private CameraShake cameraShakeComponent;

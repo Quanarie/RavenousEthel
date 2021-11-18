@@ -9,8 +9,8 @@ public class PlayerAttack : MonoBehaviour
     public static event Transformation OnMutation;
     public static event Transformation OnDemutation;
 
-    [SerializeField] private RuntimeAnimatorController regularController;
-    [SerializeField] private RuntimeAnimatorController mutatedController;
+    public RuntimeAnimatorController regularController;
+    public RuntimeAnimatorController mutatedController;
 
     [HideInInspector] public Weapon weapon;
     private WeaponManager weaponManager;
@@ -113,14 +113,9 @@ public class PlayerAttack : MonoBehaviour
         GameManager.Instance.playerAnimator.runtimeAnimatorController = mutatedController;
         GameManager.Instance.playerAnimator.SetTrigger("transform");
 
-        if (enemy != null)
-        {
-            GameManager.Instance.playerHealth.Mutate(enemy.GetComponent<EnemyHealth>().corpse.GetComponent<EnemyCorpse>().toHeal);
-            transform.position = enemy.transform.position;
-            Destroy(enemy);
-        }
-        else
-            GameManager.Instance.playerHealth.Mutate(0f);
+        GameManager.Instance.playerHealth.Mutate(enemy.GetComponent<EnemyHealth>().corpse.GetComponent<EnemyCorpse>().toHeal);
+        transform.position = enemy.transform.position;
+        Destroy(enemy);
 
         CircleCollider2D hitbox = GameManager.Instance.playerHitBox;
         hitbox.radius = 0.115f;

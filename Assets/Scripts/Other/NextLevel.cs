@@ -6,14 +6,22 @@ using UnityEngine;
 public class NextLevel : MonoBehaviour
 {
     [SerializeField] private string sceneName;
-    [SerializeField] private int doneLevelIndex;
+    private int doneLevelIndex;
+
+    private void Start()
+    {
+        doneLevelIndex = int.Parse(sceneName[sceneName.Length - 1].ToString()) - 2;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out PlayerHealth _))
         {
             SceneManager.LoadScene(sceneName);
-            GameManager.Instance.levels[doneLevelIndex] = true;
+            if (doneLevelIndex >= 0)
+                GameManager.Instance.levels[doneLevelIndex] = true;
+
+            GameManager.Instance.SaveState();
         }
     }
 }
