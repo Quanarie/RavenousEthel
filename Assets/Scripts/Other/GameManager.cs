@@ -107,6 +107,8 @@ public class GameManager : MonoBehaviour
                 Destroy(WeaponParent.GetChild(i));
             }
 
+            weaponManager.ClearWeapons();
+
             for (int i = 0; i < PlayerPrefs.GetInt("WeaponCount"); i++)
             {
                 Weapon weapon = Instantiate(weapons[PlayerPrefs.GetInt("Weapon" + i.ToString())], transform.position, transform.rotation, WeaponParent);
@@ -114,6 +116,7 @@ public class GameManager : MonoBehaviour
                 weapon.transform.localPosition = Vector3.zero;
                 weapon.rechargeImage = weaponManager.rechargeImage;
                 weapon.UpdateWeaponStock();
+                weaponManager.AddWeapon(weapon);
                 playerAttack.weapon = weapon;
             }
         }

@@ -15,6 +15,12 @@ public class WeaponManager : MonoBehaviour
     private int currentWeapon = -1;
     private List<Weapon> weapons = new List<Weapon>();
 
+    public void AddWeapon(Weapon weapon)
+    {
+        weapons.Add(weapon);
+        currentWeapon++;
+    }
+
     public void Break(Weapon weapon)
     {
         if (weapons.Count > 1)
