@@ -30,6 +30,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject DontDestroyOnLoadContainer;
 
+    [HideInInspector] public bool[] levels = new bool[14];
+    public Weapon[] weapons = new Weapon[9];
+
     private void Awake()
     {
         if (Instance != null)
@@ -39,8 +42,10 @@ public class GameManager : MonoBehaviour
         }
 
         Instance = this;
+        LoadState();
 
         SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneLoaded += SaveState;
 
         playerAnimator = Player.GetComponent<Animator>();
         playerAttack = Player.GetComponent<PlayerAttack>();
@@ -61,6 +66,75 @@ public class GameManager : MonoBehaviour
         if (spawnPoint != null)
         {
             Player.transform.position = spawnPoint.transform.position;
+        }
+    }
+
+    public void SaveState(Scene scene, LoadSceneMode mode)
+    {
+        PlayerPrefs.SetInt("Level", GetCurrentLevel());
+
+        if (state == State.regular)
+            PlayerPrefs.SetInt("State", 0);
+        else
+            PlayerPrefs.SetInt("State", 1);
+
+        PlayerPrefs.SetFloat("Health", playerHealth.currentHp);
+
+        PlayerPrefs.SetFloat("Size", Player.transform.localScale.x);
+
+        PlayerPrefs.SetInt("WeaponCount", WeaponParent.childCount);
+        for (int i = 0; i < WeaponParent.childCount; i++)
+        {
+            PlayerPrefs.SetInt("Weapon" + i.ToString(), WeaponParent.GetChild(i).GetComponent<Weapon>().index);
+            PlayerPrefs.SetInt("WeaponShoots" + i.ToString(), WeaponParent.GetChild(i).GetComponent<Weapon>().currentShotQuantity);
+        }
+    }
+
+    public void LoadState()
+    {
+        SetCurrentLevel(PlayerPrefs.GetInt("Level"));
+
+        if (PlayerPrefs.GetInt("State") == 0)
+            state = State.regular;
+        else
+            state = State.mutated;
+
+        playerHealth.currentHp = PlayerPrefs.GetFloat("Health");
+
+        Player.transform.localScale = new Vector3(PlayerPrefs.GetFloat("Size"), PlayerPrefs.GetFloat("Size"), 0);
+
+        for (int i = 0; i < WeaponParent.childCount; i++)
+        {
+            Destroy(WeaponParent.GetChild(i));
+        }
+        
+        for (int i = 0; i < PlayerPrefs.GetInt("WeaponCount"); i++)
+        {
+            Weapon weapon = Instantiate(weapons[PlayerPrefs.GetInt("Weapon" + i.ToString())], transform.position, transform.rotation, WeaponParent);
+            weapon.currentShotQuantity = PlayerPrefs.GetInt("WeaponShoots" + i.ToString());
+        }
+    }
+
+    private int GetCurrentLevel()
+    {
+        int levelsDone = 0;
+        foreach (bool isLevelDone in levels)
+        {
+            if (isLevelDone)
+                levelsDone++;
+        }
+
+        return levelsDone + 1;
+    }
+
+    private void SetCurrentLevel(int level)
+    {
+        for (int i = 0; i < levels.Length; i++)
+        {
+            if (i < level)
+            {
+                levels[i] = true;
+            }
         }
     }
 

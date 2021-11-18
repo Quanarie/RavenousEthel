@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void StartSavedGame()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Level" + PlayerPrefs.GetInt("Level"));
     }
 
     public void StartNewGame()
@@ -18,8 +18,12 @@ public class MainMenu : MonoBehaviour
         }
         else
         {
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.SetInt("TutorialStart", 1);
             SceneManager.LoadScene("Level1");
         }
+
+        
     }
 
     public void StartTutorial()
@@ -27,5 +31,4 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("TutorialStart", 1);
         SceneManager.LoadScene("Tutorial");
     }
-
 }

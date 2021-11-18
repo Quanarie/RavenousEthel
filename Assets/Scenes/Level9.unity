@@ -117576,6 +117576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: MainScene
+  doneLevelNumber: 8
 --- !u!1 &2080490753
 GameObject:
   m_ObjectHideFlags: 0

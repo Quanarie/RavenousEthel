@@ -121277,6 +121277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Level6
+  doneLevelNumber: 4
 --- !u!1001 &2002163799
 PrefabInstance:
   m_ObjectHideFlags: 0
