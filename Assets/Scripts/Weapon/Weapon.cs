@@ -68,11 +68,33 @@ public class Weapon : MonoBehaviour
 
         Transform enemyToAttack = GameManager.Instance.FindClosestEnemyInRange(range);
 
+        Vector3 weaponPos = transform.position;
+        Vector3 weaponDir = Vector3.zero;
+
         if (enemyToAttack != null)
         {
-            Vector3 weaponPos = transform.position;
-            Vector3 weaponDir = new Vector3(enemyToAttack.position.x - weaponPos.x, enemyToAttack.position.y - weaponPos.y + Projectile.offsetY, 0);
+            weaponPos = transform.position;
+            weaponDir = new Vector3(enemyToAttack.position.x - weaponPos.x, enemyToAttack.position.y - weaponPos.y + Projectile.offsetY, 0);
+        }
 
+        RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, weaponDir);
+
+        bool isWallBetweenPlayerAndEnemy = false;
+        foreach (RaycastHit2D hit in hits)
+        {
+            if (hit.collider.TryGetComponent(out EnemyHealth _))
+            {
+                break;
+            }
+
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
+            {
+                isWallBetweenPlayerAndEnemy = true;
+            }
+        }
+
+        if (!isWallBetweenPlayerAndEnemy && weaponDir.magnitude > 0)
+        {
             float angleBetweenEnemyAndWeapon = Mathf.Acos(weaponDir.x / weaponDir.magnitude) * 180 / Mathf.PI;
             if (enemyToAttack.position.y + Projectile.offsetY < transform.position.y) angleBetweenEnemyAndWeapon *= -1;
 
@@ -83,11 +105,11 @@ public class Weapon : MonoBehaviour
             else
                 transform.localScale = new Vector3(1, 1, 0);
         }
-        else
+        else 
         {
             Animator animator = GameManager.Instance.playerAnimator;
 
-            Vector3 weaponDir = new Vector3(animator.GetFloat("moveX"), animator.GetFloat("moveY"), 0);
+            weaponDir = new Vector3(animator.GetFloat("moveX"), animator.GetFloat("moveY"), 0);
 
             if (weaponDir.magnitude == 0)
                 return;

@@ -12,7 +12,7 @@ public class EnemyWeapon : MonoBehaviour
         Vector3 playerPos = GameManager.Instance.Player.position;
 
         Projectile spawnedProjectile = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
-        spawnedProjectile.direction = new Vector3(playerPos.x - transform.position.x, playerPos.y - transform.position.y, 0);
+        spawnedProjectile.direction = new Vector3(playerPos.x - transform.position.x, playerPos.y - transform.position.y + Projectile.offsetY, 0);
     }
 
     private void Update()
