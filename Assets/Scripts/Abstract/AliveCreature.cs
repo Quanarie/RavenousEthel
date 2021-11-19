@@ -6,7 +6,7 @@ public class AliveCreature : MonoBehaviour
 {
     [SerializeField] protected float maxHp;
 
-    public float currentHp;
+    [HideInInspector] public float currentHp;
 
     private Movement movementScript;
     protected Animator animator;

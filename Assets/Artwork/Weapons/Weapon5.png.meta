@@ -5,6 +5,9 @@ TextureImporter:
   - first:
       213: 3999879021017648358
     second: Weapon5_0
+  - first:
+      213: -6716245567036418798
+    second: Weapon5_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -36,7 +39,7 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
+    aniso: 1
     mipBias: -100
     wrapU: 1
     wrapV: 1
@@ -121,6 +124,27 @@ TextureImporter:
       name: Weapon5_0
       rect:
         serializedVersion: 2
+        x: 3
+        y: 0
+        width: 25
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ec4b4007cc628730800000000000000
+      internalID: 3999879021017648358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon5_1
+      rect:
+        serializedVersion: 2
         x: 35
         y: 5
         width: 7
@@ -132,8 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ec4b4007cc628730800000000000000
-      internalID: 3999879021017648358
+      spriteID: 2159080bd3a1bc2a0800000000000000
+      internalID: -6716245567036418798
       vertices: []
       indices: 
       edges: []

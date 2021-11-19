@@ -13,7 +13,7 @@ public class Weapon : MonoBehaviour
 
     protected float lastShootTime;
     protected Vector3 weaponDirectionLast;
-    public int currentShotQuantity;
+    [HideInInspector] public int currentShotQuantity;
     public int index;
 
     public void UpdateWeaponStock()
