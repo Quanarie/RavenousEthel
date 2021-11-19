@@ -10,6 +10,8 @@ public abstract class PickupableObject : MonoBehaviour
     private float argumentForSin;
     protected GameObject arrow;
 
+    private bool isPickedUp;
+
     protected virtual void Start()
     {
         WeaponManager.OnPickupClicked += TryPickup;
@@ -20,6 +22,9 @@ public abstract class PickupableObject : MonoBehaviour
 
     private void Update()
     {
+        if (isPickedUp)
+            return;
+
         if (Vector3.Distance(GameManager.Instance.Player.position, transform.position) <= pickupDistance)
         {
             if (!arrow.activeSelf)
@@ -41,6 +46,7 @@ public abstract class PickupableObject : MonoBehaviour
         if (Vector3.Distance(GameManager.Instance.Player.position, transform.position) <= pickupDistance)
         {
             PerformAction();
+            isPickedUp = true;
         }
     }
 

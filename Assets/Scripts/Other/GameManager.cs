@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public Animator playerAnimator;
     [HideInInspector] public PlayerAttack playerAttack;
     [HideInInspector] public PlayerHealth playerHealth;
+    [HideInInspector] public PlayerMovement playerMovement;
 
     [HideInInspector] public CircleCollider2D playerHitBox;
 
@@ -48,6 +49,7 @@ public class GameManager : MonoBehaviour
         playerAnimator = Player.GetComponent<Animator>();
         playerAttack = Player.GetComponent<PlayerAttack>();
         playerHealth = Player.GetComponent<PlayerHealth>();
+        playerMovement = Player.GetComponent<PlayerMovement>();
         playerHitBox = Player.GetComponent<CircleCollider2D>();
         weaponManager = Player.GetComponent<WeaponManager>();
     }

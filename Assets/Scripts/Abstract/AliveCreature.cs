@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AliveCreature : MonoBehaviour
 {
-    [SerializeField] protected float maxHp;
+    public float maxHp;
 
     [HideInInspector] public float currentHp;
 

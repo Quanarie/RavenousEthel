@@ -21,6 +21,7 @@ public class PlayerHealth : AliveCreature
     private float prevTimeGotSmaller;
 
     public float maxRegularHp;
+    public float upgradeHealth;
 
     [Header("Camera Shake")]
     private CameraShake cameraShakeComponent;
@@ -44,7 +45,20 @@ public class PlayerHealth : AliveCreature
 
     public override void ReceiveDamage(float damageAmount)
     {
-        base.ReceiveDamage(damageAmount);
+        if (upgradeHealth > 0f)
+        {
+            upgradeHealth -= damageAmount;
+            GameManager.Instance.floatingTextManager.Show("-" + damageAmount.ToString(), 15, Color.blue, transform.position, new Vector3(70, 80, 0), 0.5f);
+        }
+
+        if (upgradeHealth < 0f)
+        {
+            base.ReceiveDamage(-upgradeHealth);
+            upgradeHealth = 0f;
+        }
+
+        if (upgradeHealth == 0)
+            base.ReceiveDamage(damageAmount);
 
         UpdateHealth();
 
@@ -77,7 +91,7 @@ public class PlayerHealth : AliveCreature
         UpdateHealth();
     }
 
-    private void UpdateHealth()
+    public void UpdateHealth()
     {
         healhtSlider.maxValue = maxHp;
         healhtSlider.value = currentHp;

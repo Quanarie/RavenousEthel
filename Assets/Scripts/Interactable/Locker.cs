@@ -15,13 +15,13 @@ public class Locker : PickupableObject
     {
         base.Start();
 
-        offsetY = 0.3f;
-
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     protected override void PerformAction()
     {
+        base.PerformAction();
+
         spriteRenderer.sprite = opened;
         Instantiate(insideObject, spawnPoint.position, transform.rotation);
 
