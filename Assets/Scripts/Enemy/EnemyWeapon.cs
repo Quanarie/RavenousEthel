@@ -28,7 +28,7 @@ public class EnemyWeapon : MonoBehaviour
         Vector3 weaponDir = new Vector3(playerPos.x - weaponPos.x, playerPos.y - weaponPos.y + Projectile.offsetY, 0);
 
         float angleBetweenEnemyAndWeapon = Mathf.Acos(weaponDir.x / weaponDir.magnitude) * 180 / Mathf.PI;
-        if (playerPos.y < transform.position.y) angleBetweenEnemyAndWeapon *= -1;
+        if (playerPos.y + Projectile.offsetY < transform.position.y) angleBetweenEnemyAndWeapon *= -1;
 
         transform.rotation = Quaternion.Euler(0f, 0f, angleBetweenEnemyAndWeapon);
     }

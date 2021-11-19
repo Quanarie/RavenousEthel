@@ -16,7 +16,6 @@ public class EnemyHealth : AliveCreature
         }
 
         animator.SetTrigger("death");
-        animator.SetBool("isDead", true);
 
         GetComponent<EnemyMovement>().enabled = false;
 

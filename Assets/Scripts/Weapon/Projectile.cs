@@ -25,7 +25,7 @@ public class Projectile : MonoBehaviour
 
     protected virtual void Update()
     {
-        transform.Translate(new Vector3(direction.x, direction.y + offsetY, 0).normalized * speed * Time.deltaTime, Space.World);
+        transform.Translate(new Vector3(direction.x, direction.y, 0).normalized * speed * Time.deltaTime, Space.World);
 
         Destroy(gameObject, lifetime);
     }
