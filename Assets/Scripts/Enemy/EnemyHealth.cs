@@ -30,7 +30,6 @@ public class EnemyHealth : AliveCreature
             Weapon weapon = Instantiate(dropWeapon, transform.position, transform.rotation);
 
             weapon.currentShotQuantity = Random.Range(0, weapon.maxShootQuantity);
-            print("enemy"+ weapon.currentShotQuantity);
 
             Vector2 randomOffset = Random.insideUnitCircle / 3;
             weapon.transform.position += new Vector3(randomOffset.x, randomOffset.y, 0);

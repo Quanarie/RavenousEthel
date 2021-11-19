@@ -11,13 +11,15 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] private float radius;
     public Image rechargeImage;
     [SerializeField] protected Image weaponImage;
+    [SerializeField] protected Sprite weaponSpriteStandart;
 
-    public int currentWeapon = 0;
+    [HideInInspector] public int currentWeapon = 0;
     private List<Weapon> weapons = new List<Weapon>();
 
     private void Start()
     {
         weapons.Add(null);
+        weaponImage.sprite = weaponSpriteStandart;
     }
 
     public void AddWeapon(Weapon weapon)
@@ -53,7 +55,7 @@ public class WeaponManager : MonoBehaviour
 
         weapons = new List<Weapon>();
         weapons.Add(null);
-        weaponImage.sprite = null;
+        weaponImage.sprite = weaponSpriteStandart;
 
         currentWeapon = 0;
     }
@@ -68,7 +70,7 @@ public class WeaponManager : MonoBehaviour
 
         weapons = new List<Weapon>();
         weapons.Add(null);
-        weaponImage.sprite = null;
+        weaponImage.sprite = weaponSpriteStandart;
 
         currentWeapon = 0;
     }
@@ -82,7 +84,7 @@ public class WeaponManager : MonoBehaviour
         if (currentWeapon >= weapons.Count)
         {
             currentWeapon = 0;
-            weaponImage.sprite = null;
+            weaponImage.sprite = weaponSpriteStandart;
         }
 
         if (weapons[currentWeapon] != null)
