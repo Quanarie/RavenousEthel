@@ -32,11 +32,13 @@ public class Weapon : MonoBehaviour
             Projectile spawnedProjectile = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
             Vector3 weaponPos = transform.position;
 
+            Vector3 weaponDir = Vector3.zero;
             if (enemyToAttack != null)
             {
-                spawnedProjectile.direction = new Vector3(enemyToAttack.position.x - weaponPos.x, enemyToAttack.position.y - weaponPos.y + Projectile.offsetY, 0);
+                weaponDir = new Vector3(enemyToAttack.position.x - weaponPos.x, enemyToAttack.position.y - weaponPos.y + Projectile.offsetY, 0);
             }
-            else
+
+            if (IsThereAWallOnTheWay(weaponDir))
             {
                 spawnedProjectile.direction = new Vector3(weaponDirectionLast.x, weaponDirectionLast.y, 0);
 
@@ -44,6 +46,10 @@ public class Weapon : MonoBehaviour
                 {
                     spawnedProjectile.direction = Vector3.right;
                 }
+            }
+            else
+            {
+                spawnedProjectile.direction = weaponDir;
             }
 
             lastShootTime = Time.time;
@@ -77,21 +83,7 @@ public class Weapon : MonoBehaviour
             weaponDir = new Vector3(enemyToAttack.position.x - weaponPos.x, enemyToAttack.position.y - weaponPos.y + Projectile.offsetY, 0);
         }
 
-        RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, weaponDir);
-
-        bool isWallBetweenPlayerAndEnemy = false;
-        foreach (RaycastHit2D hit in hits)
-        {
-            if (hit.collider.TryGetComponent(out EnemyHealth _))
-            {
-                break;
-            }
-
-            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
-            {
-                isWallBetweenPlayerAndEnemy = true;
-            }
-        }
+        bool isWallBetweenPlayerAndEnemy = IsThereAWallOnTheWay(weaponDir);
 
         if (!isWallBetweenPlayerAndEnemy && weaponDir.magnitude > 0)
         {
@@ -125,5 +117,26 @@ public class Weapon : MonoBehaviour
             else
                 transform.localScale = new Vector3(1, 1, 0);
         }
+    }
+
+    private bool IsThereAWallOnTheWay(Vector3 weaponDir)
+    {
+        RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, weaponDir);
+
+        bool isWallBetweenPlayerAndEnemy = false;
+        foreach (RaycastHit2D hit in hits)
+        {
+            if (hit.collider.TryGetComponent(out EnemyHealth _))
+            {
+                break;
+            }
+
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
+            {
+                isWallBetweenPlayerAndEnemy = true;
+            }
+        }
+
+        return isWallBetweenPlayerAndEnemy;
     }
 }
