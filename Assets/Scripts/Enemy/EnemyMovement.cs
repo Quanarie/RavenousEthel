@@ -16,7 +16,7 @@ public class EnemyMovement : Movement
 
     private void FixedUpdate()
     {
-        if (Vector3.Distance(GameManager.Instance.Player.position, transform.position) <= enemyAttack.attackDistance)
+        if (Vector3.Distance(GameManager.Instance.Player.position, transform.position) <= enemyAttack.attackDistance || IsThereAWallOnTheWayToPlayer(transform.position))
         {
             UpdateMotor(Vector3.zero);
             return;
@@ -48,5 +48,28 @@ public class EnemyMovement : Movement
         yield return new WaitForSeconds(stunTime);
         enemyAttack.enabled = true;
         isStunned = false;
+    }
+
+    public static bool IsThereAWallOnTheWayToPlayer(Vector3 selfPos)
+    {
+        Vector3 playerPos = GameManager.Instance.Player.position;
+
+        RaycastHit2D[] hits = Physics2D.RaycastAll(selfPos, new Vector3(playerPos.x - selfPos.x, playerPos.y - selfPos.y, 0f));
+
+        bool isWallBetweenPlayerAndEnemy = false;
+        foreach (RaycastHit2D hit in hits)
+        {
+            if (hit.collider.TryGetComponent(out PlayerHealth _))
+            {
+                break;
+            }
+
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
+            {
+                isWallBetweenPlayerAndEnemy = true;
+            }
+        }
+
+        return isWallBetweenPlayerAndEnemy;
     }
 }

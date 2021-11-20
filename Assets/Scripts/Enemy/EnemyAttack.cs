@@ -12,7 +12,7 @@ public class EnemyAttack : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (Vector3.Distance(GameManager.Instance.Player.position, transform.position) <= attackDistance)
+        if (Vector3.Distance(GameManager.Instance.Player.position, transform.position) <= attackDistance && !EnemyMovement.IsThereAWallOnTheWayToPlayer(transform.position))
         {
             if (Time.time - lastAttackTime < rechargeTime)
                 return;
