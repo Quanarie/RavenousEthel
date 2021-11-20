@@ -18,9 +18,6 @@ public class Projectile : MonoBehaviour
 
     protected virtual void Start()
     {
-        //float angleBetweenEnemyAndWeapon = Mathf.Acos(direction.x / direction.magnitude) * 180 / Mathf.PI;
-        //if (direction.y < transform.position.y) angleBetweenEnemyAndWeapon *= -1;
-
         transform.localRotation = Quaternion.Euler(0f, 0f, angleBetweenEnemyAndWeapon);
     }
 

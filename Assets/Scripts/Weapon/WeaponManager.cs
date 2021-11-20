@@ -32,7 +32,7 @@ public class WeaponManager : MonoBehaviour
     {
         GameManager.Instance.weaponStock.value = 0;
         currentWeapon = 0;
-        weaponImage.sprite = null;
+        weaponImage.sprite = weaponSpriteStandart;
 
         weapons.Remove(weapon);
         Destroy(weapon.gameObject);

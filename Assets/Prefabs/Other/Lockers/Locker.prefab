@@ -114,7 +114,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupDistance: 0.5
   offsetY: 0.2
-  insideObject: {fileID: 3220945507767099502, guid: 0a28c235fd8ecf74d8998eadaee5967d, type: 3}
+  insideObject: {fileID: 8205730870124094524, guid: 88c2843eddf03a1499d7522d56b20797, type: 3}
   insideSpawnPoint: {fileID: 844776686}
   outsideSpawnPoint: {fileID: 1190986107626237782}
   opened: {fileID: -660011976924896280, guid: 0b2bd2ba2446ce6479e4fa39ee35b6d2, type: 3}

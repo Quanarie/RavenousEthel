@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     public GameObject DontDestroyOnLoadContainer;
 
     public bool[] levels = new bool[14];
-    public Weapon[] weapons = new Weapon[9];
+    public Weapon[] weapons;
 
     private void Awake()
     {
