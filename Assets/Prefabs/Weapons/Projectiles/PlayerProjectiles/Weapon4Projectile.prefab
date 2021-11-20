@@ -148,5 +148,5 @@ MonoBehaviour:
   pushForce: 3
   stunTime: 1
   speed: 1
-  lifetime: 2
+  lifetime: 7
   direction: {x: 0, y: 0, z: 0}

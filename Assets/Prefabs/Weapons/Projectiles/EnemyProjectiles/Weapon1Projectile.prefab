@@ -147,6 +147,6 @@ MonoBehaviour:
   damageAmount: 1
   pushForce: 1
   stunTime: 0
-  speed: 0.1
-  lifetime: 10
+  speed: 0.7
+  lifetime: 7
   direction: {x: 0, y: 0, z: 0}

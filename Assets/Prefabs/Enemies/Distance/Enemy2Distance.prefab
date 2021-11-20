@@ -161,7 +161,7 @@ MonoBehaviour:
   currentHp: 0
   deathClip: {fileID: 7400000, guid: bdcbd79f6641ce24a9ea354dd0c162e2, type: 2}
   dropWeapon: {fileID: 3220945507767099503, guid: 557ffacbf35f80a4cb6e675edb748c49, type: 3}
-  corpse: {fileID: 345898005979158083, guid: 9db7320f966abb2469e284394cb5f96e, type: 3}
+  corpse: {fileID: 345898005979158083, guid: 33afdd042f78c65418c3eaa47519ee68, type: 3}
 --- !u!114 &1407280010274751151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d165ef582f9e114ea4120b1a6bc5e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ySpeed: 4
+  ySpeed: 0.4
   xSpeed: 0.55
   pushRecoverySpeed: 0
   pushDirection: {x: 0, y: 0, z: 0}
