@@ -96,6 +96,7 @@ public class GameManager : MonoBehaviour
     {
         SetCurrentLevel(PlayerPrefs.GetInt("Level", 0));
 
+        weaponManager.DeleteWeapons();
         if (PlayerPrefs.GetInt("State", 0) == 0)
         {
             state = State.regular;
@@ -105,14 +106,7 @@ public class GameManager : MonoBehaviour
         {
             state = State.mutated;
             playerAnimator.runtimeAnimatorController = playerAttack.mutatedController;
-            for (int i = 0; i < WeaponParent.childCount; i++)
-            {
-                Destroy(WeaponParent.GetChild(i).gameObject);
-            }
 
-            weaponManager.DeleteWeapons();
-
-        
             int currentWeapon = PlayerPrefs.GetInt("CurrentWeaponCount");
             for (int i = 0; i < PlayerPrefs.GetInt("WeaponCount", 0); i++)
             {

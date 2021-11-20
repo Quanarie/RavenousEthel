@@ -24,6 +24,24 @@ public class MainMenu : MonoBehaviour
                 continue;
 
             lvlButtonText.color = Color.green;
+            if (i == 1)
+            {
+                levelButton.onClick.AddListener(
+                () =>
+                {
+                    if (PlayerPrefs.GetInt("Tutorial", 0) == 0)
+                    {
+                        SceneManager.LoadScene("Tutorial");
+                        PlayerPrefs.SetInt("Tutorial", 1);
+                    }
+                    else
+                    {
+                        SceneManager.LoadScene("Level" + lvlButtonText.text);
+                    }
+                });
+
+                continue;
+            }
 
             levelButton.onClick.AddListener(
             () =>
@@ -46,21 +64,23 @@ public class MainMenu : MonoBehaviour
 
     public void StartNewGame()
     {
-        PlayerPrefs.DeleteAll();
-        if (PlayerPrefs.GetInt("TutorialStart", 0) == 0)
+        if (PlayerPrefs.GetInt("Tutorial") == 1)
         {
-            StartTutorial();
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.SetInt("Tutorial", 1);
+            SceneManager.LoadScene("Level1");
         }
         else
         {
-            PlayerPrefs.SetInt("TutorialStart", 1);
-            SceneManager.LoadScene("Level1");
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.SetInt("Tutorial", 1);
+            SceneManager.LoadScene("Tutorial");
         }
     }
 
     public void StartTutorial()
     {
-        PlayerPrefs.SetInt("TutorialStart", 1);
+        PlayerPrefs.SetInt("Tutorial", 1);
         SceneManager.LoadScene("Tutorial");
     }
 }
