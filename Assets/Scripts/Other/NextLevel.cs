@@ -6,7 +6,6 @@ using UnityEngine;
 public class NextLevel : MonoBehaviour
 {
     [SerializeField] private string sceneName;
-    [SerializeField] private bool shouldSave;
     private int doneLevelIndex;
 
     private void Start()

@@ -835,27 +835,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy3-Sheet_33
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 127
-        width: 7
-        height: 4
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db56ae014eb9df080800000000000000
-      internalID: -9151987463908334147
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Enemy3-Sheet_34
       rect:
         serializedVersion: 2
