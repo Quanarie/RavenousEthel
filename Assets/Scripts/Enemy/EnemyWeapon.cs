@@ -13,6 +13,7 @@ public class EnemyWeapon : MonoBehaviour
 
         Projectile spawnedProjectile = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
         spawnedProjectile.direction = new Vector3(playerPos.x - transform.position.x, playerPos.y - transform.position.y + Projectile.offsetY, 0);
+        spawnedProjectile.angleBetweenEnemyAndWeapon = transform.localRotation.eulerAngles.z;
     }
 
     private void Update()
