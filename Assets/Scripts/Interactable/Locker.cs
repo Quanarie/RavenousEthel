@@ -5,7 +5,8 @@ using UnityEngine;
 public class Locker : PickupableObject
 {
     [SerializeField] private GameObject insideObject;
-    [SerializeField] private Transform spawnPoint;
+    [SerializeField] private Transform insideSpawnPoint;
+    [SerializeField] private Transform outsideSpawnPoint;
     [SerializeField] private Sprite opened;
     [SerializeField] private Sprite closed;
 
@@ -23,7 +24,12 @@ public class Locker : PickupableObject
         base.PerformAction();
 
         spriteRenderer.sprite = opened;
-        Instantiate(insideObject, spawnPoint.position, transform.rotation);
+        GameObject insideObj = Instantiate(insideObject, insideSpawnPoint.position, transform.rotation);
+
+        if (insideObject.TryGetComponent(out Weapon _))
+        {
+            insideObj.transform.position = outsideSpawnPoint.position;
+        }
 
         Destroy(arrow);
         Destroy(this);

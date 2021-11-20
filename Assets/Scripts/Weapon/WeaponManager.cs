@@ -156,6 +156,9 @@ public class WeaponManager : MonoBehaviour
 
         weaponImage.sprite = newWeapon.gameObject.GetComponent<SpriteRenderer>().sprite;
 
+        newWeapon.gameObject.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+        newWeapon.gameObject.transform.localScale = new Vector3(1, 1, 0);
+
         newWeapon.rechargeImage = rechargeImage;
     }
 }

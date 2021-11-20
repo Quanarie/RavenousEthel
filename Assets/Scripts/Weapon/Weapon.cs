@@ -16,55 +16,6 @@ public class Weapon : MonoBehaviour
     [HideInInspector] public int currentShotQuantity;
     public int index;
 
-    public void UpdateWeaponStock()
-    {
-        GameManager.Instance.weaponStock.minValue = 0f;
-        GameManager.Instance.weaponStock.maxValue = maxShootQuantity;
-        GameManager.Instance.weaponStock.value = maxShootQuantity - currentShotQuantity;
-    }
-
-    public virtual void Shoot()
-    {
-        if (Time.time - lastShootTime >= rechargeTime)
-        {
-            Transform enemyToAttack = GameManager.Instance.FindClosestEnemyInRange(range);
-
-            Projectile spawnedProjectile = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
-            Vector3 weaponPos = transform.position;
-
-            Vector3 weaponDir = Vector3.zero;
-            if (enemyToAttack != null)
-            {
-                weaponDir = new Vector3(enemyToAttack.position.x - weaponPos.x, enemyToAttack.position.y - weaponPos.y + Projectile.offsetY, 0);
-            }
-
-            if (IsThereAWallOnTheWay(weaponDir) || weaponDir.magnitude == 0)
-            {
-                spawnedProjectile.direction = new Vector3(weaponDirectionLast.x, weaponDirectionLast.y, 0);
-
-                if (weaponDirectionLast.magnitude == 0)
-                {
-                    spawnedProjectile.direction = Vector3.right;
-                }
-            }
-            else if (weaponDir.magnitude != 0)
-            {
-                spawnedProjectile.direction = weaponDir;
-            }
-
-            lastShootTime = Time.time;
-
-            currentShotQuantity++;
-            if (currentShotQuantity >= maxShootQuantity)
-            {
-                GameManager.Instance.weaponManager.Break(this);
-                rechargeImage.fillAmount = 0f;
-                return;
-            }
-            UpdateWeaponStock();
-        }
-    }
-
     protected virtual void Update()
     {
         if (transform.parent != GameManager.Instance.WeaponParent)
@@ -79,16 +30,15 @@ public class Weapon : MonoBehaviour
 
         if (enemyToAttack != null)
         {
-            weaponPos = transform.position;
             weaponDir = new Vector3(enemyToAttack.position.x - weaponPos.x, enemyToAttack.position.y - weaponPos.y + Projectile.offsetY, 0);
         }
 
         bool isWallBetweenPlayerAndEnemy = IsThereAWallOnTheWay(weaponDir);
 
-        if (!isWallBetweenPlayerAndEnemy && weaponDir.magnitude > 0)
+        if (!isWallBetweenPlayerAndEnemy && enemyToAttack != null)
         {
             float angleBetweenEnemyAndWeapon = Mathf.Acos(weaponDir.x / weaponDir.magnitude) * 180 / Mathf.PI;
-            if (enemyToAttack.position.y + Projectile.offsetY < transform.position.y) angleBetweenEnemyAndWeapon *= -1;
+            if (enemyToAttack.position.y + Projectile.offsetY < weaponPos.y) angleBetweenEnemyAndWeapon *= -1;
 
             transform.rotation = Quaternion.Euler(0f, 0f, angleBetweenEnemyAndWeapon);
 
@@ -99,12 +49,14 @@ public class Weapon : MonoBehaviour
         }
         else
         {
-            Animator animator = GameManager.Instance.playerAnimator;
+            float inputX = GameManager.Instance.Joystick.Horizontal;
+            float inputY = GameManager.Instance.Joystick.Vertical;
 
-            weaponDir = new Vector3(animator.GetFloat("moveX"), animator.GetFloat("moveY"), 0);
+            weaponDir = new Vector3(inputX, inputY, 0);
 
             if (weaponDir.magnitude == 0)
                 return;
+
             weaponDirectionLast = weaponDir;
 
             float angleBetweenWalkDirectionAndWeapon = Mathf.Acos(weaponDir.x / weaponDir.magnitude) * 180 / Mathf.PI;
@@ -117,6 +69,59 @@ public class Weapon : MonoBehaviour
             else
                 transform.localScale = new Vector3(1, 1, 0);
         }
+    }
+
+    public virtual void Shoot()
+    {
+        if (Time.time - lastShootTime < rechargeTime)
+            return;
+
+        Transform enemyToAttack = GameManager.Instance.FindClosestEnemyInRange(range);
+
+        Projectile spawnedProjectile = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
+        Vector3 weaponPos = transform.position;
+
+        Vector3 weaponDir = Vector3.zero;
+        if (enemyToAttack != null)
+        {
+            weaponDir = new Vector3(enemyToAttack.position.x - weaponPos.x, enemyToAttack.position.y - weaponPos.y + Projectile.offsetY, 0);
+        }
+
+        if (!IsThereAWallOnTheWay(weaponDir) && enemyToAttack != null)
+        {
+            spawnedProjectile.direction = weaponDir;
+            spawnedProjectile.angleBetweenEnemyAndWeapon = transform.localRotation.eulerAngles.z;
+        }
+        else
+        {
+            spawnedProjectile.direction = new Vector3(weaponDirectionLast.x, weaponDirectionLast.y, 0);
+            spawnedProjectile.angleBetweenEnemyAndWeapon = transform.localRotation.eulerAngles.z;
+
+            if (weaponDirectionLast.magnitude == 0)
+            {
+                spawnedProjectile.direction = Vector3.right;
+                spawnedProjectile.angleBetweenEnemyAndWeapon = transform.localRotation.eulerAngles.z;
+            }
+        }
+
+        lastShootTime = Time.time;
+
+        currentShotQuantity++;
+        if (currentShotQuantity >= maxShootQuantity)
+        {
+            GameManager.Instance.weaponManager.Break(this);
+            rechargeImage.fillAmount = 0f;
+            return;
+        }
+
+        UpdateWeaponStock();
+    }
+
+    public void UpdateWeaponStock()
+    {
+        GameManager.Instance.weaponStock.minValue = 0f;
+        GameManager.Instance.weaponStock.maxValue = maxShootQuantity;
+        GameManager.Instance.weaponStock.value = maxShootQuantity - currentShotQuantity;
     }
 
     private bool IsThereAWallOnTheWay(Vector3 weaponDir)

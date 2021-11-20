@@ -11,14 +11,15 @@ public class Projectile : MonoBehaviour
     [SerializeField] protected float lifetime;
 
     [HideInInspector] public Vector3 direction;
+    [HideInInspector] public float angleBetweenEnemyAndWeapon;
     public static float offsetY = 0.175f;
 
     private EnemyHealth enemyToAttack;
 
     protected virtual void Start()
     {
-        float angleBetweenEnemyAndWeapon = Mathf.Acos(direction.x / direction.magnitude) * 180 / Mathf.PI;
-        if (direction.y < transform.position.y) angleBetweenEnemyAndWeapon *= -1;
+        //float angleBetweenEnemyAndWeapon = Mathf.Acos(direction.x / direction.magnitude) * 180 / Mathf.PI;
+        //if (direction.y < transform.position.y) angleBetweenEnemyAndWeapon *= -1;
 
         transform.localRotation = Quaternion.Euler(0f, 0f, angleBetweenEnemyAndWeapon);
     }
