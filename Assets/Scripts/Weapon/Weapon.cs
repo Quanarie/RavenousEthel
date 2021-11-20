@@ -38,7 +38,7 @@ public class Weapon : MonoBehaviour
                 weaponDir = new Vector3(enemyToAttack.position.x - weaponPos.x, enemyToAttack.position.y - weaponPos.y + Projectile.offsetY, 0);
             }
 
-            if (IsThereAWallOnTheWay(weaponDir))
+            if (IsThereAWallOnTheWay(weaponDir) || weaponDir.magnitude == 0)
             {
                 spawnedProjectile.direction = new Vector3(weaponDirectionLast.x, weaponDirectionLast.y, 0);
 
@@ -47,7 +47,7 @@ public class Weapon : MonoBehaviour
                     spawnedProjectile.direction = Vector3.right;
                 }
             }
-            else
+            else if (weaponDir.magnitude != 0)
             {
                 spawnedProjectile.direction = weaponDir;
             }
@@ -97,7 +97,7 @@ public class Weapon : MonoBehaviour
             else
                 transform.localScale = new Vector3(1, 1, 0);
         }
-        else 
+        else
         {
             Animator animator = GameManager.Instance.playerAnimator;
 
