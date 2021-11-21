@@ -31,6 +31,7 @@ public class Locker : PickupableObject
             insideObj.transform.position = outsideSpawnPoint.position;
         }
 
+
         Destroy(arrow);
         Destroy(this);
     }

@@ -128,4 +128,4 @@ MonoBehaviour:
   maxShootQuantity: 20
   rechargeImage: {fileID: 0}
   currentShotQuantity: 0
-  index: 1
+  index: 8
