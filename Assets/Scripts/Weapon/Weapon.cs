@@ -15,14 +15,14 @@ public class Weapon : MonoBehaviour
     protected Vector3 weaponDirectionLast;
     [HideInInspector] public int currentShotQuantity;
     public int index;
+    [SerializeField] protected string weaponSoundName;
 
-    private AudioSource audioSource;
-
-    private void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
-
+    [SerializeField] private float damageAmount;
+    [SerializeField] private float pushForce;
+    [SerializeField] private float stunTime;
+    [SerializeField] private float speed;
+    [SerializeField] private float lifetime;
+    [SerializeField] private Sprite projectileSprite;
 
     protected virtual void Update()
     {
@@ -84,11 +84,12 @@ public class Weapon : MonoBehaviour
         if (Time.time - lastShootTime < rechargeTime)
             return;
 
-        audioSource.Play();
+        GameManager.Instance.audioManager.Play(weaponSoundName);
 
         Transform enemyToAttack = GameManager.Instance.FindClosestEnemyInRange(range);
 
         Projectile spawnedProjectile = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
+        spawnedProjectile.Construct(damageAmount, pushForce, stunTime, speed, lifetime, projectileSprite);
         Vector3 weaponPos = transform.position;
 
         Vector3 weaponDir = Vector3.zero;

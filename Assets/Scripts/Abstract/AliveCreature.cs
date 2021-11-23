@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class AliveCreature : MonoBehaviour
 {
-    [SerializeField] private AudioClip damageAudio;
-    [SerializeField] private AudioClip deathAudio;
+    [SerializeField] private string damageAudioName;
+    [SerializeField] private string deathAudioName;
     public float maxHp;
 
     [HideInInspector] public float currentHp;
 
     private Movement movementScript;
     protected Animator animator;
-    private AudioSource audioSource;
 
     protected virtual void Start()
     {
@@ -20,7 +19,6 @@ public class AliveCreature : MonoBehaviour
 
         movementScript = GetComponent<Movement>();
         animator = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
     }
 
     public virtual void ReceiveDamage(float damageAmount)
@@ -38,7 +36,7 @@ public class AliveCreature : MonoBehaviour
 
         animator.SetTrigger("damage");
 
-        audioSource.PlayOneShot(damageAudio);
+        //GameManager.Instance.audioManager.Play(damageAudioName);
     }
 
     public virtual void ReceiveDamage(float damageAmount, Vector3 pushDirection, float stunTime)
@@ -52,6 +50,6 @@ public class AliveCreature : MonoBehaviour
 
     public virtual void Death()
     {
-        audioSource.PlayOneShot(deathAudio);
+        GameManager.Instance.audioManager.Play(deathAudioName);
     }
 }

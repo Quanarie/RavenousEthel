@@ -1,5 +1,99 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &272035446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 272035447}
+  - component: {fileID: 272035448}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &272035447
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272035446}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7835769711448552039}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &272035448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272035446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f933465e8abf19e47a67c5aad26cb96f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Weapon1
+    clip: {fileID: 8300000, guid: 1257729b9ad8b9540bf5ff9875426fc9, type: 3}
+    volume: 0.8
+    pitch: 1
+    source: {fileID: 0}
+  - name: Weapon2
+    clip: {fileID: 8300000, guid: 1257729b9ad8b9540bf5ff9875426fc9, type: 3}
+    volume: 0.8
+    pitch: 1
+    source: {fileID: 0}
+  - name: Weapon3
+    clip: {fileID: 8300000, guid: 1257729b9ad8b9540bf5ff9875426fc9, type: 3}
+    volume: 0.8
+    pitch: 1
+    source: {fileID: 0}
+  - name: Weapon4
+    clip: {fileID: 8300000, guid: 1257729b9ad8b9540bf5ff9875426fc9, type: 3}
+    volume: 0.8
+    pitch: 1
+    source: {fileID: 0}
+  - name: Weapon5
+    clip: {fileID: 8300000, guid: 1257729b9ad8b9540bf5ff9875426fc9, type: 3}
+    volume: 0.8
+    pitch: 1
+    source: {fileID: 0}
+  - name: Weapon6
+    clip: {fileID: 8300000, guid: 1257729b9ad8b9540bf5ff9875426fc9, type: 3}
+    volume: 0.8
+    pitch: 1
+    source: {fileID: 0}
+  - name: Weapon7
+    clip: {fileID: 8300000, guid: 1257729b9ad8b9540bf5ff9875426fc9, type: 3}
+    volume: 0.8
+    pitch: 1
+    source: {fileID: 0}
+  - name: Weapon8
+    clip: {fileID: 8300000, guid: 1257729b9ad8b9540bf5ff9875426fc9, type: 3}
+    volume: 0.8
+    pitch: 1
+    source: {fileID: 0}
+  - name: Weapon9
+    clip: {fileID: 8300000, guid: 1257729b9ad8b9540bf5ff9875426fc9, type: 3}
+    volume: 0.8
+    pitch: 1
+    source: {fileID: 0}
+  - name: Weapon10
+    clip: {fileID: 8300000, guid: 1257729b9ad8b9540bf5ff9875426fc9, type: 3}
+    volume: 0.8
+    pitch: 1
+    source: {fileID: 0}
 --- !u!1 &1295253094
 GameObject:
   m_ObjectHideFlags: 0
@@ -7284,6 +7378,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab8b077a6d4d644898aae2fbcd4ab16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageAudioName: 
+  deathAudioName: 
   maxHp: 10
   currentHp: 0
   maxMonsterHp: 25
@@ -8341,6 +8437,7 @@ MonoBehaviour:
   WeaponParent: {fileID: 7835769710608672303}
   weaponManager: {fileID: 7835769710824073549}
   weaponStock: {fileID: 7835769711450651284}
+  audioManager: {fileID: 272035448}
   pickupableArrowObject: {fileID: 6361831512966144877, guid: 2d4ab2a2251f77049a7b0b12331cdb2d, type: 3}
   playerAnimator: {fileID: 7835769710824073536}
   playerAttack: {fileID: 0}
@@ -8397,6 +8494,7 @@ Transform:
   - {fileID: 7835769711373444199}
   - {fileID: 7835769711219671322}
   - {fileID: 7835769710368407089}
+  - {fileID: 272035447}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

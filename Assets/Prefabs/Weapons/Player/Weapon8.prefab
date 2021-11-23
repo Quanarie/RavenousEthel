@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3220945507767099498}
   - component: {fileID: 3220945507767099501}
   - component: {fileID: 7415342570427145632}
-  - component: {fileID: -6011396106995204944}
   - component: {fileID: 3220945507767099503}
   m_Layer: 0
   m_Name: Weapon8
@@ -111,102 +110,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.26554263, y: 0.13487239}
   m_EdgeRadius: 0
---- !u!82 &-6011396106995204944
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3220945507767099502}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &3220945507767099503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,10 +122,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4285bd6be22fdf94584ae5de10a0c3a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 945572282811277856, guid: 36f4e433a9aad89488f54d75145b2f7b, type: 3}
+  projectile: {fileID: 945572282811277856, guid: 24bc505b230306b4b8f2bff0d5fc7e7a, type: 3}
   rechargeTime: 0.25
   range: 2
   maxShootQuantity: 20
   rechargeImage: {fileID: 0}
   currentShotQuantity: 0
   index: 7
+  weaponSoundName: Weapon8
+  damageAmount: 3
+  pushForce: 3
+  stunTime: 0.5
+  speed: 1.5
+  lifetime: 5
+  projectileSprite: {fileID: -2384538672884440082, guid: 369f30d32f9bc954f83097fef43da680, type: 3}

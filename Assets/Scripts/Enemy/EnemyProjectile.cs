@@ -6,6 +6,7 @@ public class EnemyProjectile : Projectile
 {
     private PlayerHealth playerHealth;
 
+
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out playerHealth))

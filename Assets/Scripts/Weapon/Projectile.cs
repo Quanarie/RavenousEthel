@@ -4,17 +4,27 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] protected float damageAmount;
-    [SerializeField] protected float pushForce;
-    [SerializeField] protected float stunTime;
-    [SerializeField] protected float speed;
-    [SerializeField] protected float lifetime;
+    protected float damageAmount;
+    protected float pushForce;
+    protected float stunTime;
+    protected float speed;
+    protected float lifetime;
 
     [HideInInspector] public Vector3 direction;
     [HideInInspector] public float angleBetweenEnemyAndWeapon;
     public static float offsetY = 0.175f;
 
     private EnemyHealth enemyToAttack;
+
+    public void Construct(float dmg, float push, float stun, float speed, float lifetime, Sprite sprite)
+    {
+        damageAmount = dmg;
+        pushForce = push;
+        stunTime = stun;
+        this.speed = speed;
+        this.lifetime = lifetime;
+        GetComponent<SpriteRenderer>().sprite = sprite;
+    }
 
     protected virtual void Start()
     {

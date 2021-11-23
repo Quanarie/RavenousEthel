@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public Transform WeaponParent;
     public WeaponManager weaponManager;
     public Slider weaponStock;
+    public AudioManager audioManager;
 
     public GameObject pickupableArrowObject;
 

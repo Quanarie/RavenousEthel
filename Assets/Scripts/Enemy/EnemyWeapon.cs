@@ -5,23 +5,26 @@ using UnityEngine;
 public class EnemyWeapon : MonoBehaviour
 {
     [SerializeField] protected GameObject projectile;
+    [SerializeField] private string weaponSoundName;
     public float chanceOfDropping;
-    private AudioSource audioSource;
 
-    private void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
+    [SerializeField] private float damageAmount;
+    [SerializeField] private float pushForce;
+    [SerializeField] private float stunTime;
+    [SerializeField] private float speed;
+    [SerializeField] private float lifetime;
+    [SerializeField] private Sprite projectileSprite;
 
     public void Shoot()
     {
-        audioSource.Play();
+        GameManager.Instance.audioManager.Play(weaponSoundName);
 
         Vector3 playerPos = GameManager.Instance.Player.position;
 
-        Projectile spawnedProjectile = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
+        EnemyProjectile spawnedProjectile = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<EnemyProjectile>();
         spawnedProjectile.direction = new Vector3(playerPos.x - transform.position.x, playerPos.y - transform.position.y + Projectile.offsetY, 0);
         spawnedProjectile.angleBetweenEnemyAndWeapon = transform.localRotation.eulerAngles.z;
+        spawnedProjectile.Construct(damageAmount, pushForce, stunTime, speed, lifetime, projectileSprite);
     }
 
     private void Update()
