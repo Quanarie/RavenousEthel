@@ -6,9 +6,17 @@ public class EnemyWeapon : MonoBehaviour
 {
     [SerializeField] protected GameObject projectile;
     public float chanceOfDropping;
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     public void Shoot()
     {
+        audioSource.Play();
+
         Vector3 playerPos = GameManager.Instance.Player.position;
 
         Projectile spawnedProjectile = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();

@@ -16,6 +16,14 @@ public class Weapon : MonoBehaviour
     [HideInInspector] public int currentShotQuantity;
     public int index;
 
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+
     protected virtual void Update()
     {
         if (transform.parent != GameManager.Instance.WeaponParent)
@@ -75,6 +83,8 @@ public class Weapon : MonoBehaviour
     {
         if (Time.time - lastShootTime < rechargeTime)
             return;
+
+        audioSource.Play();
 
         Transform enemyToAttack = GameManager.Instance.FindClosestEnemyInRange(range);
 
