@@ -1212,7 +1212,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7835769710263625234}
   serializedVersion: 7
-  lengthInSec: 0.5
+  lengthInSec: 5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -1223,7 +1223,7 @@ ParticleSystem:
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
-  useRigidbodyForVelocity: 1
+  useRigidbodyForVelocity: 0
   startDelay:
     serializedVersion: 2
     minMaxState: 0
@@ -1277,7 +1277,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 2
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 7835769710824073540}
   scalingMode: 1
   randomSeed: 0
@@ -2090,7 +2090,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 10
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -7361,8 +7361,8 @@ MonoBehaviour:
   particleSystem: {fileID: 7835769710263625233}
   regularRadius: 0.5
   mutantRadius: 2
-  regularRateOverDistance: 2
-  mutantRateOverDistance: 4
+  regularRateOverDistance: 8
+  mutantRateOverDistance: 12
 --- !u!1 &7835769710836900006
 GameObject:
   m_ObjectHideFlags: 0
