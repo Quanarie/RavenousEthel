@@ -17,7 +17,7 @@ public class EnemyWeapon : MonoBehaviour
 
     public void Shoot()
     {
-        GameManager.Instance.audioManager.Play(weaponSoundName);
+        AudioManager.Instance.Play(weaponSoundName);
 
         Vector3 playerPos = GameManager.Instance.Player.position;
 

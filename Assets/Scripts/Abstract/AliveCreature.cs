@@ -36,7 +36,7 @@ public class AliveCreature : MonoBehaviour
 
         animator.SetTrigger("damage");
 
-        //GameManager.Instance.audioManager.Play(damageAudioName);
+        //AudioManager.Instance.Play.Play(damageAudioName);
     }
 
     public virtual void ReceiveDamage(float damageAmount, Vector3 pushDirection, float stunTime)
@@ -50,6 +50,6 @@ public class AliveCreature : MonoBehaviour
 
     public virtual void Death()
     {
-        GameManager.Instance.audioManager.Play(deathAudioName);
+        AudioManager.Instance.Play(deathAudioName);
     }
 }

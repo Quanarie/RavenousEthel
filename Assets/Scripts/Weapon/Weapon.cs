@@ -84,7 +84,7 @@ public class Weapon : MonoBehaviour
         if (Time.time - lastShootTime < rechargeTime)
             return;
 
-        GameManager.Instance.audioManager.Play(weaponSoundName);
+        AudioManager.Instance.Play(weaponSoundName);
 
         Transform enemyToAttack = GameManager.Instance.FindClosestEnemyInRange(range);
 

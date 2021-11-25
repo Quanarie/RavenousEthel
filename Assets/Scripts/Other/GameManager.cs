@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
         }
 
         Instance = this;
+        DontDestroyOnLoad(DontDestroyOnLoadContainer);
 
         SceneManager.sceneLoaded += OnSceneLoaded;
 
@@ -53,6 +54,9 @@ public class GameManager : MonoBehaviour
         playerMovement = Player.GetComponent<PlayerMovement>();
         playerHitBox = Player.GetComponent<CircleCollider2D>();
         weaponManager = Player.GetComponent<WeaponManager>();
+
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+            DontDestroyOnLoadContainer.SetActive(false);
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)

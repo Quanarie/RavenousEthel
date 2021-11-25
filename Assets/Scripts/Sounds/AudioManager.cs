@@ -6,11 +6,20 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager Instance;
+
     [SerializeField] private List<Sound> sounds;
 
     private void Awake()
     {
-        foreach(Sound sound in sounds)
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+
+        foreach (Sound sound in sounds)
         {
             sound.source = gameObject.AddComponent<AudioSource>();
             sound.source.clip = sound.clip;
@@ -18,6 +27,9 @@ public class AudioManager : MonoBehaviour
             sound.source.pitch = sound.pitch;
             sound.source.loop = sound.loop;
         }
+        DontDestroyOnLoad(gameObject);
+
+        Play("Theme");
     }
 
     public void Play(string name)
