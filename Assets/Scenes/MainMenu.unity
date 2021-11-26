@@ -12069,7 +12069,7 @@ MonoBehaviour:
   state: 0
   floatingTextManager: {fileID: 7835769711165547822}
   DontDestroyOnLoadContainer: {fileID: 7835769711287476419}
-  levels: 000000000000000000000000000000
+  levels: 0000000000000000000000000000000000000000
   weapons:
   - {fileID: 3220945507767099503, guid: 557ffacbf35f80a4cb6e675edb748c49, type: 3}
   - {fileID: 3220945507767099503, guid: 7dacdbdfdac1c3a4b811f5a7d9a07f72, type: 3}

@@ -12,6 +12,8 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        levelQuantity = GameManager.Instance.levels.Length;
+
         int currentLevel = PlayerPrefs.GetInt("Level") + 1;
 
         for (int i = 1; i <= levelQuantity; i++)
