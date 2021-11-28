@@ -108,6 +108,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -117,11 +118,11 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -796,6 +797,35 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Enemy3-Sheet_1: -6366988396368053875
+      Enemy3-Sheet_24: -8552210418642439193
+      Enemy3-Sheet_36: 6054527874950532251
+      Enemy3-Sheet_35: 1481641755901606753
+      Enemy3-Sheet_6: -8743263864283422183
+      Enemy3-Sheet_37: 9021977135028506326
+      Enemy3-Sheet_5: -4866458359211141236
+      Enemy3-Sheet_30: 7643545394651076252
+      Enemy3-Sheet_47: -2942965084479397025
+      Enemy3-Sheet_3: -1073972567141390651
+      Enemy3-Sheet_4: 4680579899801278760
+      Enemy3-Sheet_15: 5229699350273346350
+      Enemy3-Sheet_9: 4004061665076531857
+      Enemy3-Sheet_10: -784572325664854871
+      Enemy3-Sheet_27: -7871901050884107260
+      Enemy3-Sheet_2: -1457194378008095737
+      Enemy3-Sheet_31: 4487079526165590444
+      Enemy3-Sheet_45: -1105180031671684258
+      Enemy3-Sheet_21: 6987839356598033360
+      Enemy3-Sheet_28: -7580412802079613633
+      Enemy3-Sheet_29: 4416979718323051393
+      Enemy3-Sheet_7: -4268450399766968482
+      Enemy3-Sheet_26: -3135286172328473139
+      Enemy3-Sheet_8: -2353903481645457403
+      Enemy3-Sheet_23: 7145221369011561335
+      Enemy3-Sheet_25: -337672570013397807
+      Enemy3-Sheet_39: -2219883640873875416
+      Enemy3-Sheet_0: 9081278693623360622
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

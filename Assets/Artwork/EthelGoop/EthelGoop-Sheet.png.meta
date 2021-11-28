@@ -213,6 +213,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -222,11 +223,11 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -1636,6 +1637,70 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      EthelGoop-Sheet_33: -8826722484016341966
+      EthelGoop-Sheet_56: -8105857116065020564
+      EthelGoop-Sheet_23: 840840245297465448
+      EthelGoop-Sheet_10: 3224886972406516228
+      EthelGoop-Sheet_43: 6363938366183425360
+      EthelGoop-Sheet_28: -925176115306777141
+      EthelGoop-Sheet_8: 2051927145272003628
+      EthelGoop-Sheet_11: -2002835713394930091
+      EthelGoop-Sheet_39: 6154854659871686744
+      EthelGoop-Sheet_18: 6774142216251321343
+      EthelGoop-Sheet_20: -1293675214515280648
+      EthelGoop-Sheet_14: 8386449968090753381
+      EthelGoop-Sheet_16: -1896532137283949253
+      EthelGoop-Sheet_63: 7851350558343241724
+      EthelGoop-Sheet_45: -7917801760633650558
+      EthelGoop-Sheet_50: -1611329706038148406
+      EthelGoop-Sheet_59: -6586606116862384790
+      EthelGoop-Sheet_13: 591890004086918455
+      EthelGoop-Sheet_44: 1428440907039416519
+      EthelGoop-Sheet_29: -3589902327859147125
+      EthelGoop-Sheet_55: -5759778754745485700
+      EthelGoop-Sheet_1: 4664206545628118102
+      EthelGoop-Sheet_46: 432301072970784216
+      EthelGoop-Sheet_35: -7316432248487385192
+      EthelGoop-Sheet_26: 1344915594569665709
+      EthelGoop-Sheet_34: -4829644803052403047
+      EthelGoop-Sheet_47: -6722463570321586926
+      EthelGoop-Sheet_41: 3061128047445236288
+      EthelGoop-Sheet_52: -8495144511572380500
+      EthelGoop-Sheet_7: -5854612151678874393
+      EthelGoop-Sheet_38: 3022509159823204312
+      EthelGoop-Sheet_62: 6827744355673042376
+      EthelGoop-Sheet_22: 2611450053285786310
+      EthelGoop-Sheet_58: -7359842758950730333
+      EthelGoop-Sheet_53: -7387111428754979347
+      EthelGoop-Sheet_25: 134394351709119408
+      EthelGoop-Sheet_31: -6721062046465974470
+      EthelGoop-Sheet_21: -2153067910421976109
+      EthelGoop-Sheet_9: 7793920246300808787
+      EthelGoop-Sheet_0: 4396408003445649592
+      EthelGoop-Sheet_36: -1075446521466425554
+      EthelGoop-Sheet_17: 4091413533222425826
+      EthelGoop-Sheet_6: -7128725847247649574
+      EthelGoop-Sheet_24: 6141095133106240493
+      EthelGoop-Sheet_30: -4489173314310072087
+      EthelGoop-Sheet_3: 8029243882536993124
+      EthelGoop-Sheet_32: 5506449612622565927
+      EthelGoop-Sheet_27: -9071935079987949933
+      EthelGoop-Sheet_54: -1141105824110405758
+      EthelGoop-Sheet_19: 1490543517511673728
+      EthelGoop-Sheet_40: -2067993331742348156
+      EthelGoop-Sheet_57: 1186194716573182196
+      EthelGoop-Sheet_12: -5734350520242135213
+      EthelGoop-Sheet_5: 3532852050807614333
+      EthelGoop-Sheet_15: -4825861157945725675
+      EthelGoop-Sheet_2: 3247763784087683378
+      EthelGoop-Sheet_48: 8701136552680932497
+      EthelGoop-Sheet_42: 6349698701148509307
+      EthelGoop-Sheet_4: -7367225859795989260
+      EthelGoop-Sheet_51: -5730851501164037922
+      EthelGoop-Sheet_37: -3804818328290466041
+      EthelGoop-Sheet_60: 561094410122101111
+      EthelGoop-Sheet_61: 4556633396538638193
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

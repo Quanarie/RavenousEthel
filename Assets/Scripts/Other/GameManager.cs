@@ -61,11 +61,12 @@ public class GameManager : MonoBehaviour
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        LoadState();
+
         if (SceneManager.GetActiveScene().name == "MainMenu")
             return;
 
         DontDestroyOnLoadContainer.SetActive(true);
-        LoadState();
 
         GameObject spawnPoint = GameObject.Find("Respawn");
 
@@ -135,7 +136,8 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        playerHealth.currentHp = PlayerPrefs.GetFloat("Health", playerHealth.maxRegularHp);
+        playerHealth.SetCurrentHealth(PlayerPrefs.GetFloat("Health", 0f));
+        playerHealth.Mutate(0f);
 
         float size = PlayerPrefs.GetFloat("Size", 1f);
         Player.transform.localScale = new Vector3(size, size, 0);

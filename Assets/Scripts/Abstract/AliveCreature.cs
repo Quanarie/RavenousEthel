@@ -10,7 +10,7 @@ public class AliveCreature : MonoBehaviour
 
     [HideInInspector] public float currentHp;
 
-    private Movement movementScript;
+    protected Movement movementScript;
     protected Animator animator;
 
     protected virtual void Start()

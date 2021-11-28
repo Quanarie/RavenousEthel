@@ -219,6 +219,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -228,11 +229,11 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -1663,6 +1664,71 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      EthelMutated-Sheet_28: 8316808290866252168
+      EthelMutated-Sheet_17: -6973010449803496910
+      EthelMutated-Sheet_37: -7237460189514338269
+      EthelMutated-Sheet_54: 2401924185358889828
+      EthelMutated-Sheet_9: 4198348384359362055
+      EthelMutated-Sheet_18: -7099286639211156034
+      EthelMutated-Sheet_66: 8468298623072233024
+      EthelMutated-Sheet_62: -3095920864775043322
+      EthelMutated-Sheet_41: 7610093015915741997
+      EthelMutated-Sheet_61: 7285622329197505058
+      EthelMutated-Sheet_35: -5844252551250321458
+      EthelMutated-Sheet_5: 1372416331251820507
+      EthelMutated-Sheet_53: 2283379005649954266
+      EthelMutated-Sheet_72: -3215751481014470235
+      EthelMutated-Sheet_52: 6513202152520524213
+      EthelMutated-Sheet_56: -3747214605656642969
+      EthelMutated-Sheet_33: -4558542748150280674
+      EthelMutated-Sheet_25: 4962974324055937699
+      EthelMutated-Sheet_49: 9073536511967004345
+      EthelMutated-Sheet_1: -5009831142654835167
+      EthelMutated-Sheet_55: -2762719413736108578
+      EthelMutated-Sheet_57: 422678980222480115
+      EthelMutated-Sheet_4: -2569145222472318252
+      EthelMutated-Sheet_21: 8073954512198690737
+      EthelMutated-Sheet_14: -1149525874435633388
+      EthelMutated-Sheet_15: -1321689559408073842
+      EthelMutated-Sheet_8: -7117120820337178147
+      EthelMutated-Sheet_39: 1503982104753975522
+      EthelMutated-Sheet_6: 9043700856224716605
+      EthelMutated-Sheet_63: -1638301722600618
+      EthelMutated-Sheet_19: 666513695215878763
+      EthelMutated-Sheet_42: 6392971889063715117
+      EthelMutated-Sheet_38: -627871133232645694
+      EthelMutated-Sheet_2: 303321415278117846
+      EthelMutated-Sheet_46: 6995152843797522616
+      EthelMutated-Sheet_67: 7082640474500699456
+      EthelMutated-Sheet_60: -5612942741563002328
+      EthelMutated-Sheet_45: 3314345176172454441
+      EthelMutated-Sheet_29: -3176718458958588296
+      EthelMutated-Sheet_58: -537944471963449937
+      EthelMutated-Sheet_59: 8357980795499766860
+      EthelMutated-Sheet_10: 8962918931357832332
+      EthelMutated-Sheet_11: 1935193284993816562
+      EthelMutated-Sheet_43: -2232725377261145767
+      EthelMutated-Sheet_27: 2510537404133076309
+      EthelMutated-Sheet_26: 4109950808345972431
+      EthelMutated-Sheet_40: 8076613642617926231
+      EthelMutated-Sheet_51: 6562863014210032406
+      EthelMutated-Sheet_44: -3075593908354495094
+      EthelMutated-Sheet_68: -2139113616910482965
+      EthelMutated-Sheet_50: 5648395339031322236
+      EthelMutated-Sheet_7: 2159902658426548887
+      EthelMutated-Sheet_0: -8246589775845759168
+      EthelMutated-Sheet_47: 5381137821107319144
+      EthelMutated-Sheet_22: 314378102027796456
+      EthelMutated-Sheet_69: -2665561669914038830
+      EthelMutated-Sheet_24: -2864074561341239258
+      EthelMutated-Sheet_3: 7218249692026897124
+      EthelMutated-Sheet_48: -7255403639904612776
+      EthelMutated-Sheet_20: -5889738336580748931
+      EthelMutated-Sheet_12: -1106389893461580797
+      EthelMutated-Sheet_23: -296999717537819900
+      EthelMutated-Sheet_13: 7156076591363961447
+      EthelMutated-Sheet_16: 5777588681885211572
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

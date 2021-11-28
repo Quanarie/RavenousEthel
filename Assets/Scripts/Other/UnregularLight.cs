@@ -11,11 +11,11 @@ public class UnregularLight : MonoBehaviour
     private float changePeriod;
     private float startIntensity;
     private float lastChangeTime;
-    private new UnityEngine.Experimental.Rendering.Universal.Light2D light;
+    private new UnityEngine.Rendering.Universal.Light2D light;
 
     private void Start()
     {
-        light = GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>();
+        light = GetComponent<UnityEngine.Rendering.Universal.Light2D>();
         changePeriod = Random.Range(changePeriodMin, changePeriodMax);
         startIntensity = light.falloffIntensity;
     }

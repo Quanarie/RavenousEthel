@@ -153,6 +153,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -162,11 +163,11 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -1111,6 +1112,49 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Ethel-Sheet_34: -4592950135611153690
+      Ethel-Sheet_39: 3139577104028883902
+      Ethel-Sheet_15: 4834681141455620771
+      Ethel-Sheet_5: -10507060296704754
+      Ethel-Sheet_6: -2129237931157173985
+      Ethel-Sheet_10: -7521652509490683356
+      Ethel-Sheet_8: -5382202630210455907
+      Ethel-Sheet_16: -3356621851866180264
+      Ethel-Sheet_31: 8854825490448410567
+      Ethel-Sheet_7: 2993089256993452213
+      Ethel-Sheet_13: 1202041661804709641
+      Ethel-Sheet_4: -3031611272150479643
+      Ethel-Sheet_21: 7677324286775753884
+      Ethel-Sheet_23: -6991138515316443813
+      Ethel-Sheet_0: 6379731779790086710
+      Ethel-Sheet_27: -1094611210505490338
+      Ethel-Sheet_26: -565300249992310142
+      Ethel-Sheet_9: 5012281298608111272
+      Ethel-Sheet_14: -8348387336263529948
+      Ethel-Sheet_11: -435271965753501280
+      Ethel-Sheet_28: -1215193296172006981
+      Ethel-Sheet_25: 8320106237374392534
+      Ethel-Sheet_29: 3707420657487049858
+      Ethel-Sheet_1: 6712898681843624229
+      Ethel-Sheet_32: -2190888509242987114
+      Ethel-Sheet_35: 9072028870097217361
+      Ethel-Sheet_12: 3993676785521107083
+      Ethel-Sheet_36: 6544940098403106115
+      Ethel-Sheet_19: -2640352099848137065
+      Ethel-Sheet_20: 3068399864506824950
+      Ethel-Sheet_24: 5530130251644751693
+      Ethel-Sheet_3: 7226881230009006976
+      Ethel-Sheet_33: -5161091441871004504
+      Ethel-Sheet_38: 6195625612440604547
+      Ethel-Sheet_17: -7582785620443054508
+      Ethel-Sheet_41: -5483535851229555457
+      Ethel-Sheet_30: 7644438923871967442
+      Ethel-Sheet_37: 7931407911636653527
+      Ethel-Sheet_40: -4894348147996723713
+      Ethel-Sheet_22: -7130038191602187108
+      Ethel-Sheet_2: -694726019294321022
+      Ethel-Sheet_18: 6991942759169147054
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

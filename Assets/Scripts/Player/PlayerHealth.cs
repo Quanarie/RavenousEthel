@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class PlayerHealth : AliveCreature
 {
+    public delegate void PlayerDeath();
+    public static event PlayerDeath OnPlayerDeath;
+
     [SerializeField] private float maxMonsterHp;
     [SerializeField] private float maxScale;
     [SerializeField] private float minScale;
@@ -20,7 +23,7 @@ public class PlayerHealth : AliveCreature
 
     private float prevTimeGotSmaller;
 
-    public float maxRegularHp;
+    [SerializeField] private float maxRegularHp;
     public float upgradeHealth;
 
     [Header("Camera Shake")]
@@ -30,7 +33,10 @@ public class PlayerHealth : AliveCreature
 
     protected override void Start()
     {
-        base.Start();
+        movementScript = GetComponent<Movement>();
+        animator = GetComponent<Animator>();
+
+        currentHp = PlayerPrefs.GetFloat("Health", maxRegularHp);
 
         healhtSlider.minValue = 0;
         UpdateHealth();
@@ -76,6 +82,9 @@ public class PlayerHealth : AliveCreature
 
     public void Heal(float toHeal)
     {
+        if (toHeal == 0)
+            return;
+
         GameManager.Instance.floatingTextManager.Show("+" + toHeal.ToString(), 20, Color.green, transform.position, new Vector3(50, 60, 0), 1f);
         
         if (currentHp == maxHp)
@@ -103,6 +112,16 @@ public class PlayerHealth : AliveCreature
         sizeSlider.maxValue = maxScale - minScale;
         sizeSlider.value = transform.localScale.x - minScale;
         sizeText.text = ((int)(sizeSlider.value * 100)).ToString();
+    }
+
+    public void SetCurrentHealth(float health)
+    {
+        if (health <= 0)
+            currentHp = maxRegularHp;
+        else
+            currentHp = health;
+
+        UpdateHealth();
     }
 
     public void Mutate(float toHeal)
@@ -159,9 +178,10 @@ public class PlayerHealth : AliveCreature
     {
         if (GameManager.Instance.state == GameManager.State.regular)
         {
+            OnPlayerDeath?.Invoke();
+
             base.Death();
             currentHp = maxHp;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         else
         {

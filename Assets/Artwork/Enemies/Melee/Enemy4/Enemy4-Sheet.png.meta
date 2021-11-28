@@ -126,6 +126,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -135,11 +136,11 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -940,6 +941,41 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Enemy4-Sheet_29: -4792641212845792342
+      Enemy4-Sheet_0: 8283658342102998710
+      Enemy4-Sheet_4: 7685518700827917673
+      Enemy4-Sheet_7: -1526644212009712330
+      Enemy4-Sheet_20: -685742714364107261
+      Enemy4-Sheet_2: -6726378383071426805
+      Enemy4-Sheet_13: -3247858170689197578
+      Enemy4-Sheet_32: -3367509252197228258
+      Enemy4-Sheet_28: 3576289755812727713
+      Enemy4-Sheet_24: -1775289996501071575
+      Enemy4-Sheet_37: 8413518774006598633
+      Enemy4-Sheet_23: 9191578030284459275
+      Enemy4-Sheet_14: -2320628100541509995
+      Enemy4-Sheet_22: -6279797265378693717
+      Enemy4-Sheet_10: 5362701288640974212
+      Enemy4-Sheet_26: -1062569714601764751
+      Enemy4-Sheet_11: -6476994662777105295
+      Enemy4-Sheet_18: 5326793476002989258
+      Enemy4-Sheet_34: -8972196412277988796
+      Enemy4-Sheet_21: 3705372761864103295
+      Enemy4-Sheet_25: -7794080278922120000
+      Enemy4-Sheet_6: -3852905094416776116
+      Enemy4-Sheet_36: -9118842437907454258
+      Enemy4-Sheet_1: -1435708345912589952
+      Enemy4-Sheet_5: 3652968889721225799
+      Enemy4-Sheet_9: 7048194243270900720
+      Enemy4-Sheet_3: 4682790768849219504
+      Enemy4-Sheet_17: 58986358999773413
+      Enemy4-Sheet_33: 5772170373842562361
+      Enemy4-Sheet_12: 1490671861937061694
+      Enemy4-Sheet_27: 1273630121936534080
+      Enemy4-Sheet_8: -460875402006586203
+      Enemy4-Sheet_31: 852700019230871310
+      Enemy4-Sheet_19: 858924810196825478
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

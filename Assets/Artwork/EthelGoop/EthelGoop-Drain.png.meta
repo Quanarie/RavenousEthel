@@ -45,6 +45,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -55,10 +56,10 @@ TextureImporter:
     serializedVersion: 2
     filterMode: 0
     aniso: 1
-    mipBias: -100
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -292,6 +293,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      EthelGoop-Drain_0: -5778997980087526228
+      EthelGoop-Drain_1: 4566875601472995047
+      EthelGoop-Drain_2: -622284927506543498
+      EthelGoop-Drain_6: -9106949240040888908
+      EthelGoop-Drain_3: -8767968125452426526
+      EthelGoop-Drain_4: -4950632461163579693
+      EthelGoop-Drain_5: -1308712616820943653
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
