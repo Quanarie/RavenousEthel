@@ -9,6 +9,7 @@ public class PlayerHealth : AliveCreature
     public delegate void PlayerDeath();
     public static event PlayerDeath OnPlayerDeath;
 
+    [SerializeField] private float maxRegularHp;
     [SerializeField] private float maxMonsterHp;
     [SerializeField] private float maxScale;
     [SerializeField] private float minScale;
@@ -23,7 +24,6 @@ public class PlayerHealth : AliveCreature
 
     private float prevTimeGotSmaller;
 
-    [SerializeField] private float maxRegularHp;
     public float upgradeHealth;
 
     [Header("Camera Shake")]
@@ -43,8 +43,6 @@ public class PlayerHealth : AliveCreature
 
         sizeSlider.minValue = 0;
         UpdateSize();
-
-        maxRegularHp = maxHp;
 
         cameraShakeComponent = Camera.main.GetComponent<CameraShake>();
     }
@@ -141,7 +139,7 @@ public class PlayerHealth : AliveCreature
     public void DeMutate()
     {
         maxHp = maxRegularHp;
-        currentHp = maxHp = maxRegularHp;
+        currentHp = maxRegularHp;
 
         UpdateHealth();
         UpdateSize();

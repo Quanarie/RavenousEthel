@@ -37,11 +37,6 @@ public class InGameMenus : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void WatchAd()
-    {
-
-    }
-
     public void DeactivateDeathMenu()
     {
         Time.timeScale = 1f;
