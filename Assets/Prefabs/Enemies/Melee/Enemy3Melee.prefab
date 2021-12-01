@@ -162,7 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAudioName: 
   deathAudioName: 
-  maxHp: 10
+  maxHp: 15
   currentHp: 0
   deathClip: {fileID: 7400000, guid: 8f36cbb0d5f3ca241a642a646f6d84e8, type: 2}
   dropWeapon: {fileID: 0}
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rechargeTime: 2
   attackDistance: 0.3
-  damageAmount: 2
+  damageAmount: 30
   attackClip: {fileID: 7400000, guid: 191da414f68c7d54ead87bf356e5661d, type: 2}
 --- !u!114 &753768928840391547
 MonoBehaviour:
@@ -195,8 +195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d165ef582f9e114ea4120b1a6bc5e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ySpeed: 0.35
-  xSpeed: 0.5
+  ySpeed: 0.4
+  xSpeed: 0.55
   pushRecoverySpeed: 0.5
   pushDirection: {x: 0, y: 0, z: 0}
   chasingDistance: 2
