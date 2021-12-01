@@ -60,10 +60,10 @@ public class GameManager : MonoBehaviour
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        LoadState();
-
         if (SceneManager.GetActiveScene().name == "MainMenu")
             return;
+
+        LoadState();
 
         DontDestroyOnLoadContainer.SetActive(true);
 
@@ -109,7 +109,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            state = State.mutated;
+            playerHealth.Mutate(0f);
             playerAnimator.runtimeAnimatorController = playerAttack.mutatedController;
 
             int currentWeapon = PlayerPrefs.GetInt("CurrentWeaponCount");
@@ -136,8 +136,7 @@ public class GameManager : MonoBehaviour
         }
 
         playerHealth.SetCurrentHealth(PlayerPrefs.GetFloat("Health", 0f));
-        playerHealth.Mutate(0f);
-
+        
         float size = PlayerPrefs.GetFloat("Size", 1f);
         Player.transform.localScale = new Vector3(size, size, 0);
     }
