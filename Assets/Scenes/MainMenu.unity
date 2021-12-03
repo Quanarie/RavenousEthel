@@ -13467,7 +13467,7 @@ MonoBehaviour:
   - name: Theme
     clip: {fileID: 8300000, guid: 7c37caab34dbecc4ab60920f585061ec, type: 3}
     loop: 1
-    volume: 0
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
   - name: Weapon1
