@@ -10,7 +10,7 @@ public class InGameMenus : MonoBehaviour
 
     private void Start()
     {
-        PlayerHealth.OnPlayerDeath += ActivateDeathMenu;
+        GameManager.Instance.playerHealth.OnPlayerDeath += ActivateDeathMenu;
     }
 
     public void ActivatePauseMenu()

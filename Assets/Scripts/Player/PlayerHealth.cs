@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
@@ -6,23 +7,14 @@ using UnityEngine;
 
 public class PlayerHealth : AliveCreature
 {
-    public delegate void PlayerDeath();
-    public static event PlayerDeath OnPlayerDeath;
+    public Action OnPlayerDeath = delegate { };
+    public Action OnDemutation = delegate { };
 
     [SerializeField] private float maxRegularHp;
     [SerializeField] private float maxMonsterHp;
-    [SerializeField] private float maxScale;
-    [SerializeField] private float minScale;
-    [SerializeField] private float getBiggerValue;
-    public float getSmallerValue;
-    [SerializeField] private float timeToGetSmaller;
 
     [SerializeField] private Slider healhtSlider;
     [SerializeField] private Text healhtText;
-    [SerializeField] private Slider sizeSlider;
-    [SerializeField] private Text sizeText;
-
-    private float prevTimeGotSmaller;
 
     public float upgradeHealth;
 
@@ -40,9 +32,6 @@ public class PlayerHealth : AliveCreature
 
         healhtSlider.minValue = 0;
         UpdateHealth();
-
-        sizeSlider.minValue = 0;
-        UpdateSize();
 
         cameraShakeComponent = Camera.main.GetComponent<CameraShake>();
     }
@@ -67,15 +56,6 @@ public class PlayerHealth : AliveCreature
         UpdateHealth();
 
         StartCoroutine(cameraShakeComponent.Shake(duration, magnitude));
-    }
-
-    private void Update()
-    {
-        if (Time.time - prevTimeGotSmaller > timeToGetSmaller)
-        {
-            GetSmaller();
-            prevTimeGotSmaller = Time.time;
-        }
     }
 
     public void Heal(float toHeal)
@@ -105,13 +85,6 @@ public class PlayerHealth : AliveCreature
         healhtText.text = currentHp.ToString();
     }
 
-    private void UpdateSize()
-    {
-        sizeSlider.maxValue = maxScale - minScale;
-        sizeSlider.value = transform.localScale.x - minScale;
-        sizeText.text = ((int)(sizeSlider.value * 100)).ToString();
-    }
-
     public void SetCurrentHealth(float health)
     {
         if (health <= 0)
@@ -133,7 +106,6 @@ public class PlayerHealth : AliveCreature
         Heal(toHeal);
 
         UpdateHealth();
-        UpdateSize();
     }
 
     public void DeMutate()
@@ -142,34 +114,6 @@ public class PlayerHealth : AliveCreature
         currentHp = maxRegularHp;
 
         UpdateHealth();
-        UpdateSize();
-    }
-
-    public void GetBigger()
-    {
-        if (transform.localScale.x + getBiggerValue < maxScale)
-        {
-            transform.localScale += new Vector3(getBiggerValue, getBiggerValue, 0);
-        }
-        else
-        {
-            transform.localScale = new Vector3(maxScale, maxScale, 0);
-        }
-        UpdateSize();
-    }
-
-    public void GetSmaller()
-    {
-        if (transform.localScale.x - getSmallerValue > minScale)
-        {
-            transform.localScale -= new Vector3(getSmallerValue, getSmallerValue, 0);
-        }
-        else if (GameManager.Instance.state == GameManager.State.mutated)
-        {
-            GameManager.Instance.playerAttack.DeMutate();
-            DeMutate();
-        }
-        UpdateSize();
     }
 
     public override void Death()
@@ -183,7 +127,7 @@ public class PlayerHealth : AliveCreature
         }
         else
         {
-            GameManager.Instance.playerAttack.DeMutate();
+            OnDemutation?.Invoke();
             DeMutate();
         }
     }

@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector] public Animator playerAnimator;
     [HideInInspector] public PlayerAttack playerAttack;
+    [HideInInspector] public AnimationController playerAnimationController;
     [HideInInspector] public PlayerHealth playerHealth;
     [HideInInspector] public PlayerMovement playerMovement;
 
@@ -49,6 +50,7 @@ public class GameManager : MonoBehaviour
 
         playerAnimator = Player.GetComponent<Animator>();
         playerAttack = Player.GetComponent<PlayerAttack>();
+        playerAnimationController = Player.GetComponent<AnimationController>();
         playerHealth = Player.GetComponent<PlayerHealth>();
         playerMovement = Player.GetComponent<PlayerMovement>();
         playerHitBox = Player.GetComponent<CircleCollider2D>();
@@ -105,12 +107,12 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.GetInt("State", 0) == 0)
         {
             state = State.regular;
-            playerAnimator.runtimeAnimatorController = playerAttack.regularController;
+            playerAnimator.runtimeAnimatorController = playerAnimationController.regularController;
         }
         else
         {
             playerHealth.Mutate(0f);
-            playerAnimator.runtimeAnimatorController = playerAttack.mutatedController;
+            playerAnimator.runtimeAnimatorController = playerAnimationController.mutatedController;
 
             int currentWeapon = PlayerPrefs.GetInt("CurrentWeaponCount");
             for (int i = 0; i < PlayerPrefs.GetInt("WeaponCount", 0); i++)

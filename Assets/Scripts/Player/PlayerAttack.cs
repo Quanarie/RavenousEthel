@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
@@ -5,12 +6,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public delegate void Transformation();
-    public static event Transformation OnMutation;
-    public static event Transformation OnDemutation;
-
-    public RuntimeAnimatorController regularController;
-    public RuntimeAnimatorController mutatedController;
+    public Action<float> OnMutation = delegate { };
 
     [HideInInspector] public Weapon weapon;
     private WeaponManager weaponManager;
@@ -31,9 +27,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float stunTimeMutantState;
     [SerializeField] private float pushForceMutantState;
     [SerializeField] private Image rechargeMutatedImage;
-    [SerializeField] private GameObject mutantProjectilePrefab;
-    [SerializeField] private GameObject deadMonsterPrefab;
-    [SerializeField] private AnimationClip monsterDeath;
+
     private float previousMutatedStateAttackTime;
 
     private void Start()
@@ -41,6 +35,8 @@ public class PlayerAttack : MonoBehaviour
         GameManager.Instance.playerAnimator.SetTrigger("transform");
 
         weaponManager = GetComponent<WeaponManager>();
+
+        GameManager.Instance.playerHealth.OnDemutation += DeMutate;
     }
 
     private void Update()
@@ -102,38 +98,24 @@ public class PlayerAttack : MonoBehaviour
 
     public void Mutate(GameObject enemy)
     {
-
-        OnMutation?.Invoke();
-
         Instantiate(deadSlimePrefab, transform.position, Quaternion.identity);
 
-        GameManager.Instance.playerAnimator.runtimeAnimatorController = mutatedController;
-        GameManager.Instance.playerAnimator.SetTrigger("transform");
-
-        GameManager.Instance.playerHealth.Mutate(enemy.GetComponent<EnemyHealth>().corpse.GetComponent<EnemyCorpse>().toHeal);
+        OnMutation?.Invoke(enemy.GetComponent<EnemyHealth>().corpse.GetComponent<EnemyCorpse>().toHeal);
         transform.position = enemy.transform.position;
         Destroy(enemy);
 
         CircleCollider2D hitbox = GameManager.Instance.playerHitBox;
         hitbox.radius = 0.115f;
         hitbox.offset = new Vector3(0f, 0.115f, 0f);
-
-        GameManager.Instance.playerHealth.GetBigger();
     }
 
     public void DeMutate()
     {
-        OnDemutation?.Invoke();
-
         GameManager.Instance.state = GameManager.State.regular;
-
-        GameManager.Instance.playerAnimator.SetTrigger("death");
 
         CircleCollider2D hitbox = GameManager.Instance.playerHitBox;
         hitbox.radius = 0.09f;
         hitbox.offset = new Vector3(0f, 0.09f, 0f);
-
-        StartCoroutine(ChangeStateToRegular());
 
         weaponManager.ClearWeapons();
     }
@@ -157,14 +139,5 @@ public class PlayerAttack : MonoBehaviour
 
         GameManager.Instance.playerAnimator.SetTrigger("drain");
         return true;
-    }
-
-    IEnumerator ChangeStateToRegular()
-    {
-        yield return new WaitForSeconds(monsterDeath.length);
-
-        GameManager.Instance.playerAnimator.runtimeAnimatorController = regularController;
-        GameManager.Instance.playerAnimator.SetTrigger("transform");
-        Instantiate(deadMonsterPrefab, transform.position, Quaternion.identity);
     }
 }
