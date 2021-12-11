@@ -8,20 +8,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public Transform Player;
     public Transform WeaponParent;
     public WeaponManager weaponManager;
     public Slider weaponStock;
 
     public GameObject pickupableArrowObject;
-
-    [HideInInspector] public Animator playerAnimator;
-    [HideInInspector] public PlayerAttack playerAttack;
-    [HideInInspector] public AnimationController playerAnimationController;
-    [HideInInspector] public PlayerHealth playerHealth;
-    [HideInInspector] public PlayerMovement playerMovement;
-
-    [HideInInspector] public CircleCollider2D playerHitBox;
 
     public Joystick Joystick;
     public Button AttackButton;
@@ -48,14 +39,6 @@ public class GameManager : MonoBehaviour
 
         SceneManager.sceneLoaded += OnSceneLoaded;
 
-        playerAnimator = Player.GetComponent<Animator>();
-        playerAttack = Player.GetComponent<PlayerAttack>();
-        playerAnimationController = Player.GetComponent<AnimationController>();
-        playerHealth = Player.GetComponent<PlayerHealth>();
-        playerMovement = Player.GetComponent<PlayerMovement>();
-        playerHitBox = Player.GetComponent<CircleCollider2D>();
-        weaponManager = Player.GetComponent<WeaponManager>();
-
         if (SceneManager.GetActiveScene().name == "MainMenu")
             DontDestroyOnLoadContainer.SetActive(false);
     }
@@ -73,7 +56,7 @@ public class GameManager : MonoBehaviour
 
         if (spawnPoint != null)
         {
-            Player.transform.position = spawnPoint.transform.position;
+            PlayerIdentifier.Instance.transform.position = spawnPoint.transform.position;
         }
     }
 
@@ -86,9 +69,9 @@ public class GameManager : MonoBehaviour
         else
             PlayerPrefs.SetInt("State", 1);
 
-        PlayerPrefs.SetFloat("Health", playerHealth.currentHp);
+        PlayerPrefs.SetFloat("Health", PlayerIdentifier.Instance.Health.currentHp);
 
-        PlayerPrefs.SetFloat("Size", Player.transform.localScale.x);
+        PlayerPrefs.SetFloat("Size", PlayerIdentifier.Instance.transform.localScale.x);
 
         PlayerPrefs.SetInt("WeaponCount", WeaponParent.childCount);
         PlayerPrefs.SetInt("CurrentWeapon", weaponManager.currentWeapon);
@@ -107,12 +90,12 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.GetInt("State", 0) == 0)
         {
             state = State.regular;
-            playerAnimator.runtimeAnimatorController = playerAnimationController.regularController;
+            PlayerIdentifier.Instance.Animator.runtimeAnimatorController = PlayerIdentifier.Instance.AnimationChanger.regularController;
         }
         else
         {
-            playerHealth.Mutate(0f);
-            playerAnimator.runtimeAnimatorController = playerAnimationController.mutatedController;
+            PlayerIdentifier.Instance.Health.Mutate(0f);
+            PlayerIdentifier.Instance.Animator.runtimeAnimatorController = PlayerIdentifier.Instance.AnimationChanger.mutatedController;
 
             int currentWeapon = PlayerPrefs.GetInt("CurrentWeaponCount");
             for (int i = 0; i < PlayerPrefs.GetInt("WeaponCount", 0); i++)
@@ -128,7 +111,7 @@ public class GameManager : MonoBehaviour
 
                 if (i == currentWeapon)
                 {
-                    playerAttack.weapon = weapon;
+                    PlayerIdentifier.Instance.Attack.SetWeapon(weapon);
                 }
                 else
                 {
@@ -137,10 +120,10 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        playerHealth.SetCurrentHealth(PlayerPrefs.GetFloat("Health", 0f));
+        PlayerIdentifier.Instance.Health.SetCurrentHealth(PlayerPrefs.GetFloat("Health", 0f));
         
         float size = PlayerPrefs.GetFloat("Size", 1f);
-        Player.transform.localScale = new Vector3(size, size, 0);
+        PlayerIdentifier.Instance.transform.localScale = new Vector3(size, size, 0);
     }
 
     private int GetCurrentLevel()
@@ -170,42 +153,5 @@ public class GameManager : MonoBehaviour
     {
         regular,
         mutated,
-    }
-
-    public Transform FindClosestEnemyInRange(float range)
-    {
-        Collider2D[] items = Physics2D.OverlapCircleAll(new Vector2(Player.transform.position.x, Player.transform.position.y), range);
-
-        int enemiesQuantity = 0;
-        foreach (Collider2D item in items)
-        {
-            if (item.TryGetComponent(out EnemyHealth _))
-                enemiesQuantity++;
-        }
-
-        Collider2D[] enemies = new Collider2D[enemiesQuantity];
-        int enemyCounter = 0;
-        for (int i = 0; i < items.Length; i++)
-        {
-            if (items[i].TryGetComponent(out EnemyHealth _))
-            {
-                enemies[enemyCounter] = items[i];
-                enemyCounter++;
-            }
-        }
-
-        if (enemies.Length == 0)
-            return null;
-
-        int closestEnemy = 0;
-        for (int i = 0; i < enemies.Length; i++)
-        {
-            if (Vector3.Distance(Player.transform.position, enemies[i].transform.position) < Vector3.Distance(Player.transform.position, enemies[closestEnemy].transform.position))
-            {
-                closestEnemy = i;
-            }
-        }
-
-        return enemies[closestEnemy].transform;
     }
 }

@@ -43,7 +43,7 @@ public class Projectile : MonoBehaviour
         if (collision.TryGetComponent(out enemyToAttack))
         {
             Vector3 enemyPos = enemyToAttack.transform.position;
-            Vector3 playerPos = GameManager.Instance.Player.position;
+            Vector3 playerPos = PlayerIdentifier.Instance.transform.position;
 
             enemyToAttack.ReceiveDamage(damageAmount, new Vector3(enemyPos.x - playerPos.x, enemyPos.y - playerPos.y, 0).normalized * pushForce, stunTime);
 

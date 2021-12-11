@@ -8,7 +8,7 @@ public class PlayerAttack : MonoBehaviour
 {
     public Action<float> OnMutation = delegate { };
 
-    [HideInInspector] public Weapon weapon;
+    private Weapon weapon;
     private WeaponManager weaponManager;
 
     [SerializeField] private float distanceToDrain;
@@ -32,11 +32,11 @@ public class PlayerAttack : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance.playerAnimator.SetTrigger("transform");
+        PlayerIdentifier.Instance.Animator.SetTrigger("transform");
 
         weaponManager = GetComponent<WeaponManager>();
 
-        GameManager.Instance.playerHealth.OnDemutation += DeMutate;
+        PlayerIdentifier.Instance.Health.OnDemutation += DeMutate;
     }
 
     private void Update()
@@ -47,7 +47,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void SwallowUp()
     {
-        Transform enemy = GameManager.Instance.FindClosestEnemyInRange(Camera.main.orthographicSize * Screen.width / Screen.height);
+        Transform enemy = EnemyFinder.FindClosestEnemyInRange(Camera.main.orthographicSize * Screen.width / Screen.height);
         if (enemy == null || !enemy.GetComponent<Renderer>().isVisible)
             return;
 
@@ -72,12 +72,12 @@ public class PlayerAttack : MonoBehaviour
 
         if (weapon == null)
         {
-            Transform enemy = GameManager.Instance.FindClosestEnemyInRange(attackDistanceMutantState);
+            Transform enemy = EnemyFinder.FindClosestEnemyInRange(attackDistanceMutantState);
 
             if (enemy != null)
             {
-                GameManager.Instance.playerAnimator.SetFloat("enemyPosX", (enemy.position.x - transform.position.x) / Mathf.Abs((enemy.position.x - transform.position.x)));
-                GameManager.Instance.playerAnimator.SetTrigger("attack");
+                PlayerIdentifier.Instance.Animator.SetFloat("enemyPosX", (enemy.position.x - transform.position.x) / Mathf.Abs((enemy.position.x - transform.position.x)));
+                PlayerIdentifier.Instance.Animator.SetTrigger("attack");
 
                 enemy.GetComponent<EnemyHealth>().ReceiveDamage(damageMutantState,
                     new Vector3(enemy.position.x - transform.position.x, enemy.position.y - transform.position.y, 0).normalized * pushForceMutantState,
@@ -85,8 +85,8 @@ public class PlayerAttack : MonoBehaviour
             }
             else
             {
-                GameManager.Instance.playerAnimator.SetFloat("enemyPosX", 0);
-                GameManager.Instance.playerAnimator.SetTrigger("attack");
+                PlayerIdentifier.Instance.Animator.SetFloat("enemyPosX", 0);
+                PlayerIdentifier.Instance.Animator.SetTrigger("attack");
             }
             previousMutatedStateAttackTime = Time.time;
         }
@@ -96,6 +96,8 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
+    public void SetWeapon(Weapon weapon) => this.weapon = weapon;
+
     public void Mutate(GameObject enemy)
     {
         Instantiate(deadSlimePrefab, transform.position, Quaternion.identity);
@@ -104,7 +106,7 @@ public class PlayerAttack : MonoBehaviour
         transform.position = enemy.transform.position;
         Destroy(enemy);
 
-        CircleCollider2D hitbox = GameManager.Instance.playerHitBox;
+        CircleCollider2D hitbox = PlayerIdentifier.Instance.HitBox;
         hitbox.radius = 0.115f;
         hitbox.offset = new Vector3(0f, 0.115f, 0f);
     }
@@ -113,7 +115,7 @@ public class PlayerAttack : MonoBehaviour
     {
         GameManager.Instance.state = GameManager.State.regular;
 
-        CircleCollider2D hitbox = GameManager.Instance.playerHitBox;
+        CircleCollider2D hitbox = PlayerIdentifier.Instance.HitBox;
         hitbox.radius = 0.09f;
         hitbox.offset = new Vector3(0f, 0.09f, 0f);
 
@@ -137,7 +139,7 @@ public class PlayerAttack : MonoBehaviour
         if (corpsesCount == 0)
             return false;
 
-        GameManager.Instance.playerAnimator.SetTrigger("drain");
+        PlayerIdentifier.Instance.Animator.SetTrigger("drain");
         return true;
     }
 }

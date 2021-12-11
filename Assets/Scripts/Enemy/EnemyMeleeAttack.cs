@@ -17,13 +17,13 @@ public class EnemyMeleeAttack : EnemyAttack
     protected override void Attack()
     {
         animator.SetTrigger("attack");
-        animator.SetFloat("playerPosX", (GameManager.Instance.Player.position.x - transform.position.x) / Mathf.Abs(GameManager.Instance.Player.position.x - transform.position.x));
+        animator.SetFloat("playerPosX", (PlayerIdentifier.Instance.transform.position.x - transform.position.x) / Mathf.Abs(PlayerIdentifier.Instance.transform.position.x - transform.position.x));
         StartCoroutine(AttackAfterAnimation());
     }
 
     private IEnumerator AttackAfterAnimation()
     {
         yield return new WaitForSeconds(attackClip.length);
-        GameManager.Instance.playerHealth.ReceiveDamage(damageAmount);
+        PlayerIdentifier.Instance.Health.ReceiveDamage(damageAmount);
     }
 }

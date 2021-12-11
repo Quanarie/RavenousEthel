@@ -11,7 +11,7 @@ public class RegularProjectile : MonoBehaviour
 
     private void Start()
     {
-        enemyToAttack = GameManager.Instance.FindClosestEnemyInRange(Camera.main.orthographicSize * Screen.width / Screen.height);
+        enemyToAttack = EnemyFinder.FindClosestEnemyInRange(Camera.main.orthographicSize * Screen.width / Screen.height);
 
         if (enemyToAttack == null)
         {
@@ -20,21 +20,24 @@ public class RegularProjectile : MonoBehaviour
         }
 
         if (GameManager.Instance.state == GameManager.State.regular)
-            GameManager.Instance.playerAnimator.SetTrigger("attack");
-        else GameManager.Instance.playerAnimator.SetTrigger("transform");
+            PlayerIdentifier.Instance.Animator.SetTrigger("attack");
+        else PlayerIdentifier.Instance.Animator.SetTrigger("transform");
 
-        GameManager.Instance.playerAnimator.SetFloat("enemyPosX", (enemyToAttack.position.x - GameManager.Instance.Player.position.x) / Mathf.Abs(enemyToAttack.position.x - GameManager.Instance.Player.position.x));
+        PlayerIdentifier.Instance.Animator.SetFloat("enemyPosX", (enemyToAttack.position.x - PlayerIdentifier.Instance.transform.position.x) / Mathf.Abs(enemyToAttack.position.x - PlayerIdentifier.Instance.transform.position.x));
     }
 
     private void Update()
     {
+        if (enemyToAttack == null)
+            return;
+
         Vector3 endPos = new Vector3(enemyToAttack.position.x, enemyToAttack.position.y + Projectile.offsetY, 0);
 
         transform.position = Vector3.Lerp(transform.position, endPos, speedOfLerping);
 
         if (Vector3.Distance(transform.position, endPos) < distanceToMutate)
         {
-            GameManager.Instance.playerAttack.Mutate(enemyToAttack.gameObject);
+            PlayerIdentifier.Instance.Attack.Mutate(enemyToAttack.gameObject);
             Destroy(gameObject);
         }
     }

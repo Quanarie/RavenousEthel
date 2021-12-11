@@ -25,7 +25,7 @@ public abstract class PickupableObject : MonoBehaviour
         if (isPickedUp)
             return;
 
-        if (Vector3.Distance(GameManager.Instance.Player.position, transform.position) <= pickupDistance)
+        if (Vector3.Distance(PlayerIdentifier.Instance.transform.position, transform.position) <= pickupDistance)
         {
             if (!arrow.activeSelf)
                 arrow.SetActive(true);
@@ -43,7 +43,7 @@ public abstract class PickupableObject : MonoBehaviour
 
     protected virtual void TryPickup()
     {
-        if (Vector3.Distance(GameManager.Instance.Player.position, transform.position) <= pickupDistance)
+        if (Vector3.Distance(PlayerIdentifier.Instance.transform.position, transform.position) <= pickupDistance)
         {
             PerformAction();
             isPickedUp = true;

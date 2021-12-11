@@ -15,7 +15,7 @@ public class CameraMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 lerpedPosition = Vector3.Lerp(transform.position, GameManager.Instance.Player.position, cameraLerpSpeed);
+        Vector3 lerpedPosition = Vector3.Lerp(transform.position, PlayerIdentifier.Instance.transform.position, cameraLerpSpeed);
 
         transform.position = new Vector3(lerpedPosition.x, lerpedPosition.y, cameraStartPosition.z);
     }

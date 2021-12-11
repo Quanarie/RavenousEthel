@@ -11,7 +11,7 @@ public class EnemyProjectile : Projectile
     {
         if (collision.TryGetComponent(out playerHealth))
         {
-            Vector3 playerPos = GameManager.Instance.Player.position;
+            Vector3 playerPos = PlayerIdentifier.Instance.transform.position;
 
             playerHealth.ReceiveDamage(damageAmount, new Vector3(playerPos.x - transform.position.x, playerPos.y - transform.position.y, 0).normalized * pushForce, stunTime);
             

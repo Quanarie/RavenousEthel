@@ -31,7 +31,7 @@ public class Weapon : MonoBehaviour
 
         rechargeImage.fillAmount = Mathf.Min((Time.time - lastShootTime) / rechargeTime, 1);
 
-        Transform enemyToAttack = GameManager.Instance.FindClosestEnemyInRange(range);
+        Transform enemyToAttack = EnemyFinder.FindClosestEnemyInRange(range);
 
         Vector3 weaponPos = transform.position;
         Vector3 weaponDir = Vector3.zero;
@@ -86,7 +86,7 @@ public class Weapon : MonoBehaviour
 
         AudioManager.Instance.Play(weaponSoundName);
 
-        Transform enemyToAttack = GameManager.Instance.FindClosestEnemyInRange(range);
+        Transform enemyToAttack = EnemyFinder.FindClosestEnemyInRange(range);
 
         Projectile spawnedProjectile = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
         spawnedProjectile.Construct(damageAmount, pushForce, stunTime, speed, lifetime, projectileSprite);

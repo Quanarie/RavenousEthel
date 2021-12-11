@@ -19,7 +19,7 @@ public class EnemyWeapon : MonoBehaviour
     {
         AudioManager.Instance.Play(weaponSoundName);
 
-        Vector3 playerPos = GameManager.Instance.Player.position;
+        Vector3 playerPos = PlayerIdentifier.Instance.transform.position;
 
         EnemyProjectile spawnedProjectile = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<EnemyProjectile>();
         spawnedProjectile.direction = new Vector3(playerPos.x - transform.position.x, playerPos.y - transform.position.y + Projectile.offsetY, 0);
@@ -32,7 +32,7 @@ public class EnemyWeapon : MonoBehaviour
         if (EnemyMovement.IsThereAWallOnTheWayToPlayer(transform.position))
             return;
 
-        Vector3 playerPos = GameManager.Instance.Player.position;
+        Vector3 playerPos = PlayerIdentifier.Instance.transform.position;
 
         if (playerPos.x < transform.position.x)
             transform.localScale = new Vector3(1, -1, 0);

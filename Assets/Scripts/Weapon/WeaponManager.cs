@@ -94,7 +94,7 @@ public class WeaponManager : MonoBehaviour
             weaponImage.sprite = weapons[currentWeapon].gameObject.GetComponent<SpriteRenderer>().sprite;
         }
 
-        GameManager.Instance.playerAttack.weapon = weapons[currentWeapon];
+        PlayerIdentifier.Instance.Attack.SetWeapon(weapons[currentWeapon]);
     }
 
     public void Pickup()
@@ -147,7 +147,7 @@ public class WeaponManager : MonoBehaviour
         weapons[closestWeapon].transform.position = weaponParent.position;
 
         Weapon newWeapon = weapons[closestWeapon].GetComponent<Weapon>();
-        GameManager.Instance.playerAttack.weapon = newWeapon;
+        PlayerIdentifier.Instance.Attack.SetWeapon(newWeapon);
         this.weapons.Add(newWeapon);
         if (this.weapons[currentWeapon] != null)
             this.weapons[currentWeapon].gameObject.SetActive(false);

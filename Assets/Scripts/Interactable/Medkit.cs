@@ -10,7 +10,7 @@ public class Medkit : PickupableObject
     {
         base.PerformAction();
 
-        GameManager.Instance.playerHealth.Heal(toHeal);
+        PlayerIdentifier.Instance.Health.Heal(toHeal);
 
         Destroy(gameObject);
     }

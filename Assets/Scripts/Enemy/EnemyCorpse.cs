@@ -8,7 +8,7 @@ public class EnemyCorpse : MonoBehaviour
 
     public void Drain()
     {
-        GameManager.Instance.playerHealth.Heal(toHeal);
+        PlayerIdentifier.Instance.Health.Heal(toHeal);
 
         Destroy(gameObject);
     }

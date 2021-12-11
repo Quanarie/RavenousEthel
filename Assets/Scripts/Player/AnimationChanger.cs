@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimationController : MonoBehaviour
+public class AnimationChanger : MonoBehaviour
 {
     public RuntimeAnimatorController regularController;
     public RuntimeAnimatorController mutatedController;
@@ -12,19 +12,19 @@ public class AnimationController : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance.playerAttack.OnMutation += Mutate;
-        GameManager.Instance.playerHealth.OnDemutation += DeMutate;
+        PlayerIdentifier.Instance.Attack.OnMutation += Mutate;
+        PlayerIdentifier.Instance.Health.OnDemutation += DeMutate;
     }
 
     public void Mutate(float compatibility)
     {
-        GameManager.Instance.playerAnimator.runtimeAnimatorController = mutatedController;
-        GameManager.Instance.playerAnimator.SetTrigger("transform");
+        PlayerIdentifier.Instance.Animator.runtimeAnimatorController = mutatedController;
+        PlayerIdentifier.Instance.Animator.SetTrigger("transform");
     }
 
     public void DeMutate()
     {
-        GameManager.Instance.playerAnimator.SetTrigger("death");
+        PlayerIdentifier.Instance.Animator.SetTrigger("death");
         StartCoroutine(ChangeStateToRegular());
 
     }
@@ -33,8 +33,8 @@ public class AnimationController : MonoBehaviour
     {
         yield return new WaitForSeconds(monsterDeath.length);
 
-        GameManager.Instance.playerAnimator.runtimeAnimatorController = regularController;
-        GameManager.Instance.playerAnimator.SetTrigger("transform");
+        PlayerIdentifier.Instance.Animator.runtimeAnimatorController = regularController;
+        PlayerIdentifier.Instance.Animator.SetTrigger("transform");
         Instantiate(deadMonsterPrefab, transform.position, Quaternion.identity);
     }
 }

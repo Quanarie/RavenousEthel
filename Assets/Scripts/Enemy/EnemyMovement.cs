@@ -16,13 +16,13 @@ public class EnemyMovement : Movement
 
     private void FixedUpdate()
     {
-        if (Vector3.Distance(GameManager.Instance.Player.position, transform.position) <= enemyAttack.attackDistance || IsThereAWallOnTheWayToPlayer(transform.position))
+        if (Vector3.Distance(PlayerIdentifier.Instance.transform.position, transform.position) <= enemyAttack.attackDistance || IsThereAWallOnTheWayToPlayer(transform.position))
         {
             UpdateMotor(Vector3.zero);
             return;
         }
 
-        Vector3 playerPos = GameManager.Instance.Player.position;
+        Vector3 playerPos = PlayerIdentifier.Instance.transform.position;
         float inputX = playerPos.x - transform.position.x;
         float inputY = playerPos.y - transform.position.y;
 
@@ -52,7 +52,7 @@ public class EnemyMovement : Movement
 
     public static bool IsThereAWallOnTheWayToPlayer(Vector3 selfPos)
     {
-        Vector3 playerPos = GameManager.Instance.Player.position;
+        Vector3 playerPos = PlayerIdentifier.Instance.transform.position;
 
         RaycastHit2D[] hits = Physics2D.RaycastAll(selfPos, new Vector3(playerPos.x - selfPos.x, playerPos.y - selfPos.y, 0f));
 
