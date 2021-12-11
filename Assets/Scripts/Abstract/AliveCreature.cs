@@ -35,8 +35,6 @@ public class AliveCreature : MonoBehaviour
         GameManager.Instance.floatingTextManager.Show("-" + damageAmount.ToString(), 15, Color.red, transform.position, new Vector3(70, 80, 0), 0.5f);
 
         animator.SetTrigger("damage");
-
-        //AudioManager.Instance.Play.Play(damageAudioName);
     }
 
     public virtual void ReceiveDamage(float damageAmount, Vector3 pushDirection, float stunTime)
