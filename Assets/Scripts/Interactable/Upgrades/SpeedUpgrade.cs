@@ -12,8 +12,8 @@ public class SpeedUpgrade : PickupableObject
     {
         base.PerformAction();
 
-        PlayerIdentifier.Instance.Movement.xSpeed += xSpeedUpgrade;
-        PlayerIdentifier.Instance.Movement.ySpeed += ySpeedUpgrade;
+        //PlayerIdentifier.Instance.Movement.xSpeed += xSpeedUpgrade;
+        //PlayerIdentifier.Instance.Movement.ySpeed += ySpeedUpgrade;
 
         GetComponent<SpriteRenderer>().sprite = null;
         Destroy(arrow);
@@ -25,8 +25,8 @@ public class SpeedUpgrade : PickupableObject
     {
         yield return new WaitForSeconds(duration);
 
-        PlayerIdentifier.Instance.Movement.xSpeed -= xSpeedUpgrade;
-        PlayerIdentifier.Instance.Movement.ySpeed -= ySpeedUpgrade;
+        //PlayerIdentifier.Instance.Movement.xSpeed -= xSpeedUpgrade;
+        //PlayerIdentifier.Instance.Movement.ySpeed -= ySpeedUpgrade;
 
         Destroy(gameObject);
     }

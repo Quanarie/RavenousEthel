@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public Transform WeaponParent;
-    public WeaponManager weaponManager;
     public Slider weaponStock;
 
     public GameObject pickupableArrowObject;
@@ -71,7 +70,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetFloat("Size", PlayerIdentifier.Instance.transform.localScale.x);
 
         PlayerPrefs.SetInt("WeaponCount", WeaponParent.childCount);
-        PlayerPrefs.SetInt("CurrentWeapon", weaponManager.currentWeapon);
+        PlayerPrefs.SetInt("CurrentWeapon", PlayerIdentifier.Instance.WeaponManager.currentWeapon);
         for (int i = 0; i < WeaponParent.childCount; i++)
         {
             PlayerPrefs.SetInt("Weapon" + i.ToString(), WeaponParent.GetChild(i).GetComponent<Weapon>().index);
@@ -83,7 +82,7 @@ public class GameManager : MonoBehaviour
     {
         SetCurrentLevel(PlayerPrefs.GetInt("Level", 0));
 
-        weaponManager.DeleteWeapons();
+        PlayerIdentifier.Instance.WeaponManager.DeleteWeapons();
         if (PlayerPrefs.GetInt("State", 0) == 0)
         {
             state = State.regular;
@@ -91,30 +90,24 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            state = State.mutated;
+
             PlayerIdentifier.Instance.Health.Mutate(0f);
             PlayerIdentifier.Instance.Animator.runtimeAnimatorController = PlayerIdentifier.Instance.AnimationChanger.mutatedController;
 
-            int currentWeapon = PlayerPrefs.GetInt("CurrentWeaponCount");
+            int currentWeapon = PlayerPrefs.GetInt("CurrentWeapon");
             for (int i = 0; i < PlayerPrefs.GetInt("WeaponCount", 0); i++)
             {
                 Weapon weapon = Instantiate(weapons[PlayerPrefs.GetInt("Weapon" + i.ToString())], transform.position, transform.rotation, WeaponParent);
 
                 weapon.currentShotQuantity = PlayerPrefs.GetInt("WeaponShoots" + i.ToString());
                 weapon.transform.localPosition = Vector3.zero;
-                weapon.rechargeImage = weaponManager.rechargeImage;
+                weapon.rechargeImage = PlayerIdentifier.Instance.WeaponManager.rechargeImage;
 
                 weapon.UpdateWeaponStock();
-                weaponManager.AddWeapon(weapon);
-
-                if (i == currentWeapon)
-                {
-                    PlayerIdentifier.Instance.Attack.SetWeapon(weapon);
-                }
-                else
-                {
-                    weapon.gameObject.SetActive(false);
-                }
+                PlayerIdentifier.Instance.WeaponManager.AddWeapon(weapon);
             }
+            PlayerIdentifier.Instance.WeaponManager.ChangeCurrentWeapon(currentWeapon);
         }
 
         PlayerIdentifier.Instance.Health.SetCurrentHealth(PlayerPrefs.GetFloat("Health", 0f));

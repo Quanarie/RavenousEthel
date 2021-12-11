@@ -9880,6 +9880,7 @@ GameObject:
   - component: {fileID: 1595203740}
   - component: {fileID: 1595203739}
   - component: {fileID: 1595203738}
+  - component: {fileID: 1595203749}
   - component: {fileID: 1595203746}
   - component: {fileID: 1595203736}
   - component: {fileID: 1595203737}
@@ -9937,15 +9938,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceToDrain: 0.2
+  distanceToPickupBonus: 0.5
   rechargeTimeRegular: 1
   regularProjectilePrefab: {fileID: 7350114879659511275, guid: 83fa1a85ba73c3a468f85bb04ce7b2b0, type: 3}
-  deadSlimePrefab: {fileID: 2016878233217422246, guid: 46b5e5f8499f1034e95d8815b11717c5, type: 3}
   rechargeRegularImage: {fileID: 981807335}
   attackDistanceMutantState: 0.4
   rechargeTimeMutated: 1
   damageMutantState: 2
   stunTimeMutantState: 1
-  pushForceMutantState: 5
+  pushForceMutantState: 2.5
   rechargeMutatedImage: {fileID: 1057285074}
 --- !u!114 &1595203739
 MonoBehaviour:
@@ -9984,8 +9985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ySpeed: 0.75
   xSpeed: 1
-  pushRecoverySpeed: 0
-  pushDirection: {x: 0, y: 0, z: 0}
+  pushRecoverySpeed: 0.2
 --- !u!95 &1595203741
 Animator:
   serializedVersion: 4
@@ -10041,7 +10041,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!212 &1595203744
 SpriteRenderer:
@@ -10146,7 +10146,9 @@ MonoBehaviour:
   AnimationChanger: {fileID: 0}
   Health: {fileID: 0}
   Attack: {fileID: 0}
+  Mutation: {fileID: 0}
   Movement: {fileID: 0}
+  WeaponManager: {fileID: 0}
   HitBox: {fileID: 0}
 --- !u!114 &1595203748
 MonoBehaviour:
@@ -10161,6 +10163,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joystick: {fileID: 1827970929}
+--- !u!114 &1595203749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595203735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f09f31d80fa945749a32e6b666197767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deadSlimePrefab: {fileID: 2016878233217422246, guid: 46b5e5f8499f1034e95d8815b11717c5, type: 3}
 --- !u!1 &1624509588
 GameObject:
   m_ObjectHideFlags: 0
@@ -11621,7 +11636,7 @@ RectTransform:
   - {fileID: 1709066481}
   - {fileID: 148996360}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11836,7 +11851,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2066099090
 GameObject:
@@ -12870,7 +12885,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4070366252291985462
 MonoBehaviour:

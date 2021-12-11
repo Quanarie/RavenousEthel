@@ -13,10 +13,16 @@ public class PlayerIdentifier : MonoBehaviour
     [HideInInspector] public PlayerAttack Attack;
     [HideInInspector] public PlayerMutation Mutation;
     [HideInInspector] public PlayerMovement Movement;
+    [HideInInspector] public WeaponManager WeaponManager;
     [HideInInspector] public CircleCollider2D HitBox;
 
     private void Awake()
     {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
         Instance = this;
 
         Input = GetComponent<PlayerInput>();
@@ -26,6 +32,7 @@ public class PlayerIdentifier : MonoBehaviour
         Attack = GetComponent<PlayerAttack>();
         Mutation = GetComponent<PlayerMutation>();
         Movement = GetComponent<PlayerMovement>();
+        WeaponManager = GetComponent<WeaponManager>();
         HitBox = GetComponent<CircleCollider2D>();
     }
 }

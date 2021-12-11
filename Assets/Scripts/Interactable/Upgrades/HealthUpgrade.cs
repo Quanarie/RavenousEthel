@@ -11,7 +11,7 @@ public class HealthUpgrade : PickupableObject
     {
         base.PerformAction();
 
-        PlayerIdentifier.Instance.Health.upgradeHealth = upgradeHealth;
+        //PlayerIdentifier.Instance.Health.upgradeHealth = upgradeHealth;
 
         GetComponent<SpriteRenderer>().sprite = null;
         Destroy(arrow);
@@ -24,7 +24,7 @@ public class HealthUpgrade : PickupableObject
         yield return new WaitForSeconds(duration);
 
         if (PlayerIdentifier.Instance.Health.upgradeHealth > 0)
-            PlayerIdentifier.Instance.Health.upgradeHealth = 0;
+            //PlayerIdentifier.Instance.Health.upgradeHealth = 0;
 
         Destroy(gameObject);
     }

@@ -9,6 +9,7 @@ public class PlayerAttack : MonoBehaviour
     private Weapon weapon;
 
     [SerializeField] private float distanceToDrain;
+    [SerializeField] private float distanceToPickupBonus;
 
     [Header("Regular State")]
     [SerializeField] private float rechargeTimeRegular;
@@ -62,6 +63,12 @@ public class PlayerAttack : MonoBehaviour
         if (Time.time - previousMutatedStateAttackTime < rechargeTimeMutated)
             return;
 
+        if (PlayerIdentifier.Instance.WeaponManager.Pickup())
+            return;
+
+        if (TryPickupBonuses(distanceToPickupBonus))
+            return;
+
         if (TryDrainCorpses())
             return;
 
@@ -92,6 +99,24 @@ public class PlayerAttack : MonoBehaviour
     }
 
     public void SetWeapon(Weapon weapon) => this.weapon = weapon;
+
+    public bool TryPickupBonuses(float range)
+    {
+        Collider2D[] items = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), range);
+
+        int bonusesQuantity = 0;
+        foreach (Collider2D item in items)
+        {
+            if (item.TryGetComponent(out PickupableObject _))
+            {
+                item.GetComponent<PickupableObject>().TryPickup();
+                bonusesQuantity++;
+            }
+        }
+
+        if (bonusesQuantity > 0) return true;
+        else return false;
+    }
 
     public bool TryDrainCorpses()
     {

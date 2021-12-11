@@ -34,6 +34,8 @@ public class PlayerHealth : AliveCreature
         UpdateHealth();
 
         cameraShakeComponent = Camera.main.GetComponent<CameraShake>();
+
+        PlayerIdentifier.Instance.Mutation.OnMutation += Mutate;
     }
 
     public override void ReceiveDamage(float damageAmount)
@@ -98,10 +100,7 @@ public class PlayerHealth : AliveCreature
     public void Mutate(float toHeal)
     {
         maxHp = maxMonsterHp;
-        if (GameManager.Instance.state == GameManager.State.regular)
-            currentHp = maxMonsterHp - (maxRegularHp - currentHp);
-
-        GameManager.Instance.state = GameManager.State.mutated;
+        currentHp = maxMonsterHp - (maxRegularHp - currentHp);
 
         Heal(toHeal);
 

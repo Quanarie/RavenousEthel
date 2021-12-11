@@ -41,7 +41,7 @@ public class AliveCreature : MonoBehaviour
     {
         ReceiveDamage(damageAmount);
 
-        movementScript.pushDirection = pushDirection;
+        movementScript.SetPushDirection(pushDirection);
 
         movementScript.Stun(stunTime);
     }

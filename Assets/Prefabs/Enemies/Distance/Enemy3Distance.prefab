@@ -111,7 +111,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!95 &1877402155899591911
 Animator:
@@ -181,9 +181,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ySpeed: 0.5
-  xSpeed: 0.6
-  pushRecoverySpeed: 0
-  pushDirection: {x: 0, y: 0, z: 0}
+  xSpeed: 0.7
+  pushRecoverySpeed: 0.2
   chasingDistance: 1.5
 --- !u!114 &1877402155899591933
 MonoBehaviour:

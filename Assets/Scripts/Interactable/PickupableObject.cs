@@ -14,8 +14,6 @@ public abstract class PickupableObject : MonoBehaviour
 
     protected virtual void Start()
     {
-        WeaponManager.OnPickupClicked += TryPickup;
-
         arrow = Instantiate(GameManager.Instance.pickupableArrowObject, transform.position, transform.rotation, transform);
         arrow.SetActive(false);
     }
@@ -41,7 +39,7 @@ public abstract class PickupableObject : MonoBehaviour
         }
     }
 
-    protected virtual void TryPickup()
+    public virtual void TryPickup()
     {
         if (Vector3.Distance(PlayerIdentifier.Instance.transform.position, transform.position) <= pickupDistance)
         {
@@ -52,11 +50,16 @@ public abstract class PickupableObject : MonoBehaviour
 
     protected virtual void PerformAction() 
     {
-        WeaponManager.OnPickupClicked -= TryPickup;
+        UnregisterFromEvent();
     }
 
     private void OnDestroy()
     {
-        WeaponManager.OnPickupClicked -= TryPickup;
+        UnregisterFromEvent();
+    }
+
+    private void UnregisterFromEvent()
+    {
+        PlayerIdentifier.Instance.Input.OnInteractButtonPressed -= TryPickup;
     }
 }

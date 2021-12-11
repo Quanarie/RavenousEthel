@@ -120,7 +120,7 @@ public class Weapon : MonoBehaviour
         currentShotQuantity++;
         if (currentShotQuantity >= maxShootQuantity)
         {
-            GameManager.Instance.weaponManager.Break(this);
+            PlayerIdentifier.Instance.WeaponManager.Break(this);
             rechargeImage.fillAmount = 0f;
             return;
         }

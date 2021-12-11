@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
@@ -5,11 +6,8 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    public delegate void PickupClick();
-    public static event PickupClick OnPickupClicked;
-
-    [SerializeField] private float radius;
     public Image rechargeImage;
+    [SerializeField] private float radius;
     [SerializeField] protected Image weaponImage;
     [SerializeField] protected Sprite weaponSpriteStandart;
 
@@ -18,14 +16,15 @@ public class WeaponManager : MonoBehaviour
 
     private void Start()
     {
-        weapons.Add(null);
         weaponImage.sprite = weaponSpriteStandart;
+
+        PlayerIdentifier.Instance.Input.OnWeaponButtonPressed += NextWeapon;
     }
 
     public void AddWeapon(Weapon weapon)
     {
         weapons.Add(weapon);
-        currentWeapon++;
+        NextWeapon();
     }
 
     public void Break(Weapon weapon)
@@ -47,7 +46,7 @@ public class WeaponManager : MonoBehaviour
 
             weapons[i].transform.SetParent(null);
 
-            Vector2 randomOffset = Random.insideUnitCircle / 3;
+            Vector2 randomOffset = UnityEngine.Random.insideUnitCircle / 3;
             weapons[i].transform.position += new Vector3(randomOffset.x, randomOffset.y, 0);
 
             weapons[i].gameObject.SetActive(true);
@@ -92,18 +91,70 @@ public class WeaponManager : MonoBehaviour
             weapons[currentWeapon].gameObject.SetActive(true);
             weapons[currentWeapon].UpdateWeaponStock();
             weaponImage.sprite = weapons[currentWeapon].gameObject.GetComponent<SpriteRenderer>().sprite;
+            print(weapons[currentWeapon].gameObject.GetComponent<SpriteRenderer>().sprite.name);
+        }
+        else
+        {
+            weaponImage.sprite = weaponSpriteStandart;
         }
 
-        PlayerIdentifier.Instance.Attack.SetWeapon(weapons[currentWeapon]);
+        SetWeapon(currentWeapon);
     }
 
-    public void Pickup()
+    public void ChangeCurrentWeapon(int current)
     {
-        OnPickupClicked?.Invoke();
+        if (weapons[currentWeapon] != null)
+            weapons[currentWeapon].gameObject.SetActive(false);
 
+        currentWeapon = current;
+
+        if (weapons[currentWeapon] != null)
+        {
+            weapons[currentWeapon].gameObject.SetActive(true);
+            weapons[currentWeapon].UpdateWeaponStock();
+            weaponImage.sprite = weapons[currentWeapon].gameObject.GetComponent<SpriteRenderer>().sprite;
+        }
+
+        SetWeapon(currentWeapon);
+    }
+
+    private void SetWeapon(int index) => PlayerIdentifier.Instance.Attack.SetWeapon(weapons[index]);
+
+    public bool Pickup()
+    {
         if (GameManager.Instance.state == GameManager.State.regular)
-            return;
+            return false;
 
+        Weapon newWeapon = FindClosestWeapon(weapons);
+
+        if (newWeapon == null)
+            return false;
+
+        Transform weaponParent = GameManager.Instance.WeaponParent;
+        newWeapon.transform.SetParent(weaponParent);
+        newWeapon.transform.position = weaponParent.position;
+
+        PlayerIdentifier.Instance.Attack.SetWeapon(newWeapon);
+        if (weapons[currentWeapon] != null)
+            weapons[currentWeapon].gameObject.SetActive(false);
+
+        weapons.Add(newWeapon);
+        currentWeapon++;
+        SetWeapon(currentWeapon);
+
+        newWeapon.UpdateWeaponStock();
+
+        weaponImage.sprite = newWeapon.gameObject.GetComponent<SpriteRenderer>().sprite;
+
+        newWeapon.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+
+        newWeapon.rechargeImage = rechargeImage;
+
+        return true;
+    }
+
+    private Weapon FindClosestWeapon(List<Weapon> weapons)
+    {
         Collider2D[] items = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), radius);
 
         int weaponQuantity = 0;
@@ -116,7 +167,7 @@ public class WeaponManager : MonoBehaviour
                 weaponQuantity++;
         }
 
-        Collider2D[] weapons = new Collider2D[weaponQuantity];
+        Collider2D[] weaponsLocal = new Collider2D[weaponQuantity];
         int weaponCounter = 0;
         for (int i = 0; i < items.Length; i++)
         {
@@ -125,40 +176,23 @@ public class WeaponManager : MonoBehaviour
 
             if (items[i].TryGetComponent(out Weapon _))
             {
-                weapons[weaponCounter] = items[i];
+                weaponsLocal[weaponCounter] = items[i];
                 weaponCounter++;
             }
         }
 
-        if (weapons.Length == 0)
-            return;
+        if (weaponsLocal.Length == 0)
+            return null;
 
         int closestWeapon = 0;
-        for (int i = 0; i < weapons.Length; i++)
+        for (int i = 0; i < weaponsLocal.Length; i++)
         {
-            if (Vector3.Distance(transform.position, weapons[i].transform.position) < Vector3.Distance(transform.position, weapons[closestWeapon].transform.position))
+            if (Vector3.Distance(transform.position, weaponsLocal[i].transform.position) < Vector3.Distance(transform.position, weaponsLocal[closestWeapon].transform.position))
             {
                 closestWeapon = i;
             }
         }
 
-        Transform weaponParent = GameManager.Instance.WeaponParent;
-        weapons[closestWeapon].transform.SetParent(weaponParent);
-        weapons[closestWeapon].transform.position = weaponParent.position;
-
-        Weapon newWeapon = weapons[closestWeapon].GetComponent<Weapon>();
-        PlayerIdentifier.Instance.Attack.SetWeapon(newWeapon);
-        this.weapons.Add(newWeapon);
-        if (this.weapons[currentWeapon] != null)
-            this.weapons[currentWeapon].gameObject.SetActive(false);
-        currentWeapon++;
-        newWeapon.UpdateWeaponStock();
-
-        weaponImage.sprite = newWeapon.gameObject.GetComponent<SpriteRenderer>().sprite;
-
-        newWeapon.gameObject.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
-        newWeapon.gameObject.transform.localScale = new Vector3(1, 1, 0);
-
-        newWeapon.rechargeImage = rechargeImage;
+        return weaponsLocal[closestWeapon].GetComponent<Weapon>();
     }
 }

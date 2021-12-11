@@ -220,7 +220,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &8010161962307220951
 CircleCollider2D:
@@ -307,6 +307,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ySpeed: 0.5
   xSpeed: 0.7
-  pushRecoverySpeed: 0.5
-  pushDirection: {x: 0, y: 0, z: 0}
+  pushRecoverySpeed: 0.2
   chasingDistance: 2

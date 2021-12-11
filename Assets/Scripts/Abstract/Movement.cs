@@ -4,14 +4,13 @@ using UnityEngine;
 
 public abstract class Movement : MonoBehaviour
 {
-    public float ySpeed = 0.75f;
-    public float xSpeed = 1f;
+    [SerializeField] protected float ySpeed = 0.75f;
+    [SerializeField] protected float xSpeed = 1f;
 
-    [HideInInspector] public float pushRecoverySpeed;
-    [HideInInspector] public Vector3 pushDirection;
+    [SerializeField] private float pushRecoverySpeed;
 
     protected bool isStunned;
-
+    private Vector3 pushDirection;
     private Vector3 moveDelta;
 
     private Animator animator;
@@ -49,8 +48,15 @@ public abstract class Movement : MonoBehaviour
         }
     }
 
+    public void SetPushDirection(Vector3 pushDirection)
+    {
+        this.pushDirection = pushDirection;
+    }
+
     public virtual void Stun(float stunTime)
     {
+        return;
+
         isStunned = true;
 
         StartCoroutine(UnStunCreature(stunTime));
