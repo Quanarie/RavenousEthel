@@ -6,8 +6,8 @@ public class PlayerMovement : Movement
 {
     private void FixedUpdate()
     {
-        float inputX = GameManager.Instance.Joystick.Horizontal;
-        float inputY = GameManager.Instance.Joystick.Vertical;
+        float inputX = PlayerIdentifier.Instance.Input.Horizontal;
+        float inputY = PlayerIdentifier.Instance.Input.Vertical;
 
         UpdateMotor(new Vector3(inputX, inputY, 0).normalized);
     }

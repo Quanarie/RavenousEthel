@@ -11,7 +11,6 @@ public class HealthUpgrade : PickupableObject
     {
         base.PerformAction();
 
-
         PlayerIdentifier.Instance.Health.upgradeHealth = upgradeHealth;
 
         GetComponent<SpriteRenderer>().sprite = null;

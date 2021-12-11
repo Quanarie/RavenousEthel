@@ -12,7 +12,7 @@ public class AnimationChanger : MonoBehaviour
 
     private void Start()
     {
-        PlayerIdentifier.Instance.Attack.OnMutation += Mutate;
+        PlayerIdentifier.Instance.Mutation.OnMutation += Mutate;
         PlayerIdentifier.Instance.Health.OnDemutation += DeMutate;
     }
 

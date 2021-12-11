@@ -57,8 +57,8 @@ public class Weapon : MonoBehaviour
         }
         else
         {
-            float inputX = GameManager.Instance.Joystick.Horizontal;
-            float inputY = GameManager.Instance.Joystick.Vertical;
+            float inputX = PlayerIdentifier.Instance.Input.Horizontal;
+            float inputY = PlayerIdentifier.Instance.Input.Vertical;
 
             weaponDir = new Vector3(inputX, inputY, 0);
 

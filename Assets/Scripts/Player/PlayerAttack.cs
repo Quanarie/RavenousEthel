@@ -6,17 +6,13 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public Action<float> OnMutation = delegate { };
-
     private Weapon weapon;
-    private WeaponManager weaponManager;
 
     [SerializeField] private float distanceToDrain;
 
     [Header("Regular State")]
     [SerializeField] private float rechargeTimeRegular;
     [SerializeField] private GameObject regularProjectilePrefab;
-    [SerializeField] private GameObject deadSlimePrefab;
     [SerializeField] private Image rechargeRegularImage;
     private float previousRegularStateAttackTime;
 
@@ -34,9 +30,8 @@ public class PlayerAttack : MonoBehaviour
     {
         PlayerIdentifier.Instance.Animator.SetTrigger("transform");
 
-        weaponManager = GetComponent<WeaponManager>();
-
-        PlayerIdentifier.Instance.Health.OnDemutation += DeMutate;
+        PlayerIdentifier.Instance.Input.OnInteractButtonPressed += Interact;
+        PlayerIdentifier.Instance.Input.OnSwallowButtonPressed += SwallowUp;
     }
 
     private void Update()
@@ -59,7 +54,7 @@ public class PlayerAttack : MonoBehaviour
         previousRegularStateAttackTime = Time.time;
     }
 
-    public void Attack()
+    public void Interact()
     {
         if (GameManager.Instance.state == GameManager.State.regular)
             return;
@@ -97,30 +92,6 @@ public class PlayerAttack : MonoBehaviour
     }
 
     public void SetWeapon(Weapon weapon) => this.weapon = weapon;
-
-    public void Mutate(GameObject enemy)
-    {
-        Instantiate(deadSlimePrefab, transform.position, Quaternion.identity);
-
-        OnMutation?.Invoke(enemy.GetComponent<EnemyHealth>().corpse.GetComponent<EnemyCorpse>().toHeal);
-        transform.position = enemy.transform.position;
-        Destroy(enemy);
-
-        CircleCollider2D hitbox = PlayerIdentifier.Instance.HitBox;
-        hitbox.radius = 0.115f;
-        hitbox.offset = new Vector3(0f, 0.115f, 0f);
-    }
-
-    public void DeMutate()
-    {
-        GameManager.Instance.state = GameManager.State.regular;
-
-        CircleCollider2D hitbox = PlayerIdentifier.Instance.HitBox;
-        hitbox.radius = 0.09f;
-        hitbox.offset = new Vector3(0f, 0.09f, 0f);
-
-        weaponManager.ClearWeapons();
-    }
 
     public bool TryDrainCorpses()
     {

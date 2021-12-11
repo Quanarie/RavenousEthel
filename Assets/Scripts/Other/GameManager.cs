@@ -14,9 +14,6 @@ public class GameManager : MonoBehaviour
 
     public GameObject pickupableArrowObject;
 
-    public Joystick Joystick;
-    public Button AttackButton;
-
     public State state;
 
     public FloatingTextManager floatingTextManager;
