@@ -107,6 +107,7 @@ public class GameManager : MonoBehaviour
                 weapon.UpdateWeaponStock();
                 PlayerIdentifier.Instance.WeaponManager.AddWeapon(weapon);
             }
+
             PlayerIdentifier.Instance.WeaponManager.ChangeCurrentWeapon(currentWeapon);
         }
 

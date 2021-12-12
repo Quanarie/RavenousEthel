@@ -102,7 +102,7 @@ MonoBehaviour:
   chanceOfDropping: 1
   damageAmount: 40
   pushForce: 3
-  stunTime: 0.3
+  stunTime: 1
   speed: 1
   lifetime: 5
   projectileSprite: {fileID: -8661526867785936451, guid: d2637050491b785438111e2bb54acecd, type: 3}

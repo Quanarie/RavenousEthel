@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyMeleeAttack : EnemyAttack
 {
     [SerializeField] private float damageAmount;
+    [SerializeField] private float pushForce;
+    [SerializeField] private float stunTime;
     [SerializeField] private AnimationClip attackClip;
 
     private Animator animator;
@@ -24,6 +26,8 @@ public class EnemyMeleeAttack : EnemyAttack
     private IEnumerator AttackAfterAnimation()
     {
         yield return new WaitForSeconds(attackClip.length);
-        PlayerIdentifier.Instance.Health.ReceiveDamage(damageAmount);
+        Vector3 playerPos = PlayerIdentifier.Instance.transform.position;
+        Vector3 pushDirection = new Vector3(playerPos.x - transform.position.x, playerPos.y - transform.position.y, 0).normalized * pushForce;
+        PlayerIdentifier.Instance.Health.ReceiveDamage(damageAmount, pushDirection, stunTime);
     }
 }

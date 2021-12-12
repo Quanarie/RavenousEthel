@@ -182,6 +182,8 @@ MonoBehaviour:
   rechargeTime: 2
   attackDistance: 0.3
   damageAmount: 20
+  pushForce: 5
+  stunTime: 1
   attackClip: {fileID: 7400000, guid: 5fbb078dcc95d934e9166ef21da58602, type: 2}
 --- !u!114 &5927496543980980416
 MonoBehaviour:

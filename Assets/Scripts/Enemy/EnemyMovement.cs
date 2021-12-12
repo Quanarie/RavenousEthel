@@ -39,7 +39,6 @@ public class EnemyMovement : Movement
     public override void Stun(float stunTime)
     {
         base.Stun(stunTime);
-
         enemyAttack.enabled = false;
     }
 

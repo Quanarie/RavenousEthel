@@ -66,10 +66,7 @@ public class PlayerAttack : MonoBehaviour
         if (PlayerIdentifier.Instance.WeaponManager.Pickup())
             return;
 
-        if (TryPickupBonuses(distanceToPickupBonus))
-            return;
-
-        if (TryDrainCorpses())
+        if (TryPickupBonuses(distanceToPickupBonus) | TryDrainCorpses())
             return;
 
         if (weapon == null)

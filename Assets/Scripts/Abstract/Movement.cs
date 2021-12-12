@@ -55,27 +55,30 @@ public abstract class Movement : MonoBehaviour
 
     public virtual void Stun(float stunTime)
     {
-        return;
-
         isStunned = true;
 
         StartCoroutine(UnStunCreature(stunTime));
+        StartCoroutine(PushWhileStunned(stunTime));
 
         UpdateAnimator(Vector3.zero);
-
-        if (Physics2D.OverlapCircleAll(transform.position + (moveDelta + pushDirection) * Time.deltaTime, 0.1f, 1 << LayerMask.NameToLayer("Obstacles")).Length > 0)
-        {
-            pushDirection = Vector3.zero;
-        }
-
-        moveDelta += pushDirection;
-        pushDirection = Vector3.zero;
-        rigidbody.MovePosition(transform.position + moveDelta * Time.deltaTime);
     }
 
     protected virtual IEnumerator UnStunCreature(float stunTime)
     {
         yield return new WaitForSeconds(stunTime);
         isStunned = false;
+    }
+
+    protected virtual IEnumerator PushWhileStunned(float stunTime)
+    {
+        for (float i = 0; i < stunTime; )
+        {
+            pushDirection = Vector3.Lerp(pushDirection, Vector3.zero, pushRecoverySpeed);
+            rigidbody.velocity = pushDirection;
+
+            i += Time.deltaTime;
+            yield return null;
+        }
+
     }
 }

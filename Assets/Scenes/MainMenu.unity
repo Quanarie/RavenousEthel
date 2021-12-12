@@ -9903,8 +9903,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fb8969a52d51424693775f0e4dff5f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0.3
   rechargeImage: {fileID: 1057285074}
+  radius: 0.3
   weaponImage: {fileID: 701104226}
   weaponSpriteStandart: {fileID: -3491606951004172564, guid: 583ca0b3ae554a54180efba7e4e011c0, type: 3}
   currentWeapon: 0
@@ -9938,7 +9938,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceToDrain: 0.2
-  distanceToPickupBonus: 0.5
+  distanceToPickupBonus: 0.3
   rechargeTimeRegular: 1
   regularProjectilePrefab: {fileID: 7350114879659511275, guid: 83fa1a85ba73c3a468f85bb04ce7b2b0, type: 3}
   rechargeRegularImage: {fileID: 981807335}
@@ -12125,7 +12125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponParent: {fileID: 719902929}
-  weaponManager: {fileID: 1595203736}
   weaponStock: {fileID: 2091093233}
   pickupableArrowObject: {fileID: 6361831512966144877, guid: 2d4ab2a2251f77049a7b0b12331cdb2d, type: 3}
   state: 0

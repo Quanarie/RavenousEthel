@@ -91,7 +91,6 @@ public class WeaponManager : MonoBehaviour
             weapons[currentWeapon].gameObject.SetActive(true);
             weapons[currentWeapon].UpdateWeaponStock();
             weaponImage.sprite = weapons[currentWeapon].gameObject.GetComponent<SpriteRenderer>().sprite;
-            print(weapons[currentWeapon].gameObject.GetComponent<SpriteRenderer>().sprite.name);
         }
         else
         {
@@ -112,7 +111,6 @@ public class WeaponManager : MonoBehaviour
         {
             weapons[currentWeapon].gameObject.SetActive(true);
             weapons[currentWeapon].UpdateWeaponStock();
-            weaponImage.sprite = weapons[currentWeapon].gameObject.GetComponent<SpriteRenderer>().sprite;
         }
 
         SetWeapon(currentWeapon);

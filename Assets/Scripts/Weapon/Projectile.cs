@@ -12,7 +12,7 @@ public class Projectile : MonoBehaviour
 
     [HideInInspector] public Vector3 direction;
     [HideInInspector] public float angleBetweenEnemyAndWeapon;
-    public static float offsetY = 0.175f;
+    public static float offsetY = 0.15f;
 
     private EnemyHealth enemyToAttack;
 
