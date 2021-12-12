@@ -10,13 +10,16 @@ public class PlayerHealth : AliveCreature
     public Action OnPlayerDeath = delegate { };
     public Action OnDemutation = delegate { };
 
-    [SerializeField] private float maxRegularHp;
+    private float maxRegularHp;
     [SerializeField] private float maxMonsterHp;
+    [SerializeField] private float maxShield;
 
     [SerializeField] private Slider healhtSlider;
     [SerializeField] private Text healhtText;
+    [SerializeField] private Slider shieldSlider;
+    [SerializeField] private Text shieldText;
 
-    public float upgradeHealth;
+    public float Shield { get; private set; }
 
     [Header("Camera Shake")]
     private CameraShake cameraShakeComponent;
@@ -25,13 +28,14 @@ public class PlayerHealth : AliveCreature
 
     protected override void Start()
     {
+        maxRegularHp = maxHp;
         movementScript = GetComponent<Movement>();
         animator = GetComponent<Animator>();
 
         currentHp = PlayerPrefs.GetFloat("Health", maxRegularHp);
 
-        healhtSlider.minValue = 0;
         UpdateHealth();
+        UpdateShield();
 
         cameraShakeComponent = Camera.main.GetComponent<CameraShake>();
 
@@ -40,22 +44,24 @@ public class PlayerHealth : AliveCreature
 
     public override void ReceiveDamage(float damageAmount)
     {
-        if (upgradeHealth > 0f)
+        if (Shield > 0f)
         {
-            upgradeHealth -= damageAmount;
+            Shield -= damageAmount;
+            animator.SetTrigger("damage");
             GameManager.Instance.floatingTextManager.Show("-" + damageAmount.ToString(), 15, Color.blue, transform.position, new Vector3(70, 80, 0), 0.5f);
         }
 
-        if (upgradeHealth < 0f)
+        if (Shield < 0f)
         {
-            base.ReceiveDamage(-upgradeHealth);
-            upgradeHealth = 0f;
+            base.ReceiveDamage(-Shield);
+            Shield = 0f;
         }
 
-        if (upgradeHealth == 0)
+        if (Shield == 0)
             base.ReceiveDamage(damageAmount);
 
         UpdateHealth();
+        UpdateShield();
 
         StartCoroutine(cameraShakeComponent.Shake(duration, magnitude));
     }
@@ -87,6 +93,13 @@ public class PlayerHealth : AliveCreature
         healhtText.text = currentHp.ToString();
     }
 
+    public void UpdateShield()
+    {
+        shieldSlider.maxValue = maxShield;
+        shieldSlider.value = Shield;
+        shieldText.text = Shield.ToString();
+    }
+
     public void SetCurrentHealth(float health)
     {
         if (health <= 0)
@@ -97,10 +110,18 @@ public class PlayerHealth : AliveCreature
         UpdateHealth();
     }
 
+    public void AddShield(float toAdd)
+    {
+        if (Shield + toAdd <= maxShield)
+            Shield += toAdd;
+        else Shield = maxShield;
+
+        UpdateShield();
+    }
+
     public void Mutate(float toHeal)
     {
         maxHp = maxMonsterHp;
-        currentHp = maxMonsterHp - (maxRegularHp - currentHp);
 
         Heal(toHeal);
 

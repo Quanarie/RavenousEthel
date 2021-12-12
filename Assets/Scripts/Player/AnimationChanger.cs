@@ -25,16 +25,9 @@ public class AnimationChanger : MonoBehaviour
     public void DeMutate()
     {
         PlayerIdentifier.Instance.Animator.SetTrigger("death");
-        StartCoroutine(ChangeStateToRegular());
-
-    }
-
-    IEnumerator ChangeStateToRegular()
-    {
-        yield return new WaitForSeconds(monsterDeath.length);
-
         PlayerIdentifier.Instance.Animator.runtimeAnimatorController = regularController;
         PlayerIdentifier.Instance.Animator.SetTrigger("transform");
+
         Instantiate(deadMonsterPrefab, transform.position, Quaternion.identity);
     }
 }
