@@ -16,7 +16,7 @@ public class EnemyMovement : Movement
 
     private void FixedUpdate()
     {
-        if (Vector3.Distance(PlayerIdentifier.Instance.transform.position, transform.position) <= enemyAttack.attackDistance || IsThereAWallOnTheWayToPlayer(transform.position))
+        if (Vector3.Distance(PlayerIdentifier.Instance.transform.position, transform.position) <= enemyAttack.attackDistance)
         {
             UpdateMotor(Vector3.zero);
             return;
@@ -49,7 +49,7 @@ public class EnemyMovement : Movement
         isStunned = false;
     }
 
-    public static bool IsThereAWallOnTheWayToPlayer(Vector3 selfPos)
+    /*public static bool IsThereAWallOnTheWayToPlayer(Vector3 selfPos)
     {
         Vector3 playerPos = PlayerIdentifier.Instance.transform.position;
 
@@ -70,5 +70,5 @@ public class EnemyMovement : Movement
         }
 
         return isWallBetweenPlayerAndEnemy;
-    }
+    }*/
 }

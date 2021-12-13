@@ -29,8 +29,8 @@ public class EnemyWeapon : MonoBehaviour
 
     private void Update()
     {
-        if (EnemyMovement.IsThereAWallOnTheWayToPlayer(transform.position))
-            return;
+        /*if (EnemyMovement.IsThereAWallOnTheWayToPlayer(transform.position))
+            return;*/
 
         Vector3 playerPos = PlayerIdentifier.Instance.transform.position;
 
