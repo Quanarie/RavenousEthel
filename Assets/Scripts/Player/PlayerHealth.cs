@@ -10,7 +10,7 @@ public class PlayerHealth : AliveCreature
     public Action OnPlayerDeath = delegate { };
     public Action OnDemutation = delegate { };
 
-    private float maxRegularHp;
+    [SerializeField] private float maxRegularHp;
     [SerializeField] private float maxMonsterHp;
     [SerializeField] private float maxShield;
 
@@ -28,7 +28,6 @@ public class PlayerHealth : AliveCreature
 
     protected override void Start()
     {
-        maxRegularHp = maxHp;
         movementScript = GetComponent<Movement>();
         animator = GetComponent<Animator>();
 
@@ -48,16 +47,19 @@ public class PlayerHealth : AliveCreature
         {
             Shield -= damageAmount;
             animator.SetTrigger("damage");
-            GameManager.Instance.floatingTextManager.Show("-" + damageAmount.ToString(), 15, Color.blue, transform.position, new Vector3(70, 80, 0), 0.5f);
-        }
 
-        if (Shield < 0f)
-        {
-            base.ReceiveDamage(-Shield);
-            Shield = 0f;
+            if (Shield < 0f)
+            {
+                GameManager.Instance.floatingTextManager.Show("-" + damageAmount + Shield.ToString(), 15, Color.blue, transform.position, new Vector3(40, 80, 0), 0.5f);
+                base.ReceiveDamage(-Shield);
+                Shield = 0f;
+            }
+            else
+            {
+                GameManager.Instance.floatingTextManager.Show("-" + damageAmount.ToString(), 15, Color.blue, transform.position, new Vector3(70, 80, 0), 0.5f);
+            }
         }
-
-        if (Shield == 0)
+        else if (Shield == 0)
             base.ReceiveDamage(damageAmount);
 
         UpdateHealth();
@@ -95,9 +97,18 @@ public class PlayerHealth : AliveCreature
 
     public void UpdateShield()
     {
-        shieldSlider.maxValue = maxShield;
-        shieldSlider.value = Shield;
-        shieldText.text = Shield.ToString();
+        if (Shield == 0)
+        {
+            shieldSlider.gameObject.SetActive(false);
+        }
+        else
+        {
+            shieldSlider.gameObject.SetActive(true);
+
+            shieldSlider.maxValue = maxShield;
+            shieldSlider.value = Shield;
+            shieldText.text = Shield.ToString();
+        }
     }
 
     public void SetCurrentHealth(float health)
@@ -143,7 +154,6 @@ public class PlayerHealth : AliveCreature
             OnPlayerDeath?.Invoke();
 
             base.Death();
-            currentHp = maxHp;
         }
         else
         {

@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
     public bool[] levels;
     public Weapon[] weapons;
 
+    private int lvlMoney;
+    private int allMoney;
+
     private void Awake()
     {
         if (Instance != null)
@@ -37,6 +40,16 @@ public class GameManager : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "MainMenu")
             DontDestroyOnLoadContainer.SetActive(false);
+
+        NextLevel.OnNextLevelTransition += SaveState;
+        NextLevel.OnNextLevelTransition += SetLevelDone;
+        NextLevel.OnNextLevelTransition += UpdateAllMoneyValue;
+    }
+
+    public void AddMoney(int quantity)
+    {
+        lvlMoney += quantity;
+        print("lvl" + lvlMoney + " all" + allMoney);
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -56,7 +69,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SaveState()
+    private void SetLevelDone(int doneLevelIndex) => levels[doneLevelIndex] = true;
+    private void UpdateAllMoneyValue(int compaibility)
+    {
+        allMoney += lvlMoney;
+        lvlMoney = 0;
+    }
+
+    public void SaveState(int compatibility)
     {
         PlayerPrefs.SetInt("Level", GetCurrentLevel());
 
@@ -67,8 +87,6 @@ public class GameManager : MonoBehaviour
 
         PlayerPrefs.SetFloat("Health", PlayerIdentifier.Instance.Health.currentHp);
 
-        PlayerPrefs.SetFloat("Size", PlayerIdentifier.Instance.transform.localScale.x);
-
         PlayerPrefs.SetInt("WeaponCount", WeaponParent.childCount);
         PlayerPrefs.SetInt("CurrentWeapon", PlayerIdentifier.Instance.WeaponManager.currentWeapon);
         for (int i = 0; i < WeaponParent.childCount; i++)
@@ -76,6 +94,10 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("Weapon" + i.ToString(), WeaponParent.GetChild(i).GetComponent<Weapon>().index);
             PlayerPrefs.SetInt("WeaponShoots" + i.ToString(), WeaponParent.GetChild(i).GetComponent<Weapon>().currentShotQuantity);
         }
+
+        PlayerPrefs.SetInt("AllMoney", allMoney);
+        PlayerPrefs.SetInt("LvlMoney", lvlMoney);
+
     }
 
     public void LoadState()
@@ -112,9 +134,9 @@ public class GameManager : MonoBehaviour
         }
 
         PlayerIdentifier.Instance.Health.SetCurrentHealth(PlayerPrefs.GetFloat("Health", 0f));
-        
-        float size = PlayerPrefs.GetFloat("Size", 1f);
-        PlayerIdentifier.Instance.transform.localScale = new Vector3(size, size, 0);
+
+        allMoney = PlayerPrefs.GetInt("AllMoney");
+        lvlMoney = PlayerPrefs.GetInt("LvlMoney");
     }
 
     private int GetCurrentLevel()

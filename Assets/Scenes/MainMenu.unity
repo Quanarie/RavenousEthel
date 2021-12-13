@@ -10311,6 +10311,7 @@ MonoBehaviour:
   deathAudioName: 
   maxHp: 50
   currentHp: 0
+  maxRegularHp: 50
   maxMonsterHp: 500
   maxShield: 300
   healhtSlider: {fileID: 1313678861}

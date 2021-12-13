@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
@@ -5,6 +6,8 @@ using UnityEngine;
 
 public class NextLevel : MonoBehaviour
 {
+    public static Action<int> OnNextLevelTransition = delegate { };
+
     [SerializeField] private string sceneName;
     private int doneLevelIndex;
 
@@ -19,12 +22,9 @@ public class NextLevel : MonoBehaviour
         {
             SceneManager.LoadScene(sceneName);
             if (doneLevelIndex >= 0)
-                GameManager.Instance.levels[doneLevelIndex] = true;
-
-            if (SceneManager.GetActiveScene().name == "Tutorial")
-                return;
-
-            GameManager.Instance.SaveState();
+            {
+                OnNextLevelTransition(doneLevelIndex);
+            }
         }
     }
 }

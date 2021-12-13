@@ -6,10 +6,13 @@ public class EnemyHealth : AliveCreature
 {
     [SerializeField] private AnimationClip deathClip;
     [SerializeField] private Weapon dropWeapon;
+    [SerializeField] private int money;
     public GameObject corpse;
 
     public override void Death()
     {
+        GameManager.Instance.AddMoney(money);
+
         for (int i = 0; i < transform.childCount; i++)
         {
             Destroy(transform.GetChild(i).gameObject);
