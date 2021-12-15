@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class AdsManager : MonoBehaviour, IUnityAdsListener
 {
+    [SerializeField] private int reward;
 
     private string iosVideo = "Interstitial_iOS";
     private string iosRewardedVideo = "Rewarded_iOS";
@@ -56,7 +57,7 @@ public class AdsManager : MonoBehaviour, IUnityAdsListener
     {
         if (placementId == iosRewardedVideo && showResult == ShowResult.Finished)
         {
-
+            PlayerPrefs.SetInt("AllMoney", PlayerPrefs.GetInt("AllMoney", reward));
         }
     }
 }

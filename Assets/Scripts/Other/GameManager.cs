@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
@@ -25,6 +26,8 @@ public class GameManager : MonoBehaviour
     private int lvlMoney;
     private int allMoney;
 
+    public Action OnMoneyAdded = delegate { };
+
     private void Awake()
     {
         if (Instance != null)
@@ -43,13 +46,13 @@ public class GameManager : MonoBehaviour
 
         NextLevel.OnNextLevelTransition += SaveState;
         NextLevel.OnNextLevelTransition += SetLevelDone;
-        NextLevel.OnNextLevelTransition += UpdateAllMoneyValue;
+        NextLevel.OnNextLevelTransition += UpdateAndSaveMoneyValues;
     }
 
     public void AddMoney(int quantity)
     {
         lvlMoney += quantity;
-        print("lvl" + lvlMoney + " all" + allMoney);
+        OnMoneyAdded();
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -67,14 +70,20 @@ public class GameManager : MonoBehaviour
         {
             PlayerIdentifier.Instance.transform.position = spawnPoint.transform.position;
         }
+
+        lvlMoney = 0;
     }
 
     private void SetLevelDone(int doneLevelIndex) => levels[doneLevelIndex] = true;
-    private void UpdateAllMoneyValue(int compaibility)
+    private void UpdateAndSaveMoneyValues(int compaibility)
     {
         allMoney += lvlMoney;
         lvlMoney = 0;
+
+        PlayerPrefs.SetInt("AllMoney", allMoney);
     }
+
+    public int GetCurrentMoney() => allMoney + lvlMoney;
 
     public void SaveState(int compatibility)
     {
@@ -94,10 +103,6 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("Weapon" + i.ToString(), WeaponParent.GetChild(i).GetComponent<Weapon>().index);
             PlayerPrefs.SetInt("WeaponShoots" + i.ToString(), WeaponParent.GetChild(i).GetComponent<Weapon>().currentShotQuantity);
         }
-
-        PlayerPrefs.SetInt("AllMoney", allMoney);
-        PlayerPrefs.SetInt("LvlMoney", lvlMoney);
-
     }
 
     public void LoadState()
@@ -136,7 +141,6 @@ public class GameManager : MonoBehaviour
         PlayerIdentifier.Instance.Health.SetCurrentHealth(PlayerPrefs.GetFloat("Health", 0f));
 
         allMoney = PlayerPrefs.GetInt("AllMoney");
-        lvlMoney = PlayerPrefs.GetInt("LvlMoney");
     }
 
     private int GetCurrentLevel()

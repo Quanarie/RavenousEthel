@@ -38,7 +38,7 @@ public class RegularProjectile : MonoBehaviour
         if (Vector3.Distance(transform.position, endPos) < distanceToMutate)
         {
             PlayerIdentifier.Instance.Mutation.Mutate(enemyToAttack.gameObject);
-            Destroy(gameObject);
+            enemyToAttack.GetComponent<EnemyHealth>().Death();
         }
     }
 }
