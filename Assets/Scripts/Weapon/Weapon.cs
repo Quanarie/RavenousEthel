@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    [SerializeField] protected int price;
+
     [SerializeField] protected GameObject projectile;
     [SerializeField] protected float rechargeTime;
     [SerializeField] protected float range;
@@ -16,7 +18,6 @@ public class Weapon : MonoBehaviour
     [HideInInspector] public int currentShotQuantity;
     public int index;
     [SerializeField] protected string weaponSoundName;
-
     [SerializeField] private float damageAmount;
     [SerializeField] private float pushForce;
     [SerializeField] private float stunTime;
@@ -77,6 +78,21 @@ public class Weapon : MonoBehaviour
             else
                 transform.localScale = new Vector3(1, 1, 0);
         }
+    }
+
+    public void GetProperties(out int price, out float range, out float damageAmount, out float pushForce, out float stunTime, 
+                              out float speed, out float lifetime, out Sprite weapon, out Sprite projectile)
+    {
+        price = this.price;
+        range = this.range;
+        damageAmount = this.damageAmount;
+        pushForce = this.pushForce;
+        stunTime = this.stunTime;
+        speed = this.speed;
+        lifetime = this.lifetime;
+        weapon = GetComponent<SpriteRenderer>().sprite;
+        projectile = projectileSprite;
+
     }
 
     public virtual void Shoot()

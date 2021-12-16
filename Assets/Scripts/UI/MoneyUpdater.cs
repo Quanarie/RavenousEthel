@@ -7,18 +7,13 @@ using TMPro;
 public class MoneyUpdater : MonoBehaviour
 {
     private TextMeshProUGUI moneyText;
+
     private void Start()
     {
         moneyText = GetComponent<TextMeshProUGUI>();
-        moneyText.text = PlayerPrefs.GetInt("AllMoney").ToString();
     }
 
-    public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
-    {
-        UpdateText();
-    }
-
-    private void UpdateText()
+    private void Update()
     {
         moneyText.text = PlayerPrefs.GetInt("AllMoney").ToString();
     }

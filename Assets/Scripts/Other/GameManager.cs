@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     private int lvlMoney;
     private int allMoney;
 
-    public Action OnMoneyAdded = delegate { };
+    public Action OnMoneyChanged = delegate { };
 
     private void Awake()
     {
@@ -52,15 +52,15 @@ public class GameManager : MonoBehaviour
     public void AddMoney(int quantity)
     {
         lvlMoney += quantity;
-        OnMoneyAdded();
+        OnMoneyChanged();
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        LoadState();
+
         if (SceneManager.GetActiveScene().name == "MainMenu")
             return;
-
-        LoadState();
 
         DontDestroyOnLoadContainer.SetActive(true);
 
@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void SetLevelDone(int doneLevelIndex) => levels[doneLevelIndex] = true;
-    private void UpdateAndSaveMoneyValues(int compaibility)
+    private void UpdateAndSaveMoneyValues(int compatibility)
     {
         allMoney += lvlMoney;
         lvlMoney = 0;
@@ -84,6 +84,17 @@ public class GameManager : MonoBehaviour
     }
 
     public int GetCurrentMoney() => allMoney + lvlMoney;
+    public bool BuyObject(int price)
+    {
+        if (price > allMoney)
+            return false;
+
+        OnMoneyChanged();
+
+        PlayerPrefs.SetInt("AllMoney", PlayerPrefs.GetInt("AllMoney") - price);
+        allMoney -= price;
+        return true;
+    }
 
     public void SaveState(int compatibility)
     {

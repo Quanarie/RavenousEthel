@@ -12,7 +12,7 @@ public class MoneyUpdaterRealTime : MonoBehaviour
         moneyText = GetComponent<TextMeshProUGUI>();
         moneyText.text = GameManager.Instance.GetCurrentMoney().ToString();
 
-        GameManager.Instance.OnMoneyAdded += UpdateText;
+        GameManager.Instance.OnMoneyChanged += UpdateText;
         SceneManager.sceneLoaded += UpdateText;
     }
 
