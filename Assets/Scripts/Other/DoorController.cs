@@ -11,6 +11,7 @@ public class DoorController : PickupableObject
         foreach (ControlledDoor door in doors)
         {
             door.Open();
+            PointerSpawner.Instance.CreateNewPointer(door.transform.position);
         }
 
         Destroy(arrow);

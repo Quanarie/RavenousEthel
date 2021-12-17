@@ -39,6 +39,7 @@ public class RegularProjectile : MonoBehaviour
         {
             PlayerIdentifier.Instance.Mutation.Mutate(enemyToAttack.gameObject);
             enemyToAttack.GetComponent<EnemyHealth>().Death();
+            Destroy(gameObject);
         }
     }
 }

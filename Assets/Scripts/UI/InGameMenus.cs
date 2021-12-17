@@ -82,8 +82,6 @@ public class InGameMenus : MonoBehaviour
 
     public void OpenMenu()
     {
-
-
         GameManager.Instance.DontDestroyOnLoadContainer.SetActive(false);
 
         SceneManager.LoadScene("MainMenu");
