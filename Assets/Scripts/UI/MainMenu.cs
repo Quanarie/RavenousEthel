@@ -33,12 +33,12 @@ public class MainMenu : MonoBehaviour
                 {
                     if (PlayerPrefs.GetInt("Tutorial", 0) == 0)
                     {
-                        SceneManager.LoadScene("Tutorial");
+                        SceneFader.Instance.FadeOut("Tutorial");
                         PlayerPrefs.SetInt("Tutorial", 1);
                     }
                     else
                     {
-                        SceneManager.LoadScene("Level" + lvlButtonText.text);
+                        SceneFader.Instance.FadeOut("Level" + lvlButtonText.text);
                     }
                 });
 
@@ -48,7 +48,7 @@ public class MainMenu : MonoBehaviour
             levelButton.onClick.AddListener(
             () =>
             {
-                SceneManager.LoadScene("Level" + lvlButtonText.text);
+                SceneFader.Instance.FadeOut("Level" + lvlButtonText.text);
             });
         }
     }
@@ -56,7 +56,7 @@ public class MainMenu : MonoBehaviour
     public void StartSavedGame()
     {
         int currentLevelIndex = PlayerPrefs.GetInt("Level", 0);
-        SceneManager.LoadScene("Level" + (currentLevelIndex + 1).ToString());
+        SceneFader.Instance.FadeOut("Level" + (currentLevelIndex + 1).ToString());
     }
 
     public void DeletePlayerPrefs()
@@ -70,19 +70,19 @@ public class MainMenu : MonoBehaviour
         {
             PlayerPrefs.DeleteAll();
             PlayerPrefs.SetInt("Tutorial", 1);
-            SceneManager.LoadScene("Level1");
+            SceneFader.Instance.FadeOut("Level1");
         }
         else
         {
             PlayerPrefs.DeleteAll();
             PlayerPrefs.SetInt("Tutorial", 1);
-            SceneManager.LoadScene("Tutorial");
+            SceneFader.Instance.FadeOut("Tutorial");
         }
     }
 
     public void StartTutorial()
     {
         PlayerPrefs.SetInt("Tutorial", 1);
-        SceneManager.LoadScene("Tutorial");
+        SceneFader.Instance.FadeOut("Tutorial");
     }
 }

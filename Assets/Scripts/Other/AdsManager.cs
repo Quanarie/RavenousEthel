@@ -57,7 +57,7 @@ public class AdsManager : MonoBehaviour, IUnityAdsListener
     {
         if (placementId == iosRewardedVideo && showResult == ShowResult.Finished)
         {
-            PlayerPrefs.SetInt("AllMoney", PlayerPrefs.GetInt("AllMoney", reward));
+            PlayerPrefs.SetInt("AllMoney", PlayerPrefs.GetInt("AllMoney") + reward);
         }
     }
 }

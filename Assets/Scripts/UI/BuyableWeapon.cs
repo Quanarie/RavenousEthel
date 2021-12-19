@@ -48,9 +48,12 @@ public class BuyableWeapon : MonoBehaviour
 
     public void Buy()
     {
-        if (GameManager.Instance.BuyObject(price))
+        if (PlayerPrefs.GetInt("AllMoney") >= price)
         {
+            PlayerPrefs.SetInt("AllMoney", PlayerPrefs.GetInt("AllMoney") - price);
+
             int weaponCount = PlayerPrefs.GetInt("WeaponCount");
+
             PlayerPrefs.SetInt("WeaponCount", weaponCount + 1);
             PlayerPrefs.SetInt("Weapon" + weaponCount.ToString(), weapon.index);
             PlayerPrefs.SetInt("WeaponShoots" + weaponCount.ToString(), 0);

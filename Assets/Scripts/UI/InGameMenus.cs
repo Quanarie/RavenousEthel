@@ -83,7 +83,6 @@ public class InGameMenus : MonoBehaviour
     public void OpenMenu()
     {
         Time.timeScale = 1f;
-        //SceneFader.Instance.FadeOut("MainMenu");
-        SceneManager.LoadScene("MainMenu");
+        SceneFader.Instance.FadeOut("MainMenu");
     }
 }
