@@ -20,7 +20,8 @@ public class NextLevel : MonoBehaviour
     {
         if (collision.TryGetComponent(out PlayerHealth _))
         {
-            SceneManager.LoadScene(sceneName);
+            SceneFader.Instance.FadeOut(sceneName);
+
             if (doneLevelIndex >= 0)
             {
                 OnNextLevelTransition(doneLevelIndex);

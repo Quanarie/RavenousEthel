@@ -60,7 +60,10 @@ public class GameManager : MonoBehaviour
         LoadState();
 
         if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            DontDestroyOnLoadContainer.SetActive(false);
             return;
+        }
 
         DontDestroyOnLoadContainer.SetActive(true);
 
